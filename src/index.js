@@ -6,7 +6,7 @@ module.exports = {
             <img src="https://placehold.it/180x180" v-bind:alt="alt" v-bind:style="imgStyle" />\
             <br>\
             <label v-bind:for="name" v-bind:class="buttonStyle">Select Image</label>\
-            <input type="file" v-bind:name="name" style="display:none;" accept="image/*" v-on:change="onFileChange">\
+            <input type="file" v-bind:name="name" v-bind:id="name" style="display:none;" accept="image/*" v-on:change="onFileChange">\
         </div>\
         <div v-else>\
             <img v-bind:src="internal_image" v-bind:alt="alt" v-bind:style="imgStyle" />\
