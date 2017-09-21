@@ -1,16 +1,18 @@
-const VImage = {
+module.exports = {
     name: 'v-image',
 
-    template: '<div v-if="!internal_image">\
-        <img src="https://placehold.it/180x180" v-bind:alt="alt" v-bind:style="imgStyle" />\
-        <br>\
-        <label v-bind:for="name" v-bind:class="buttonStyle">Select Image</label>\
-        <input type="file" v-bind:name="name" style="display:none;" accept="image/*" v-on:change="onFileChange">\
-    </div>\
-    <div v-else>\
-        <img v-bind:src="internal_image" v-bind:alt="alt" v-bind:style="imgStyle" />\
-        <br>\
-        <button v-bind:class="buttonStyle" v-on:click="removeImage">Remove image</button>\
+    template: '<div>\
+        <div v-if="!internal_image">\
+            <img src="https://placehold.it/180x180" v-bind:alt="alt" v-bind:style="imgStyle" />\
+            <br>\
+            <label v-bind:for="name" v-bind:class="buttonStyle">Select Image</label>\
+            <input type="file" v-bind:name="name" style="display:none;" accept="image/*" v-on:change="onFileChange">\
+        </div>\
+        <div v-else>\
+            <img v-bind:src="internal_image" v-bind:alt="alt" v-bind:style="imgStyle" />\
+            <br>\
+            <button v-bind:class="buttonStyle" v-on:click="removeImage">Remove image</button>\
+        </div>\
     </div>',
 
     props: {
@@ -73,6 +75,4 @@ const VImage = {
         }
 
     }
-}
-
-export default VImage;
+};
