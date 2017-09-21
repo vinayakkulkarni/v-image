@@ -50,26 +50,26 @@ module.exports = {
         }
     },
     methods: {
-        onFileChange(e) {
-            let files = e.target.files || e.dataTransfer.files;
+        onFileChange: function(e) {
+            const files = e.target.files || e.dataTransfer.files;
             if (!files.length)
                 return;
             this.createImage(files[0]);
         },
 
-        createImage(file) {
-            let image = new Image();
-            let reader = new FileReader();
-            let t = this;
+        createImage: function(file) {
+            const image = new Image();
+            const reader = new FileReader();
+            const vm = this;
 
-            reader.onload = (e) => {
-                t.internal_image = e.target.result;
-                t.$emit('loadImage', e.target.result);
+            reader.onload = function(e) {
+                vm.internal_image = e.target.result;
+                vm.$emit('loadImage', e.target.result);
             };
             reader.readAsDataURL(file);
         },
 
-        removeImage() {
+        removeImage: function() {
             this.image = null;
             this.internal_image = null;
         }
