@@ -2,6 +2,7 @@
 # V-Image :camera:
 
 + This is [on GitHub](https://github.com/vinayakkulkarni/v-image)  so let me know if I've b0rked it somewhere, give me a star :star: if you like it :beers:
++ Demo here -> [v-image](https://vinayakkulkarni.github.io/v-image/)
 
 ### :white_check_mark: Install :ok_hand:
 ``` bash
