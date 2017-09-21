@@ -24,7 +24,7 @@ import vImage from 'v-image';
 ### :white_check_mark: Example :four_leaf_clover: 
 
 ```html
-  <v-image alt="Alt Text for the Image" name="name" v-on:load-image="localVariable"></v-image>
+  <v-image alt="Alt Text for the Image" :name="'my-awesome-image'" :img-style="myStyle" @load-image="localVariable"></v-image>
 ```
 ```js
 import vImage from 'v-image';
@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       image: '',
-      style: {
+      myStyle: {
         height: '200px',
         width: '200px',
       },
