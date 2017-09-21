@@ -1,0 +1,46 @@
+{
+    "name": "v-image",
+    "description": "Tiny little component for input type=file.",
+    "version": "1.0.4",
+    "author": {
+        "name": "Vinayak Kulkarni",
+        "email": "vinayak.kulkarni@live.com",
+        "url": "https://vinayak.website"
+    },
+    "private": false,
+    "main": "src/index.js",
+    "keywords": [
+        "vuejs",
+        "image",
+        "vue2",
+        "input-image"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vinayakkulkarni/v-image.git"
+    },
+    "scripts": {
+        "test": "karma start karma.conf.js",
+        "test-watch": "karma start karma.conf.js --no-single-run"
+    },
+    "devDependencies": {
+        "aliasify": "^2.1.0",
+        "babel-preset-es2015": "^6.18.0",
+        "babelify": "^7.3.0",
+        "browserify": "^13.3.0",
+        "jasmine-core": "^2.5.2",
+        "karma": "^1.3.0",
+        "karma-browserify": "^5.1.0",
+        "karma-jasmine": "^1.1.0",
+        "karma-phantomjs-launcher": "^1.0.2",
+        "karma-spec-reporter": "^0.0.26",
+        "phantomjs-prebuilt": "^2.1.14",
+        "vue": "^2.4.4",
+        "watchify": "^3.8.0"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vinayakkulkarni/v-image/issues"
+    },
+    "homepage": "https://github.com/vinayakkulkarni/v-image#readme"
+}
