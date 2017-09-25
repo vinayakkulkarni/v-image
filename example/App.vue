@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-image alt="Much Wow!" name="myImage" v-bind:img-style="style" v-on:load-image="localVariable"></v-image>
+    <v-image alt="Much Wow!" name="myImage" v-bind:img-style="style" v-on:load-image="localVariable" :add-label="add" :remove-label="remove"></v-image>
   </div>
 </template>
 
@@ -18,6 +18,8 @@ export default {
   data() {
     return {
       image: '',
+      add: 'Select a dopeass Image',
+      remove: 'Remove this dopeass image',
       style: {
         height: '200px',
         width: '200px',
