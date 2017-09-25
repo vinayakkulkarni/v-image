@@ -1,7 +1,7 @@
 {
     "name": "v-image",
     "description": "Tiny little component for input type=file.",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "author": {
         "name": "Vinayak Kulkarni",
         "email": "vinayak.kulkarni@live.com",
