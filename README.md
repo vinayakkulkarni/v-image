@@ -6,7 +6,7 @@
 ### :white_check_mark: Install :ok_hand:
 ``` bash
 npm i v-image
-// or 
+// or
 yarn add v-image
 ```
 
@@ -21,7 +21,7 @@ Or use locally
 import vImage from 'v-image';
 ```
 
-### :white_check_mark: Example :four_leaf_clover: 
+### :white_check_mark: Example :four_leaf_clover:
 
 ```html
   <v-image alt="Alt Text for the Image" name="name" @load-image="localVariable" :add-label="'My Custom Label'" :remove-label="'My Custom Remove Label'"></v-image>
@@ -47,7 +47,7 @@ export default {
 };
 ```
 
-### :white_check_mark: :book: Props: 
+### :white_check_mark: :book: Props:
 | Name | Type | Required? | Default | Description |
 | --- | --- | --- | --- | --- |
 | `name` | String | Yes | -- | For `name` attribute for the input field. |
@@ -56,11 +56,12 @@ export default {
 | `add-label` | String | No | `Select Image` | Label text shown to user where he clicks and select image popup is shown. |
 | `buttonStyle` | Object | No | -- | Styling for the `button` & `label` tag. |
 | `remove-label` | String | No | `Remove Image` | Button text shown to user where he clicks and image data is cleared. |
+| `placeholder` | String | No | `https://placehold.it/180x180` | The `src` attribute for a placeholder image. |
 
+### :white_check_mark: :ear: Events:
++ `loadImage` (load the base64 to your custom component's variable (see [example](https://github.com/vinayakkulkarni/v-image/tree/master/example))) [default: ""]
++ `removeImage` (let the parent know the remove label was clicked)
 
-### :white_check_mark: :ear: Events: 
-+ `load-image` (load the base64 to your custom component's variable (see [example](https://github.com/vinayakkulkarni/v-image/tree/master/example))) [default: ""]
-
-## NPM :octocat:  
+## NPM :octocat:
 
 [![NPM](https://nodei.co/npm/v-image.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/v-image/)
