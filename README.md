@@ -60,7 +60,6 @@ export default {
 
 ### :white_check_mark: :ear: Events:
 + `loadImage` (load the base64 to your custom component's variable (see [example](https://github.com/vinayakkulkarni/v-image/tree/master/example))) [default: ""]
-+ `removeImage` (let the parent know the remove label was clicked)
 
 ## NPM :octocat:
 
