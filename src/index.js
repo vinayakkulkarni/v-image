@@ -3,7 +3,7 @@ module.exports = {
 
     template: '<div>\
         <div v-if="!internal_image">\
-            <img src="https://placehold.it/180x180" v-bind:alt="alt" v-bind:style="imgStyle" />\
+            <img v-bind:src="placeholder" v-bind:alt="alt" v-bind:style="imgStyle" />\
             <br>\
             <label v-bind:for="name" v-bind:style="buttonStyle">{{ addLabel }}</label>\
             <input type="file" v-bind:name="name" v-bind:id="name" style="display:none;" accept="image/*" v-on:change="onFileChange">\
@@ -26,6 +26,12 @@ module.exports = {
             type: String,
             default: 'name',
             required: true,
+        },
+
+        placeholder: {
+            type: String,
+            default: 'https://placehold.it/180x180',
+            required: false,
         },
 
         addLabel: {

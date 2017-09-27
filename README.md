@@ -56,6 +56,7 @@ export default {
 | `add-label` | String | No | `Select Image` | Label text shown to user where he clicks and select image popup is shown. |
 | `buttonStyle` | Object | No | -- | Styling for the `button` & `label` tag. |
 | `remove-label` | String | No | `Remove Image` | Button text shown to user where he clicks and image data is cleared. |
+| `placeholder` | String | No | `https://placehold.it/180x180` | The `src` attribute for a placeholder image. |
 
 
 ### :white_check_mark: :ear: Events:

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-image alt="Much Wow!" name="myImage" v-bind:img-style="style" v-on:load-image="localVariable" :add-label="add" :remove-label="remove"></v-image>
+    <v-image alt="Much Wow!" name="myImage" v-bind:img-style="style" v-on:loadImage="localVariable" v-on:removeImage="removeVariable" :add-label="add" :remove-label="remove"></v-image>
   </div>
 </template>
 
@@ -13,6 +13,10 @@ export default {
     localVariable(imageSentFromComponent) {
       this.image = imageSentFromComponent;
       console.log('You have a base64 of the image file.');
+    },
+    removeVariable() {
+      this.image = null;
+      console.log('Image was removed by the user.');
     },
   },
   data() {
