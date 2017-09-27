@@ -58,8 +58,10 @@ export default {
 | `remove-label` | String | No | `Remove Image` | Button text shown to user where he clicks and image data is cleared. |
 | `placeholder` | String | No | `https://placehold.it/180x180` | The `src` attribute for a placeholder image. |
 
+
 ### :white_check_mark: :ear: Events:
-+ `loadImage` (load the base64 to your custom component's variable (see [example](https://github.com/vinayakkulkarni/v-image/tree/master/example))) [default: ""]
++ `load-image` (load the base64 to your custom component's variable (see [example](https://github.com/vinayakkulkarni/v-image/tree/master/example))) [default: ""]
++ `removeImage` (let the parent know the remove label was clicked)
 
 ## NPM :octocat:
 

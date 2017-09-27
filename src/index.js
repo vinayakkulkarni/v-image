@@ -90,6 +90,7 @@ module.exports = {
         removeImage: function() {
             this.image = null;
             this.internal_image = null;
+            this.$emit('removeImage');
         }
 
     }
