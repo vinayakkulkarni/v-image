@@ -52,9 +52,10 @@ export default {
 | --- | --- | --- | --- | --- |
 | `name` | String | Yes | -- | For `name` attribute for the input field. |
 | `alt` | String | No | `Very Interesting Image` | For `alt` attribute for the input field, mostly for proper SEO. |
-| `imgStyle` | Object | No | -- | Styling for the `img` tag. |
+| `img-style` | Object | No | -- | Styling for the `img` tag. |
 | `add-label` | String | No | `Select Image` | Label text shown to user where he clicks and select image popup is shown. |
-| `buttonStyle` | Object | No | -- | Styling for the `button` & `label` tag. |
+| `button-style` | Object | No | -- | Styling for the `button` & `label` tag. Example: `{color: 'blue', border: '1px solid #333333'}` |
+| `button-class` | Object | No | -- | Class for the `button` & `label` tag. Example: `{btn: true, btn-blue: true}` |
 | `remove-label` | String | No | `Remove Image` | Button text shown to user where he clicks and image data is cleared. |
 | `placeholder` | String | No | `https://placehold.it/180x180` | The `src` attribute for a placeholder image. |
 

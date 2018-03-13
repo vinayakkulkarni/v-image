@@ -5,13 +5,13 @@ module.exports = {
         <div v-if="!internal_image">\
             <img v-bind:src="placeholder" v-bind:alt="alt" v-bind:style="imgStyle" />\
             <br>\
-            <label v-bind:for="name" v-bind:style="buttonStyle">{{ addLabel }}</label>\
+            <label v-bind:for="name" v-bind:class="buttonClass" v-bind:style="buttonStyle">{{ addLabel }}</label>\
             <input type="file" v-bind:name="name" v-bind:id="name" style="display:none;" accept="image/*" v-on:change="onFileChange">\
         </div>\
         <div v-else>\
             <img v-bind:src="internal_image" v-bind:alt="alt" v-bind:style="imgStyle" />\
             <br>\
-            <button v-bind:style="buttonStyle" v-on:click="removeImage">{{ removeLabel }}</button>\
+            <button v-bind:class="buttonClass" v-bind:style="buttonStyle" v-on:click="removeImage">{{ removeLabel }}</button>\
         </div>\
     </div>',
 
@@ -58,6 +58,11 @@ module.exports = {
         },
 
         buttonStyle: {
+            type: Object,
+            required: false
+        }
+
+        buttonClass: {
             type: Object,
             required: false
         }
