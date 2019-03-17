@@ -10,6 +10,8 @@ npm i v-image
 yarn add v-image
 ```
 
+CDN: [UNPKG](https://unpkg.com/v-image/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/v-image/dist/) (available as `window.VImage`)
+
 ## :white_check_mark: Usage :mortar_board:
 
 Register the component globally:
@@ -24,7 +26,22 @@ import vImage from 'v-image';
 ### :white_check_mark: Example :four_leaf_clover:
 
 ```html
-  <v-image alt="Alt Text for the Image" name="name" @load-image="localVariable" :add-label="'My Custom Label'" :remove-label="'My Custom Remove Label'"></v-image>
+<template>
+  <v-image
+    name="myImage"
+    alt="Much Wow!"
+    placeholder-alt="Placeholder image"
+    :placeholder-img-style="placeholderImgStyle"
+    :placeholder-button-style="placeholderBtnStyle"
+    :placeholder-img-class="placeholderImgClass"
+    :placeholder-button-class="placeholderButtonClass"
+    :img-style="imgStyle"
+    :add-label="add"
+    :remove-label="remove"
+    @load-image="localVariable"
+    @remove-image="removeVariable"
+  />
+</template>
 ```
 ```js
 import vImage from 'v-image';
@@ -35,34 +52,63 @@ export default {
       this.image = imageSentFromComponent;
     },
   },
-  data() {
-    return {
-      image: '',
-      style: {
-        height: '200px',
-        width: '200px',
-      },
-    };
-  },
+  data: () => ({
+    image: '',
+    add: 'Select a dopeass Image',
+    remove: 'Remove this dopeass image',
+    placeholderImgStyle: {
+      height: '200px',
+      width: '200px',
+    },
+    imgStyle: {
+      height: '200px',
+      width: '200px',
+    },
+    placeholderBtnStyle: {
+      color: '#333333'
+    },
+    placeholderImgClass: 'image-responsive',
+    placeholderButtonClass: 'ui btn',
+  }),
 };
 ```
+## API
 
 ### :white_check_mark: :book: Props:
 | Name | Type | Required? | Default | Description |
 | --- | --- | --- | --- | --- |
 | `name` | String | Yes | -- | For `name` attribute for the input field. |
 | `alt` | String | No | `Very Interesting Image` | For `alt` attribute for the input field, mostly for proper SEO. |
-| `imgStyle` | Object | No | -- | Styling for the `img` tag. |
+| `placeholder-alt` | String | No | `Placeholder Image` | This attribute is displayed when placeholder image is displayed. |
+| `placeholder-img-style` | Object | No | -- | Styling for the placeholder `img` tag. |
+| `placeholder-img-class` | String | No | '' | Class for the placeholder `img` tag. |
+| `placeholder-button-style` | Object | No | -- | Styling for the placeholder label text. |
+| `placeholder-button-class` | String | No | '' | Class for the placeholder label text. |
 | `add-label` | String | No | `Select Image` | Label text shown to user where he clicks and select image popup is shown. |
-| `buttonStyle` | Object | No | -- | Styling for the `button` & `label` tag. |
+| `img-style` | Object | No | -- | Styling for the actual user uploaded `img` tag. |
+| `img-class` | String | No | '' | Class for the actual user uploaded `img` tag. |
+| `button-style` | Object | No | -- | Styling for the `button` tag, visible only when user has uploaded image. |
+| `button-class` | Object | No | '' | Class for the `button` tag, visible only when user has uploaded image. |
 | `remove-label` | String | No | `Remove Image` | Button text shown to user where he clicks and image data is cleared. |
 | `placeholder` | String | No | `https://placehold.it/180x180` | The `src` attribute for a placeholder image. |
 
 
 ### :white_check_mark: :ear: Events:
 + `load-image` (load the base64 to your custom component's variable (see [example](https://github.com/vinayakkulkarni/v-image/tree/master/example))) [default: ""]
-+ `removeImage` (let the parent know the remove label was clicked)
++ `remove-image` (let the parent know the remove label was clicked)
 
-## NPM :octocat:
+## Contributing
 
-[![NPM](https://nodei.co/npm/v-image.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/v-image/)
+1.  Fork it!
+2.  Create your feature branch: `git checkout -b my-new-feature`
+3.  Commit your changes: `git commit -am 'Add some feature'`
+4.  Push to the branch: `git push origin my-new-feature`
+5.  Submit a pull request :D
+
+## Author
+
+**v-image** © [Vinayak](https://github.com/vinayakkulkarni), Released under the [MIT](./LICENSE) License.<br>
+Authored and maintained by Vinayak Kulkarni with help from contributors ([list](https://github.com/vinayakkulkarni/v-image/contributors)).
+
+> [vinayak.pw](https://vinayak.pw) · GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)
+

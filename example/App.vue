@@ -1,34 +1,51 @@
 <template>
-  <div>
-    <v-image alt="Much Wow!" name="myImage" v-bind:img-style="style" v-on:loadImage="localVariable" v-on:removeImage="removeVariable" :add-label="add" :remove-label="remove"></v-image>
-  </div>
+  <v-image
+    name="myImage"
+    alt="Much Wow!"
+    placeholder-alt="Placeholder image"
+    :placeholder-img-style="placeholderImgStyle"
+    :placeholder-button-style="placeholderBtnStyle"
+    :placeholder-img-class="placeholderImgClass"
+    :placeholder-button-class="placeholderButtonClass"
+    :img-style="imgStyle"
+    :add-label="add"
+    :remove-label="remove"
+    @load-image="localVariable"
+    @remove-image="removeVariable"
+  />
 </template>
 
 <script>
-import vImage from 'v-image';
+import vImage from '../src/v-image.vue';
 
 export default {
+  name: 'VImageDemo',
   components: { vImage },
+  data: () => ({
+    image: '',
+    add: 'Select a dopeass Image',
+    remove: 'Remove this dopeass image',
+    placeholderImgStyle: {
+      height: '200px',
+      width: '200px',
+    },
+    imgStyle: {
+      height: '200px',
+      width: '200px',
+    },
+    placeholderBtnStyle: {
+      color: '#333333'
+    },
+    placeholderImgClass: 'image-responsive',
+    placeholderButtonClass: 'ui btn',
+  }),
   methods: {
     localVariable(imageSentFromComponent) {
       this.image = imageSentFromComponent;
-      console.log('You have a base64 of the image file.');
     },
     removeVariable() {
       this.image = null;
-      console.log('Image was removed by the user.');
     },
-  },
-  data() {
-    return {
-      image: '',
-      add: 'Select a dopeass Image',
-      remove: 'Remove this dopeass image',
-      style: {
-        height: '200px',
-        width: '200px',
-      },
-    };
   },
 };
 </script>
