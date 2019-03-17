@@ -1,5 +1,5 @@
 const Vue = require('vue');
-const VImage = require('../src/index.js');
+const VImage = require('v-image');
 
 function getComponent(Component, propsData) {
     const Ctor = Vue.extend(Component);
