@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.VImage = factory());
+  (global = global || self, global.VImage = factory());
 }(this, (function () { 'use strict';
 
   var script = {
@@ -9,81 +9,77 @@
     props: {
       image: {
         type: String,
-        default: null,
+        "default": null,
         required: false
       },
       name: {
         type: String,
-        default: 'name',
+        "default": 'name',
         required: true
       },
       placeholder: {
         type: String,
-        default: 'https://placehold.it/180x180',
+        "default": 'https://placehold.it/180x180',
         required: false
       },
       addLabel: {
         type: String,
-        default: 'Select Image',
+        "default": 'Select Image',
         required: false
       },
       removeLabel: {
         type: String,
-        default: 'Remove Image',
+        "default": 'Remove Image',
         required: false
       },
       placeholderAlt: {
         type: String,
-        default: 'Placeholder Image',
+        "default": 'Placeholder Image',
         required: false
       },
       alt: {
         type: String,
-        default: 'Very Interesting Image',
+        "default": 'Very Interesting Image',
         required: false
       },
       placeholderImgStyle: {
         type: Object,
-        default: function _default() {},
-
+        "default": function _default() {},
         required: false
       },
       placeholderImgClass: {
         type: String,
-        default: '',
+        "default": '',
         required: false
       },
       placeholderButtonStyle: {
         type: Object,
-        default: function _default() {},
-
+        "default": function _default() {},
         required: false
       },
       placeholderButtonClass: {
         type: String,
-        default: '',
+        "default": '',
         required: false
       },
       imgStyle: {
         type: Object,
-        default: function _default() {},
-
+        "default": function _default() {},
         required: false
       },
       imgClass: {
         type: String,
-        default: '',
+        "default": '',
         required: false
       },
       buttonStyle: {
         type: Object,
-        default: function _default() {},
-
+        "default": function _default() {},
         required: false
       },
       buttonClass: {
         type: String,
-        default: '',
+        "default": '',
         required: false
       }
     },
@@ -106,6 +102,7 @@
           vm.internal_image = e.target.result;
           vm.$emit('loadImage', e.target.result);
         };
+
         reader.readAsDataURL(file);
       },
       removeImage: function removeImage() {
@@ -160,8 +157,8 @@
 
       options._ssrRegister = hook;
     } else if (style) {
-      hook = shadowMode ? function () {
-        style.call(this, createInjectorShadow(this.$root.$options.shadowRoot));
+      hook = shadowMode ? function (context) {
+        style.call(this, createInjectorShadow(context, this.$root.$options.shadowRoot));
       } : function (context) {
         style.call(this, createInjector(context));
       };
@@ -184,55 +181,99 @@
     return script;
   }
 
-  var normalizeComponent_1 = normalizeComponent;
+  /* script */
+  const __vue_script__ = script;
 
-  var __vue_script__ = script;
-
-  var __vue_render__ = function __vue_render__() {
+  /* template */
+  var __vue_render__ = function() {
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c("div", [!_vm.internal_image ? _c("div", [_c("img", {
-      class: _vm.placeholderImgClass,
-      style: _vm.placeholderImgStyle,
-      attrs: { src: _vm.placeholder, alt: _vm.placeholderAlt }
-    }), _vm._v(" "), _c("br"), _vm._v(" "), _c("label", {
-      class: _vm.placeholderButtonClass,
-      style: _vm.placeholderButtonStyle,
-      attrs: { for: _vm.name }
-    }, [_vm._v("\n      " + _vm._s(_vm.addLabel) + "\n    ")]), _vm._v(" "), _c("input", {
-      staticStyle: { display: "none" },
-      attrs: {
-        id: _vm.name,
-        type: "file",
-        name: _vm.name,
-        accept: "image/*"
-      },
-      on: { change: _vm.onFileChange }
-    })]) : _c("div", [_c("img", {
-      class: _vm.imgClass,
-      style: _vm.imgStyle,
-      attrs: { src: _vm.internal_image, alt: _vm.alt }
-    }), _vm._v(" "), _c("br"), _vm._v(" "), _c("button", {
-      class: _vm.buttonClass,
-      style: _vm.buttonStyle,
-      on: { click: _vm.removeImage }
-    }, [_vm._v("\n      " + _vm._s(_vm.removeLabel) + "\n    ")])])]);
+    return _c("div", [
+      !_vm.internal_image
+        ? _c("div", [
+            _c("img", {
+              class: _vm.placeholderImgClass,
+              style: _vm.placeholderImgStyle,
+              attrs: { src: _vm.placeholder, alt: _vm.placeholderAlt }
+            }),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                class: _vm.placeholderButtonClass,
+                style: _vm.placeholderButtonStyle,
+                attrs: { for: _vm.name }
+              },
+              [_vm._v("\n      " + _vm._s(_vm.addLabel) + "\n    ")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              staticStyle: { display: "none" },
+              attrs: {
+                id: _vm.name,
+                type: "file",
+                name: _vm.name,
+                accept: "image/*"
+              },
+              on: { change: _vm.onFileChange }
+            })
+          ])
+        : _c("div", [
+            _c("img", {
+              class: _vm.imgClass,
+              style: _vm.imgStyle,
+              attrs: { src: _vm.internal_image, alt: _vm.alt }
+            }),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                class: _vm.buttonClass,
+                style: _vm.buttonStyle,
+                on: { click: _vm.removeImage }
+              },
+              [_vm._v("\n      " + _vm._s(_vm.removeLabel) + "\n    ")]
+            )
+          ])
+    ])
   };
   var __vue_staticRenderFns__ = [];
   __vue_render__._withStripped = true;
 
-  var __vue_inject_styles__ = undefined;
+    /* style */
+    const __vue_inject_styles__ = undefined;
+    /* scoped */
+    const __vue_scope_id__ = undefined;
+    /* module identifier */
+    const __vue_module_identifier__ = undefined;
+    /* functional template */
+    const __vue_is_functional_template__ = false;
+    /* style inject */
+    
+    /* style inject SSR */
+    
+    /* style inject shadow dom */
+    
 
-  var __vue_scope_id__ = undefined;
+    
+    const __vue_component__ = normalizeComponent(
+      { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+      __vue_inject_styles__,
+      __vue_script__,
+      __vue_scope_id__,
+      __vue_is_functional_template__,
+      __vue_module_identifier__,
+      false,
+      undefined,
+      undefined,
+      undefined
+    );
 
-  var __vue_module_identifier__ = undefined;
-
-  var __vue_is_functional_template__ = false;
-
-
-  var VImage = normalizeComponent_1({ render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, undefined, undefined);
-
-  return VImage;
+  return __vue_component__;
 
 })));
