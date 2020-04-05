@@ -1,7 +1,7 @@
 {
   "name": "v-image",
   "description": "Tiny little component for input type=file.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": {
     "name": "Vinayak Kulkarni",
     "email": "vinayak.kulkarni@live.com",
@@ -10,8 +10,15 @@
   "private": false,
   "main": "dist/v-rating.min.js",
   "module": "dist/v-rating.esm.js",
-  "files": ["dist/*"],
-  "keywords": ["vuejs", "image", "vue2", "input-image"],
+  "files": [
+    "dist/*"
+  ],
+  "keywords": [
+    "vuejs",
+    "image",
+    "vue2",
+    "input-image"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vinayakkulkarni/v-image.git"
