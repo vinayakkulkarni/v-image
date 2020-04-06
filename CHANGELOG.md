@@ -1,3 +1,13 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/vinayakkulkarni/v-image/compare/v1.2.0...v1.3.0) (2020-04-06)
+
+
+### Features
+
+* add GitHub actions ([#62](https://github.com/vinayakkulkarni/v-image/issues/62)) ([3d5a2bd](https://github.com/vinayakkulkarni/v-image/commit/3d5a2bd))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/vinayakkulkarni/v-image/compare/1.1.0...1.2.0) (2020-04-05)
 
