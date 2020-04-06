@@ -10,15 +10,8 @@
   "private": false,
   "main": "dist/v-rating.min.js",
   "module": "dist/v-rating.esm.js",
-  "files": [
-    "dist/*"
-  ],
-  "keywords": [
-    "vuejs",
-    "image",
-    "vue2",
-    "input-image"
-  ],
+  "files": ["dist/*"],
+  "keywords": ["vuejs", "image", "vue2", "input-image"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vinayakkulkarni/v-image.git"
@@ -55,7 +48,6 @@
     "phantomjs-prebuilt": "^2.1.16",
     "rollup": "^2.3.3",
     "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-vue": "^5.1.6",
     "shipjs": "0.18.1",
