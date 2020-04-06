@@ -10,15 +10,8 @@
   "private": false,
   "main": "dist/v-rating.min.js",
   "module": "dist/v-rating.esm.js",
-  "files": [
-    "dist/*"
-  ],
-  "keywords": [
-    "vuejs",
-    "image",
-    "vue2",
-    "input-image"
-  ],
+  "files": ["dist/*"],
+  "keywords": ["vuejs", "image", "vue2", "input-image"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vinayakkulkarni/v-image.git"
