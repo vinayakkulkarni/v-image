@@ -29,8 +29,8 @@
     "build": "npm run bundle && npm run bundle:min",
     "bundle": "rollup -c build/rollup.conf.js",
     "bundle:min": "rollup -c build/rollup.min.conf.js",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "eslint 'src/**/*.{js,vue}'",
+    "lintfix": "eslint --fix 'src/**/*.{js,vue}'",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger"
   },
