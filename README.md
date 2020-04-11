@@ -29,74 +29,78 @@ import vImage from 'v-image';
 ```html
 <template>
   <v-image
-    name="myImage"
-    alt="Much Wow!"
-    placeholder-alt="Placeholder image"
-    :placeholder-img-style="placeholderImgStyle"
-    :placeholder-button-style="placeholderBtnStyle"
-    :placeholder-img-class="placeholderImgClass"
-    :placeholder-button-class="placeholderButtonClass"
-    :img-style="imgStyle"
-    :add-label="add"
-    :remove-label="remove"
-    @load-image="localVariable"
-    @remove-image="removeVariable"
+    wrapper="flex justify-center items-center content-center w-full h-full"
+    :place-holder="placeholder"
+    :uploaded="uploaded"
+    @load-image="saveImage"
+    @remove-image="removeImage"
   />
 </template>
 ```
 ```js
+/* Used Tailwind Utility classes, checkout the example dir */
 import vImage from 'v-image';
 export default {
   components: { vImage },
+  data: () => ({
+    placeholder: {
+      wrapper: 'p-4 max-w-xs w-full border border-gray-400 border-dotted',
+      image: 'https://picsum.photos/1000/1000',
+      alt: 'Placeholder Image',
+      imgClass: 'block rounded object-contain object-center max-w-xs',
+      btnClass: 'block btn cursor-pointer text-center',
+      form: {
+        name: 'myImage',
+        label: 'Select an Image',
+        accept: 'image/jpg',
+      },
+    },
+    uploaded: {
+      wrapper: 'p-4 max-w-xs w-full border border-gray-400 border-dotted',
+      alt: 'User uploaded dope image',
+      imgClass: 'block rounded object-contain object-center max-w-xs',
+      btnClass: 'block btn cursor-pointer text-center w-full',
+      removeBtnText: 'Remove image',
+    },
+    image: '',
+  }),
   methods: {
-    localVariable(imageSentFromComponent) {
+    saveImage(imageSentFromComponent) {
       this.image = imageSentFromComponent;
     },
+    removeImage() {
+      this.image = null;
+    },
   },
-  data: () => ({
-    image: '',
-    add: 'Select a dopeass Image',
-    remove: 'Remove this dopeass image',
-    placeholderImgStyle: {
-      height: '200px',
-      width: '200px',
-    },
-    imgStyle: {
-      height: '200px',
-      width: '200px',
-    },
-    placeholderBtnStyle: {
-      color: '#333333'
-    },
-    placeholderImgClass: 'image-responsive',
-    placeholderButtonClass: 'ui btn',
-  }),
 };
 ```
 ## API
 
 ### :white_check_mark: :book: Props:
-| Name | Type | Required? | Default | Description |
-| --- | --- | --- | --- | --- |
-| `name` | String | Yes | -- | For `name` attribute for the input field. |
-| `alt` | String | No | `Very Interesting Image` | For `alt` attribute for the input field, mostly for proper SEO. |
-| `placeholder-alt` | String | No | `Placeholder Image` | This attribute is displayed when placeholder image is displayed. |
-| `placeholder-img-style` | Object | No | -- | Styling for the placeholder `img` tag. |
-| `placeholder-img-class` | String | No | '' | Class for the placeholder `img` tag. |
-| `placeholder-button-style` | Object | No | -- | Styling for the placeholder label text. |
-| `placeholder-button-class` | String | No | '' | Class for the placeholder label text. |
-| `add-label` | String | No | `Select Image` | Label text shown to user where he clicks and select image popup is shown. |
-| `img-style` | Object | No | -- | Styling for the actual user uploaded `img` tag. |
-| `img-class` | String | No | '' | Class for the actual user uploaded `img` tag. |
-| `button-style` | Object | No | -- | Styling for the `button` tag, visible only when user has uploaded image. |
-| `button-class` | Object | No | '' | Class for the `button` tag, visible only when user has uploaded image. |
-| `remove-label` | String | No | `Remove Image` | Button text shown to user where he clicks and image data is cleared. |
-| `placeholder` | String | No | `https://placehold.it/180x180` | The `src` attribute for a placeholder image. |
+|   Name  |   Type    |     Required?   |   Default   |   Description   |
+|   ---   |   ---     |     ---         |   ---       |   ---           |
+| `wrapper` | String  | No | '' | The wrapper classes for the top level `<div>`|
+| `placeHolder` | Object  | No | - |  The placeholder image & input related code|
+| `placeHolder.wrapper` | String  | No | '' | Any wrapper classes for the placeholder `<div>` |
+| `placeHolder.image` | String  | No | 'https://picsum.photos/200x200' |  The placeholder image |
+| `placeHolder.alt` | String  | No | 'Placeholder Image' |  The placeholder image alt attribute |
+| `placeHolder.imgClass` | String  | No | '' |  Any placeholder image classes |
+| `placeHolder.btnClass` | String  | No | '' |  `Select Image` button classes |
+| `placeHolder.form` | Object  | No | - |  The placeholder input form |
+| `placeHolder.form.name` | String  | No | 'v-image' |  Enable the label to interact with the `<input />`|
+| `placeHolder.form.label` | String  | No | 'Select Image' |  The label/button text |
+| `placeHolder.form.accept` | String  | No | 'image/*' |  Abilty to accept file types |
+| `uploaded` | Object  | No | - |  The user uploaded image related `Object` |
+| `uploaded.wrapper` | String  | No | '' | Any wrapper classes for the uploaded image `<div>` |
+| `uploaded.alt` | String  | No | 'Very Interesting Image' |  The actual uploaded image alt attribute |
+| `uploaded.imgClass` | String  | No | '' |  Uploaded image classes |
+| `uploaded.btnClass` | String  | No | '' |  `Remove Image` button classes |
+| `uploaded.removeBtnText` | String  | No | 'Remove Image' |  `Remove Image` button text |
 
 
 ### :white_check_mark: :ear: Events:
-+ `load-image` (load the base64 to your custom component's variable (see [example](https://github.com/vinayakkulkarni/v-image/tree/master/example))) [default: ""]
-+ `remove-image` (let the parent know the remove label was clicked)
++ `@load-image` (load the base64 to your custom component's variable (see [example](https://github.com/vinayakkulkarni/v-image/tree/master/example)))
++ `@remove-image` (let the parent know the remove label was clicked)
 
 ## Contributing
 
