@@ -1,153 +1,94 @@
 <template>
-  <div>
+  <div :class="wrapper">
     <!-- Placeholder Image -->
-    <div v-if="!internal_image">
+    <div v-if="!image" title="placeholder" :class="placeHolder.wrapper">
       <img
-        :src="placeholder"
-        :alt="placeholderAlt"
-        :style="placeholderImgStyle"
-        :class="placeholderImgClass"
-      >
-      <br>
-      <label
-        :for="name"
-        :style="placeholderButtonStyle"
-        :class="placeholderButtonClass"
-      >
-        {{ addLabel }}
+        :src="placeHolder.image"
+        :alt="placeHolder.alt"
+        :class="placeHolder.imgClass"
+      />
+      <label :for="placeHolder.form.name" :class="placeHolder.btnClass">
+        {{ placeHolder.form.label }}
       </label>
       <input
-        :id="name"
+        :id="placeHolder.form.name"
         type="file"
-        :name="name"
+        :name="placeHolder.form.name"
         style="display: none;"
-        accept="image/*"
+        :accept="placeHolder.form.accept"
         @change="onFileChange"
-      >
+      />
     </div>
-    <!-- When the user loads the image -->
-    <div v-else>
-      <img
-        :src="internal_image"
-        :alt="alt"
-        :style="imgStyle"
-        :class="imgClass"
-      >
-      <br>
-      <button
-        :style="buttonStyle"
-        :class="buttonClass"
-        @click="removeImage"
-      >
-        {{ removeLabel }}
+    <!-- User uploaded image -->
+    <div v-else :class="uploaded.wrapper">
+      <img :src="image" :alt="uploaded.alt" :class="uploaded.imgClass" />
+      <button type="button" :class="uploaded.btnClass" @click="removeImage">
+        {{ uploaded.removeBtnText }}
       </button>
     </div>
   </div>
 </template>
 <script>
-export default {
-  name: 'VImage',
-  props: {
-    image: {
-      type: String,
-      default: null,
-      required: false,
+  export default {
+    name: 'VImage',
+    props: {
+      wrapper: {
+        type: String,
+        default: '',
+        required: false,
+      },
+      // placeholder specific code
+      placeHolder: {
+        type: Object,
+        default: () => ({
+          wrapper: '',
+          image: 'https://picsum.photos/200x200',
+          alt: 'Placeholder Image',
+          imgClass: '',
+          btnClass: '',
+          form: {
+            name: 'v-image',
+            label: 'Select Image',
+            accept: 'image/*',
+          },
+        }),
+        required: false,
+      },
+      // user uploaded image
+      uploaded: {
+        type: Object,
+        default: () => ({
+          wrapper: '',
+          alt: 'Very Interesting Image',
+          imgClass: '',
+          btnClass: '',
+          removeBtnText: 'Remove Image',
+        }),
+        required: false,
+      },
     },
-    name: {
-      type: String,
-      default: 'name',
-      required: true,
+    data: () => ({
+      image: null,
+    }),
+    methods: {
+      onFileChange(e) {
+        const files = e.target.files || e.dataTransfer.files;
+        if (!files.length) return;
+        this.createImage(files[0]);
+      },
+      createImage(file) {
+        const reader = new FileReader();
+        const t = this;
+        reader.onload = (e) => {
+          t.image = e.target.result;
+          t.$emit('load-image', t.image);
+        };
+        reader.readAsDataURL(file);
+      },
+      removeImage() {
+        this.image = null;
+        this.$emit('remove-image');
+      },
     },
-    placeholder: {
-      type: String,
-      default: 'https://placehold.it/180x180',
-      required: false,
-    },
-    addLabel: {
-      type: String,
-      default: 'Select Image',
-      required: false,
-    },
-    removeLabel: {
-      type: String,
-      default: 'Remove Image',
-      required: false,
-    },
-    placeholderAlt: {
-      type: String,
-      default: 'Placeholder Image',
-      required: false,
-    },
-    alt: {
-      type: String,
-      default: 'Very Interesting Image',
-      required: false,
-    },
-    placeholderImgStyle: {
-      type: Object,
-      default() {},
-      required: false,
-    },
-    placeholderImgClass: {
-      type: String,
-      default: '',
-      required: false,
-    },
-    placeholderButtonStyle: {
-      type: Object,
-      default() {},
-      required: false,
-    },
-    placeholderButtonClass: {
-      type: String,
-      default: '',
-      required: false,
-    },
-    imgStyle: {
-      type: Object,
-      default() {},
-      required: false,
-    },
-    imgClass: {
-      type: String,
-      default: '',
-      required: false,
-    },
-    buttonStyle: {
-      type: Object,
-      default() {},
-      required: false,
-    },
-    buttonClass: {
-      type: String,
-      default: '',
-      required: false,
-    },
-  },
-  data: () => ({
-    internal_image: null,
-  }),
-  methods: {
-    onFileChange(e) {
-      const files = e.target.files || e.dataTransfer.files;
-      if (!files.length) return;
-      this.createImage(files[0]);
-    },
-    createImage(file) {
-      const reader = new FileReader();
-      const vm = this;
-
-      reader.onload = e => {
-        vm.internal_image = e.target.result;
-        vm.$emit('loadImage', e.target.result);
-      };
-      reader.readAsDataURL(file);
-    },
-    removeImage() {
-      this.image = null;
-      this.internal_image = null;
-      this.$emit('removeImage');
-    },
-  },
-};
+  };
 </script>

@@ -11,7 +11,7 @@
   "main": "dist/v-rating.min.js",
   "module": "dist/v-rating.esm.js",
   "files": [
-    "dist/*"
+    "dist"
   ],
   "keywords": [
     "vuejs",
@@ -29,7 +29,8 @@
     "build": "npm run bundle && npm run bundle:min",
     "bundle": "rollup -c build/rollup.conf.js",
     "bundle:min": "rollup -c build/rollup.min.conf.js",
-    "lint": "eslint 'src/**/*.{js,vue}'",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger"
   },
@@ -44,6 +45,9 @@
     "babelify": "^10.0.0",
     "browserify": "^16.5.1",
     "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-vue": "^6.2.2",
     "husky": "^4.2.3",
     "jasmine-core": "^3.5.0",
@@ -53,6 +57,7 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-spec-reporter": "^0.0.32",
     "phantomjs-prebuilt": "^2.1.16",
+    "prettier": "^2.0.4",
     "rollup": "^2.3.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^5.3.0",
