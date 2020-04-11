@@ -1,85 +1,46 @@
 var script = {
   name: 'VImage',
   props: {
-    image: {
-      type: String,
-      "default": null,
-      required: false
-    },
-    name: {
-      type: String,
-      "default": 'name',
-      required: true
-    },
-    placeholder: {
-      type: String,
-      "default": 'https://placehold.it/180x180',
-      required: false
-    },
-    addLabel: {
-      type: String,
-      "default": 'Select Image',
-      required: false
-    },
-    removeLabel: {
-      type: String,
-      "default": 'Remove Image',
-      required: false
-    },
-    placeholderAlt: {
-      type: String,
-      "default": 'Placeholder Image',
-      required: false
-    },
-    alt: {
-      type: String,
-      "default": 'Very Interesting Image',
-      required: false
-    },
-    placeholderImgStyle: {
-      type: Object,
-      "default": function _default() {},
-      required: false
-    },
-    placeholderImgClass: {
+    wrapper: {
       type: String,
       "default": '',
       required: false
     },
-    placeholderButtonStyle: {
+    placeHolder: {
       type: Object,
-      "default": function _default() {},
+      "default": function _default() {
+        return {
+          wrapper: '',
+          image: 'https://picsum.photos/200x200',
+          alt: 'Placeholder Image',
+          imgClass: '',
+          btnClass: '',
+          form: {
+            name: 'v-image',
+            label: 'Select Image',
+            accept: 'image/*'
+          }
+        };
+      },
       required: false
     },
-    placeholderButtonClass: {
-      type: String,
-      "default": '',
-      required: false
-    },
-    imgStyle: {
+    uploaded: {
       type: Object,
-      "default": function _default() {},
-      required: false
-    },
-    imgClass: {
-      type: String,
-      "default": '',
-      required: false
-    },
-    buttonStyle: {
-      type: Object,
-      "default": function _default() {},
-      required: false
-    },
-    buttonClass: {
-      type: String,
-      "default": '',
+      "default": function _default() {
+        return {
+          wrapper: '',
+          alt: 'Very Interesting Image',
+          imgClass: '',
+          btnClass: '',
+          removeBtnText: 'Remove Image'
+        };
+      },
       required: false
     }
   },
   data: function data() {
     return {
-      internal_image: null
+      image: null
     };
   },
   methods: {
@@ -90,19 +51,18 @@ var script = {
     },
     createImage: function createImage(file) {
       var reader = new FileReader();
-      var vm = this;
+      var t = this;
 
       reader.onload = function (e) {
-        vm.internal_image = e.target.result;
-        vm.$emit('loadImage', e.target.result);
+        t.image = e.target.result;
+        t.$emit('load-image', t.image);
       };
 
       reader.readAsDataURL(file);
     },
     removeImage: function removeImage() {
       this.image = null;
-      this.internal_image = null;
-      this.$emit('removeImage');
+      this.$emit('remove-image');
     }
   }
 };
@@ -183,55 +143,56 @@ var __vue_render__ = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
-  return _c("div", [
-    !_vm.internal_image
-      ? _c("div", [
+  return _c("div", { class: _vm.wrapper }, [
+    !_vm.image
+      ? _c(
+          "div",
+          { class: _vm.placeHolder.wrapper, attrs: { title: "placeholder" } },
+          [
+            _c("img", {
+              class: _vm.placeHolder.imgClass,
+              attrs: { src: _vm.placeHolder.image, alt: _vm.placeHolder.alt }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                class: _vm.placeHolder.btnClass,
+                attrs: { for: _vm.placeHolder.form.name }
+              },
+              [
+                _vm._v(
+                  "\n      " + _vm._s(_vm.placeHolder.form.label) + "\n    "
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              staticStyle: { display: "none" },
+              attrs: {
+                id: _vm.placeHolder.form.name,
+                type: "file",
+                name: _vm.placeHolder.form.name,
+                accept: _vm.placeHolder.form.accept
+              },
+              on: { change: _vm.onFileChange }
+            })
+          ]
+        )
+      : _c("div", { class: _vm.uploaded.wrapper }, [
           _c("img", {
-            class: _vm.placeholderImgClass,
-            style: _vm.placeholderImgStyle,
-            attrs: { src: _vm.placeholder, alt: _vm.placeholderAlt }
+            class: _vm.uploaded.imgClass,
+            attrs: { src: _vm.image, alt: _vm.uploaded.alt }
           }),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c(
-            "label",
-            {
-              class: _vm.placeholderButtonClass,
-              style: _vm.placeholderButtonStyle,
-              attrs: { for: _vm.name }
-            },
-            [_vm._v("\n      " + _vm._s(_vm.addLabel) + "\n    ")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticStyle: { display: "none" },
-            attrs: {
-              id: _vm.name,
-              type: "file",
-              name: _vm.name,
-              accept: "image/*"
-            },
-            on: { change: _vm.onFileChange }
-          })
-        ])
-      : _c("div", [
-          _c("img", {
-            class: _vm.imgClass,
-            style: _vm.imgStyle,
-            attrs: { src: _vm.internal_image, alt: _vm.alt }
-          }),
-          _vm._v(" "),
-          _c("br"),
           _vm._v(" "),
           _c(
             "button",
             {
-              class: _vm.buttonClass,
-              style: _vm.buttonStyle,
+              class: _vm.uploaded.btnClass,
+              attrs: { type: "button" },
               on: { click: _vm.removeImage }
             },
-            [_vm._v("\n      " + _vm._s(_vm.removeLabel) + "\n    ")]
+            [_vm._v("\n      " + _vm._s(_vm.uploaded.removeBtnText) + "\n    ")]
           )
         ])
   ])
