@@ -2,38 +2,44 @@ const Vue = require('vue');
 const VImage = require('v-image');
 
 function getComponent(Component, propsData) {
-    const Ctor = Vue.extend(Component);
-    return new Ctor({ propsData }).$mount();
+  const Ctor = Vue.extend(Component);
+  return new Ctor({ propsData }).$mount();
 }
 
 var exampleData = {
-    image: 'someImagebase64',
-    name: 'name',
-    alt: 'Very Interesting Image',
+  image: 'https://placehold.it/180x180',
+  alt: 'Placeholder Image',
+  imgClass: '',
+  btnClass: '',
+  form: {
+    name: 'v-image',
+    label: 'Select Image',
+    accept: 'image/*',
+  },
 };
 
-describe('VImage', function() {
-    it('has correct DOM structure', function() {
-        const vm = getComponent(VImage, {
-            data: exampleData
-        });
-
-        expect(vm.$el.nodeName).toBe('DIV');
+describe('VImage', function () {
+  it('has correct DOM structure', function () {
+    const vm = getComponent(VImage, {
+      data: exampleData,
     });
 
-    it('has correct required props', function() {
-        const vm = getComponent(VImage, {
-            data: exampleData
-        });
+    expect(vm.$el.nodeName).toBe('DIV');
+  });
 
-        expect(vm.name).toBe(exampleData.name);
+  it('has correct required props', function () {
+    const vm = getComponent(VImage, {
+      data: exampleData,
     });
 
-    it('has correct non-required props', function() {
-        const vm = getComponent(VImage, {
-            data: exampleData
-        });
+    expect(vm.placeHolder.form.name).toBe(exampleData.form.name);
+  });
 
-        expect(vm.alt).toBe(exampleData.alt);
+  it('has correct non-required props', function () {
+    const vm = getComponent(VImage, {
+      data: exampleData,
     });
+
+    expect(vm.placeHolder.alt).toBe(exampleData.alt);
+  });
 });
