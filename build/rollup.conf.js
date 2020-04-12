@@ -4,8 +4,11 @@ import vue from 'rollup-plugin-vue';
 
 export default {
   input: 'src/index.js',
-  plugins: [commonjs(), babel(), vue()],
   output: [
+    {
+      format: 'cjs',
+      file: 'dist/v-image.cjs.js',
+    },
     {
       format: 'umd',
       name: 'VImage',
@@ -15,5 +18,12 @@ export default {
       format: 'es',
       file: 'dist/v-image.esm.js',
     },
+  ],
+  plugins: [
+    commonjs(),
+    babel({
+      exclude: 'node_modules/**', // only transpile our source code
+    }),
+    vue(),
   ],
 };

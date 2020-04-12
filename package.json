@@ -8,8 +8,11 @@
     "url": "https://vinayak.pw"
   },
   "private": false,
-  "main": "dist/v-rating.min.js",
-  "module": "dist/v-rating.esm.js",
+  "main": "dist/v-image.cjs.js",
+  "module": "dist/v-image.esm.js",
+  "unpkg": "dist/v-image.js",
+  "jsdelivr": "dist/v-image.js",
+  "cdn": "dist/v-image.js",
   "files": [
     "dist"
   ],

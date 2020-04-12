@@ -1,3 +1,5 @@
+'use strict';
+
 var script = {
   name: 'VImage',
   props: {
@@ -236,4 +238,4 @@ __vue_render__._withStripped = true;
     undefined
   );
 
-export default __vue_component__;
+module.exports = __vue_component__;

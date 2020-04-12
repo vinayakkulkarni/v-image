@@ -5,10 +5,17 @@ import { terser } from 'rollup-plugin-terser';
 
 export default {
   input: 'src/index.js',
-  plugins: [commonjs(), babel(), vue(), terser()],
   output: {
     format: 'umd',
     name: 'VImage',
     file: 'dist/v-image.min.js',
   },
+  plugins: [
+    commonjs(),
+    babel({
+      exclude: 'node_modules/**', // only transpile our source code
+    }),
+    vue(),
+    terser(),
+  ],
 };
