@@ -1,3 +1,13 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/vinayakkulkarni/v-image/compare/v2.0.0...v2.0.1) (2020-04-12)
+
+
+### Features
+
+* add commonjs build ([#79](https://github.com/vinayakkulkarni/v-image/issues/79)) ([867d32d](https://github.com/vinayakkulkarni/v-image/commit/867d32d))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/vinayakkulkarni/v-image/compare/v1.3.0...v2.0.0) (2020-04-11)
 
