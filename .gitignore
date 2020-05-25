@@ -12,3 +12,5 @@ test/unit/coverage
 *.njsproj
 *.sln
 .env
+
+dist
