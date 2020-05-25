@@ -1,3 +1,19 @@
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/vinayakkulkarni/v-image/compare/v2.0.1...v2.0.2) (2020-05-25)
+
+
+### Bug Fixes
+
+* **directory:** remove dist dir from github ([9b0e10f](https://github.com/vinayakkulkarni/v-image/commit/9b0e10f))
+* **gitignore:** update ignore rules ([058c255](https://github.com/vinayakkulkarni/v-image/commit/058c255))
+
+
+### Features
+
+* add netlify badge ([9bc1a02](https://github.com/vinayakkulkarni/v-image/commit/9bc1a02))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/vinayakkulkarni/v-image/compare/v2.0.0...v2.0.1) (2020-04-12)
 
