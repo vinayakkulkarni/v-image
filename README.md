@@ -1,96 +1,175 @@
 # [v-image](https://vinayakkulkarni.github.io/v-image/) 📷
 
-<a href="https://github.com/vinayakkulkarni/v-image/releases/latest"><img src="https://img.shields.io/github/release/vinayakkulkarni/v-image.svg" alt="github release"></a> <a href="http://npmjs.org/package/v-image"><img src="https://img.shields.io/npm/v/v-image.svg" alt="npm version"></a> <a href="https://travis-ci.org/vinayakkulkarni/v-image"><img src="https://travis-ci.org/vinayakkulkarni/v-image.svg?branch=master" alt="Build Status"></a> <a href="http://npm-stat.com/charts.html?package=v-image"><img src="https://img.shields.io/npm/dm/v-image.svg" alt="npm downloads"></a> <a href="https://travis-ci.org/github/vinayakkulkarni/v-image"><img alt="Travis (.org)" src="https://img.shields.io/travis/vinayakkulkarni/v-image"></a> <a href="https://app.netlify.com/sites/v-image/deploys"><img alt="Netlify Status" src="https://img.shields.io/netlify/341e9f45-256e-4ad0-9f7f-b948b60f4e99"/></a> <a href="https://lgtm.com/projects/g/vinayakkulkarni/v-image/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/vinayakkulkarni/v-image.svg?logo=lgtm&logoWidth=18"/></a> <a href="https://codebeat.co/projects/github-com-vinayakkulkarni-v-image-master"><img alt="codebeat badge" src="https://codebeat.co/badges/055e70c6-1d9c-4d11-9059-2b6960b84731" /></a>
+<a href="https://github.com/vinayakkulkarni/v-image/releases/latest"><img src="https://img.shields.io/github/release/vinayakkulkarni/v-image.svg" alt="github release"></a>
+<a href="https://github.com/vinayakkulkarni/v-image/actions/workflows/ci.yml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/vinayakkulkarni/v-image/ci"></a>
+<a href="http://npmjs.org/package/v-image"><img src="https://img.shields.io/npm/v/v-image.svg" alt="npm version"></a>
+<a href="http://npm-stat.com/charts.html?package=v-image"><img src="https://img.shields.io/npm/dm/v-image.svg" alt="npm downloads"></a>
+<a href="https://app.netlify.com/sites/v-image/deploys"><img alt="Netlify Status" src="https://img.shields.io/netlify/341e9f45-256e-4ad0-9f7f-b948b60f4e99"/></a>
+<a href="https://lgtm.com/projects/g/vinayakkulkarni/v-image/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/vinayakkulkarni/v-image.svg?logo=lgtm&logoWidth=18"/></a>
+<a href="https://codebeat.co/projects/github-com-vinayakkulkarni-v-image-master"><img alt="codebeat badge" src="https://codebeat.co/badges/055e70c6-1d9c-4d11-9059-2b6960b84731" /></a>
 
-+ This is [on GitHub](https://github.com/vinayakkulkarni/v-image)  so let me know if I've b0rked it somewhere, give me a star :star: if you like it :beers:
-+ Demo here -> [v-image](https://vinayakkulkarni.github.io/v-image/)
+## Demo
 
-### :white_check_mark: Install :ok_hand:
+[![Edit v-image](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/v-image-h16uk?fontsize=14&hidenavigation=1&theme=dark)
+
+## Features
+
+- 💪 Built with [TypeScript](https://www.typescriptlang.org/).
+- 🌠 Built with [Vue 2](https://vuejs.org/) w/ [Composition API](https://v3.vuejs.org/guide/composition-api-introduction.html)
+- ⚡ Zero dependencies.
+
+## Table of Contents
+
+- [v-image 📷](#v-image-)
+  - [Demo](#demo)
+  - [Features](#features)
+  - [Table of Contents](#table-of-contents)
+    - [Installation](#installation)
+    - [Build Setup](#build-setup)
+    - [Usage](#usage)
+    - [Example](#example)
+    - [API](#api)
+      - [Props](#props)
+      - [Events](#events)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Author](#author)
+### Installation
 ``` bash
 npm i v-image
 // or
 yarn add v-image
 ```
 
+
+### Build Setup
+
+``` bash
+# install dependencies
+$ npm install
+
+# start dev
+$ npm run dev
+
+# package lib
+$ npm run build
+```
+
+### Usage
+
+Browser:
 CDN: [UNPKG](https://unpkg.com/v-image/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/v-image/dist/) (available as `window.VImage`)
 
-## :white_check_mark: Usage :mortar_board:
-
-Register the component globally:
+Module Bundler:
 ```javascript
-Vue.component('vImage', require('v-image'));
+import { VImage } from 'v-image';
+Vue.component('VImage', VImage);
 ```
 Or use locally
 ```javascript
-import vImage from 'v-image';
+import { VImage } from 'v-image';
 ```
 
-### :white_check_mark: Example :four_leaf_clover:
+Or use it as a plugin:
+```js
+import VImage from 'v-image';
+import Vue from 'vue';
+
+Vue.use(VImage);
+```
+
+For Nuxt, create a file in `plugins/v-image.ts`
+
+```js
+import VImage from 'v-image';
+import Vue from 'vue';
+
+Vue.use(VImage);
+```
+
+then import the file in `nuxt.config.{j|t}s`:
+
+```js
+export default {
+  // ...
+  plugins: [
+    // ...
+     { src: '~/plugins/v-image', mode: 'client' },
+    // ...
+  ],
+  // ...
+}
+```
+
+### Example
 
 ```html
 <template>
   <v-image
     wrapper="flex justify-center items-center content-center w-full h-full"
-    :place-holder="placeholder"
+    :placeholder="placeholder"
+    :form="form"
     :uploaded="uploaded"
-    @load-image="saveImage"
-    @remove-image="removeImage"
+    @image-loaded="saveImage"
+    @image-removed="deleteImage"
   />
 </template>
 ```
 ```js
 /* Used Tailwind Utility classes, checkout the example dir */
-import vImage from 'v-image';
+import { VImage } from 'v-image';
 export default {
-  components: { vImage },
-  data: () => ({
-    placeholder: {
-      wrapper: 'p-4 max-w-xs w-full border border-gray-400 border-dotted',
-      image: 'https://picsum.photos/1000/1000',
-      alt: 'Placeholder Image',
-      imgClass: 'block rounded object-contain object-center max-w-xs',
-      btnClass: 'block btn cursor-pointer text-center',
+  components: { VImage },
+  data() {
+    return {
+      placeholder: {
+        image: 'https://picsum.photos/1000/1000',
+        alt: 'Placeholder Image',
+        imgClass: 'block rounded object-contain object-center max-w-xs',
+        btnClass: 'block btn cursor-pointer text-center',
+        wrapper: 'p-4 max-w-xs w-full border border-gray-400 border-dotted',
+      },
       form: {
         name: 'myImage',
-        label: 'Select an Image',
+        label: 'Select dope Image',
         accept: 'image/jpg',
       },
-    },
-    uploaded: {
-      wrapper: 'p-4 max-w-xs w-full border border-gray-400 border-dotted',
-      alt: 'User uploaded dope image',
-      imgClass: 'block rounded object-contain object-center max-w-xs',
-      btnClass: 'block btn cursor-pointer text-center w-full',
-      removeBtnText: 'Remove image',
-    },
-    image: '',
-  }),
+      uploaded: {
+        wrapper: 'p-4 max-w-xs w-full border border-gray-400 border-dotted',
+        alt: 'User uploaded dope image',
+        imgClass: 'block rounded object-contain object-center max-w-xs',
+        btnClass: 'block btn cursor-pointer text-center w-full',
+        removeBtnText: 'Remove image',
+      },
+      image: '' as string | null,
+    };
+  },
   methods: {
-    saveImage(imageSentFromComponent) {
-      this.image = imageSentFromComponent;
+    saveImage(image: string) {
+      this.image = image;
     },
-    removeImage() {
+    deleteImage() {
       this.image = null;
     },
   },
 };
 ```
-## API
+### API
 
-### :white_check_mark: :book: Props:
+#### Props
 |   Name  |   Type    |     Required?   |   Default   |   Description   |
 |   ---   |   ---     |     ---         |   ---       |   ---           |
 | `wrapper` | String  | No | '' | The wrapper classes for the top level `<div>`|
-| `placeHolder` | Object  | No | - |  The placeholder image & input related code|
-| `placeHolder.wrapper` | String  | No | '' | Any wrapper classes for the placeholder `<div>` |
-| `placeHolder.image` | String  | No | 'https://picsum.photos/200x200' |  The placeholder image |
-| `placeHolder.alt` | String  | No | 'Placeholder Image' |  The placeholder image alt attribute |
-| `placeHolder.imgClass` | String  | No | '' |  Any placeholder image classes |
-| `placeHolder.btnClass` | String  | No | '' |  `Select Image` button classes |
-| `placeHolder.form` | Object  | No | - |  The placeholder input form |
-| `placeHolder.form.name` | String  | No | 'v-image' |  Enable the label to interact with the `<input />`|
-| `placeHolder.form.label` | String  | No | 'Select Image' |  The label/button text |
-| `placeHolder.form.accept` | String  | No | 'image/*' |  Abilty to accept file types |
+| `placeholder` | Object  | No | - |  The placeholder image & input related code|
+| `placeholder.wrapper` | String  | No | '' | Any wrapper classes for the placeholder `<div>` |
+| `placeholder.image` | String  | No | 'https://picsum.photos/200x200' |  The placeholder image |
+| `placeholder.alt` | String  | No | 'Placeholder Image' |  The placeholder image alt attribute |
+| `placeholder.imgClass` | String  | No | '' |  Any placeholder image classes |
+| `placeholder.btnClass` | String  | No | '' |  `Select Image` button classes |
+| `form` | Object  | No | - |  The placeholder input form |
+| `form.name` | String  | No | 'v-image' |  Enable the label to interact with the `<input />`|
+| `form.label` | String  | No | 'Select Image' |  The label/button text |
+| `form.accept` | String  | No | 'image/*' |  Abilty to accept file types |
 | `uploaded` | Object  | No | - |  The user uploaded image related `Object` |
 | `uploaded.wrapper` | String  | No | '' | Any wrapper classes for the uploaded image `<div>` |
 | `uploaded.alt` | String  | No | 'Very Interesting Image' |  The actual uploaded image alt attribute |
@@ -99,17 +178,27 @@ export default {
 | `uploaded.removeBtnText` | String  | No | 'Remove Image' |  `Remove Image` button text |
 
 
-### :white_check_mark: :ear: Events:
-+ `@load-image` (load the base64 to your custom component's variable (see [example](https://github.com/vinayakkulkarni/v-image/tree/master/example)))
-+ `@remove-image` (let the parent know the remove label was clicked)
+#### Events
++ `@image-loaded` (load the base64 to your custom component's variable
++ `@image-removed` (let the parent know the remove label was clicked)
 
-## Contributing
+## Contributing 
 
-1.  Fork it!
-2.  Create your feature branch: `git checkout -b my-new-feature`
-3.  Commit your changes: `git commit -am 'Add some feature'`
-4.  Push to the branch: `git push origin my-new-feature`
-5.  Submit a pull request :D
+1. Fork it ( [https://github.com/geoql/v-mapkit.js/fork](https://github.com/geoql/v-mapkit.js/fork) )
+2. Create your feature branch (`git checkout -b feat/new-feature`)
+3. Commit your changes (`git commit -Sam 'feat: add feature'`)
+4. Push to the branch (`git push origin feat/new-feature`)
+5. Create a new [Pull Request](https://github.com/geoql/v-mapkit.js/compare)
+
+_Note_: 
+1. Please contribute using [Github Flow](https://guides.github.com/introduction/flow/)
+2. Commits & PRs will be allowed only if the commit messages & PR titles follow the [conventional commit standard](https://www.conventionalcommits.org/), _read more about it [here](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional#type-enum)_
+3. PS. Ensure your commits are signed. _[Read why](https://withblue.ink/2020/05/17/how-and-why-to-sign-git-commits.html)_
+
+
+## License
+
+MIT &copy; Vinayak Kulkarni
 
 ## Author
 
