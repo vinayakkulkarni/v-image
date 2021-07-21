@@ -184,10 +184,10 @@ export default {
 
 
 #### Events
-|   Name  |   Return Type    |     Required?   |      Description   |
-|   ---   |   ---     |     ---         |     ---           |
-| `@image-loaded` | String  | No | Sends the image base64 |
-| `@image-removed` | Boolean  | No | Emits `true` if image is removed |
+|   Name  |   Returns    |         Description   |
+|   ---   |   ---     |        ---           |
+| `@image-loaded` | String  | Sends the image in `base64` format |
+| `@image-removed` | Boolean  |  Emits `true` if image is removed |
 
 ## Contributing 
 
