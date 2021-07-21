@@ -23,7 +23,7 @@ export type Uploaded = {
 
 export type Props = {
   wrapper?: string;
-  placeHolder?: Placeholder;
+  placeholder?: Placeholder;
 };
 
 export const VImage: VueConstructor<Vue>;
