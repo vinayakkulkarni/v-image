@@ -14,7 +14,7 @@
     "types"
   ],
   "scripts": {
-    "test": "npm run bundle && karma start karma.conf.js",
+    "test": "echo 'Add Tests'",
     "build": "rimraf dist && npm run bundle && npm run bundle:min",
     "bundle": "rollup -c build/rollup.config.ts",
     "bundle:min": "rollup -c build/rollup.config.min.ts",
