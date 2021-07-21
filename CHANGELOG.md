@@ -1,3 +1,18 @@
+## [2.5.1](https://github.com/vinayakkulkarni/v-image/compare/v2.5.0...v2.5.1) (2021-07-21)
+
+
+### Bug Fixes
+
+* **deps:** bump actions/setup-node from 2.2.0 to 2.3.0 ([7cd6d91](https://github.com/vinayakkulkarni/v-image/commit/7cd6d91d54f3e3849388de8d6a841dc7375e4345))
+* typing issue ([0ec8041](https://github.com/vinayakkulkarni/v-image/commit/0ec8041b4614e89b125105f5b30ce4bb8c6a60d1))
+
+
+### Features
+
+* emit a boolean when image is removed ([d70d4a2](https://github.com/vinayakkulkarni/v-image/commit/d70d4a283f544070ffa1c883aeb8a49781bbb6bf))
+
+
+
 # [2.5.0](https://github.com/vinayakkulkarni/v-image/compare/v2.0.2...v2.5.0) (2021-07-20)
 
 
