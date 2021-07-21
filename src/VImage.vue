@@ -96,7 +96,7 @@
        */
       function removeImage(): void {
         image.value = null;
-        emit('image-removed');
+        emit('image-removed', true);
       }
 
       /**
