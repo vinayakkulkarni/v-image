@@ -26,6 +26,7 @@
   - [Table of Contents](#table-of-contents)
     - [Installation](#installation)
     - [Build Setup](#build-setup)
+    - [TypeScript](#typescript)
     - [Usage](#usage)
     - [Example](#example)
     - [API](#api)
@@ -48,12 +49,13 @@ yarn add v-image
 # install dependencies
 $ npm install
 
-# start dev
-$ npm run dev
-
 # package lib
 $ npm run build
 ```
+
+### TypeScript
+
+> You can import the typings by including `v-image` in `compilerOptions.types` section of your `tsconfig.json` file.
 
 ### Usage
 
@@ -148,12 +150,15 @@ export default {
     saveImage(image: string) {
       this.image = image;
     },
-    deleteImage() {
-      this.image = null;
+    deleteImage(deleted: boolean) {
+      if (deleted) {
+        this.image = null;
+      }
     },
   },
 };
 ```
+
 ### API
 
 #### Props
@@ -179,16 +184,18 @@ export default {
 
 
 #### Events
-+ `@image-loaded` (load the base64 to your custom component's variable
-+ `@image-removed` (let the parent know the remove label was clicked)
+|   Name  |   Return Type    |     Required?   |      Description   |
+|   ---   |   ---     |     ---         |     ---           |
+| `@image-loaded` | String  | No | Sends the image base64 |
+| `@image-removed` | Boolean  | No | Emits `true` if image is removed |
 
 ## Contributing 
 
-1. Fork it ( [https://github.com/geoql/v-mapkit.js/fork](https://github.com/geoql/v-mapkit.js/fork) )
+1. Fork it ( [https://github.com/vinayakkulkarni/v-image/fork](https://github.com/vinayakkulkarni/v-image/fork) )
 2. Create your feature branch (`git checkout -b feat/new-feature`)
 3. Commit your changes (`git commit -Sam 'feat: add feature'`)
 4. Push to the branch (`git push origin feat/new-feature`)
-5. Create a new [Pull Request](https://github.com/geoql/v-mapkit.js/compare)
+5. Create a new [Pull Request](https://github.com/vinayakkulkarni/v-image/compare)
 
 _Note_: 
 1. Please contribute using [Github Flow](https://guides.github.com/introduction/flow/)
