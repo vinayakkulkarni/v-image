@@ -1,3 +1,17 @@
+# [2.6.0](https://github.com/vinayakkulkarni/v-image/compare/v2.5.1...v2.6.0) (2021-07-31)
+
+
+### Bug Fixes
+
+* remove `--no-optional` from installCommand ([50264f2](https://github.com/vinayakkulkarni/v-image/commit/50264f2cc47eb6bf38f02e4bb9c86c1dd4f1c772))
+
+
+### Features
+
+* **tsconfig:** update tsconfig to match vue's ([f2e4d62](https://github.com/vinayakkulkarni/v-image/commit/f2e4d6288c07bb4df113ee0696181603d53aba4a))
+
+
+
 ## [2.5.1](https://github.com/vinayakkulkarni/v-image/compare/v2.5.0...v2.5.1) (2021-07-21)
 
 
