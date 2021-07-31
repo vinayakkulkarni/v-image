@@ -55,7 +55,7 @@ jobs:
         run: npm install -g npm@latest
 
       - name: Install dependencies 🚀
-        run: npm ci --prefer-offline --no-audit --no-optional
+        run: npm ci --prefer-offline --no-audit
 
       - name: Run linter(s) 👀
         uses: wearerequired/lint-action@v1
