@@ -31,6 +31,7 @@ const plugins = [
   vue({ css: false }),
   scss({
     output: 'dist/v-image.min.css',
+    // @ts-ignore
     outputStyle: 'compressed',
   }),
   sucrase({
@@ -56,7 +57,7 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/v-image.min.js',
+      file: pkg.cdn,
       format: 'umd',
       name: 'VImage',
       exports: 'named',

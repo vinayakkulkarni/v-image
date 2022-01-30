@@ -48,7 +48,7 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/v-image.cjs.js',
+      file: pkg.main,
       format: 'cjs',
       name: 'VImage',
       exports: 'named',
@@ -57,7 +57,7 @@ export default {
       banner,
     },
     {
-      file: 'dist/v-image.esm.js',
+      file: pkg.module,
       format: 'es',
       name: 'VImage',
       exports: 'named',
@@ -65,7 +65,7 @@ export default {
       banner,
     },
     {
-      file: 'dist/v-image.js',
+      file: pkg.unpkg,
       format: 'umd',
       name: 'VImage',
       exports: 'named',
