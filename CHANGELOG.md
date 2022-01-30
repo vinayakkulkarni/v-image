@@ -1,3 +1,21 @@
+## [2.6.1](https://github.com/vinayakkulkarni/v-image/compare/v2.6.0...v2.6.1) (2022-01-30)
+
+
+### Bug Fixes
+
+* add support for stylelint with Vue ([94ae13a](https://github.com/vinayakkulkarni/v-image/commit/94ae13a510926286661174f4a054cb18d55cce25))
+* builds use package.json defined config(s) ([042ea89](https://github.com/vinayakkulkarni/v-image/commit/042ea8952ee138389f777766c47fc5b6c18de0f7))
+* **deps:** bump actions/setup-node from 2.3.0 to 2.4.0 ([2291947](https://github.com/vinayakkulkarni/v-image/commit/22919474d4433c1dcddb6bd15c7535f82e097533))
+* **deps:** bump actions/setup-node from 2.4.0 to 2.4.1 ([0443f10](https://github.com/vinayakkulkarni/v-image/commit/0443f10c842c3f9f9b42d483bed3b02fda35a8dc))
+* **deps:** bump actions/setup-node from 2.4.1 to 2.5.0 ([90b62f9](https://github.com/vinayakkulkarni/v-image/commit/90b62f9b2d53f74a9852815532e31e4d20745aac))
+* **deps:** bump actions/setup-node from 2.5.0 to 2.5.1 ([e93cc25](https://github.com/vinayakkulkarni/v-image/commit/e93cc250fb4593c30a7d1bdfe63e9f82f891f0d5))
+* **deps:** bump axios from 0.21.1 to 0.21.4 ([82691e3](https://github.com/vinayakkulkarni/v-image/commit/82691e3463218fabf989fba27529515f36696254))
+* **deps:** bump follow-redirects from 1.14.1 to 1.14.7 ([c899184](https://github.com/vinayakkulkarni/v-image/commit/c8991844e8059f9002bc1c81fa3999b6aa7a90be))
+* **deps:** bump nanoid from 3.1.23 to 3.2.0 ([e897bf6](https://github.com/vinayakkulkarni/v-image/commit/e897bf650d32a171a7b9932d033e8376e3af6413))
+* **deps:** bump node-fetch from 2.6.1 to 2.6.7 ([505a19b](https://github.com/vinayakkulkarni/v-image/commit/505a19ba890da3b9754a19ed23d0f95918388ee5))
+
+
+
 # [2.6.0](https://github.com/vinayakkulkarni/v-image/compare/v2.5.1...v2.6.0) (2021-07-31)
 
 
