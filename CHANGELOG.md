@@ -1,3 +1,12 @@
+## [3.0.1](https://github.com/vinayakkulkarni/v-image/compare/v3.0.0...v3.0.1) (2022-11-01)
+
+
+### Bug Fixes
+
+* correct files to be pushed to registry ([cdd47c0](https://github.com/vinayakkulkarni/v-image/commit/cdd47c04885616429b3f32879b9a5095a223bfe5))
+
+
+
 # [3.0.0](https://github.com/vinayakkulkarni/v-image/compare/v2.6.1...v3.0.0) (2022-11-01)
 
 
