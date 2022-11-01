@@ -1,6 +1,6 @@
 {
   "name": "v-image",
-  "version": "2.6.1",
+  "version": "3.0.0",
   "description": "Tiny little component for input type=file.",
   "main": "./dist/v-image.js",
   "module": "./dist/v-image.js",

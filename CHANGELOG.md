@@ -1,3 +1,25 @@
+# [3.0.0](https://github.com/vinayakkulkarni/v-image/compare/v2.6.1...v3.0.0) (2022-11-01)
+
+
+### Bug Fixes
+
+* **deps:** bump actions/checkout from 2 to 3 ([ab90cad](https://github.com/vinayakkulkarni/v-image/commit/ab90cadb5f7773278d37b7574667cf0917ca72e0))
+* **deps:** bump actions/setup-node from 2.5.1 to 3 ([61efb5c](https://github.com/vinayakkulkarni/v-image/commit/61efb5c7bc833ed7a4ffc353b7ec9f15de3b0d75))
+* **deps:** bump ejs from 3.1.6 to 3.1.7 ([caba698](https://github.com/vinayakkulkarni/v-image/commit/caba6980633bc3e3e12d4466b0f19acd0e851ea2))
+* **deps:** bump follow-redirects from 1.14.7 to 1.14.8 ([c5693d7](https://github.com/vinayakkulkarni/v-image/commit/c5693d7e303c63c0beb26d082270d5b1ee81197c))
+* **deps:** bump minimist from 1.2.5 to 1.2.6 ([553d053](https://github.com/vinayakkulkarni/v-image/commit/553d053edbe1870ba34f39b0641d5d6a9355456c))
+* **deps:** bump terser from 5.10.0 to 5.14.2 ([ef9da91](https://github.com/vinayakkulkarni/v-image/commit/ef9da9109181cd45f3a1c15dc9f30a2c0522b802))
+* **deps:** bump wearerequired/lint-action from 1 to 2 ([c45744f](https://github.com/vinayakkulkarni/v-image/commit/c45744f5be644d63490db7bd39d7af97c92f00d3))
+* remove old `types` directory ([db42abc](https://github.com/vinayakkulkarni/v-image/commit/db42abcd406ffe814988f29d211f1427b9cbcb00))
+* update vscode settings ([fbe81be](https://github.com/vinayakkulkarni/v-image/commit/fbe81be7f55949d2532bd2a32121cdf8285c4fc5))
+
+
+### Features
+
+* vite 🕺 ([b9b50c5](https://github.com/vinayakkulkarni/v-image/commit/b9b50c5fea64532556f2359c3311d03b315dee83))
+
+
+
 ## [2.6.1](https://github.com/vinayakkulkarni/v-image/compare/v2.6.0...v2.6.1) (2022-01-30)
 
 
