@@ -1,2 +1,3 @@
+import VImage from './components/VImage.vue';
 export { default } from './install';
-export { default as VImage } from './VImage.vue';
+export { VImage };
