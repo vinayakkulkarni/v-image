@@ -7,6 +7,21 @@
     @image-loaded="onImageLoad"
     @image-removed="onImageRemove"
   />
+  <!-- Netlify Badge -->
+  <div class="absolute bottom-4 right-4">
+    <a
+      href="https://app.netlify.com/sites/v-image/deploys"
+      aria-label="View deploys on Netlify"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="gray-400"
+    >
+      <img
+        src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"
+        alt="Deploys by Netlify"
+      />
+    </a>
+  </div>
 </template>
 
 <script lang="ts">
