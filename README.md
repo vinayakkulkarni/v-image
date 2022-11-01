@@ -12,7 +12,7 @@
 [![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/vinayakkulkarni/v-image?logo=lgtm)](https://lgtm.com/projects/g/vinayakkulkarni/v-image/alerts/)
 [![LGTM Grade](https://img.shields.io/lgtm/grade/javascript/github/vinayakkulkarni/v-image?logo=lgtm)](https://lgtm.com/projects/g/vinayakkulkarni/v-image/context:javascript)
 [![Codebeat](https://codebeat.co/badges/055e70c6-1d9c-4d11-9059-2b6960b84731)](https://codebeat.co/projects/github-com-vinayakkulkarni-v-image-master)
-[![Netlify](https://app.netlify.com/sites/v-image/deploys)](https://img.shields.io/netlify/341e9f45-256e-4ad0-9f7f-b948b60f4e99?logo=netlify)
+[![Netlify](https://img.shields.io/netlify/341e9f45-256e-4ad0-9f7f-b948b60f4e99?logo=netlify)](https://app.netlify.com/sites/v-image/deploys)
 [![GitHub contributors](https://img.shields.io/github/contributors/vinayakkulkarni/v-image)](https://github.com/vinayakkulkarni/v-image/graphs/contributors)
 
 [![eslint](https://img.shields.io/npm/dependency-version/v-image/dev/eslint?logo=eslint)](https://eslint.org/)
