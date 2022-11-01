@@ -16,13 +16,13 @@
         :name="form.name"
         style="display: none"
         :accept="form.accept"
-        @change="onFileChange"
+        @change="onImageLoad"
       />
     </div>
     <!-- User uploaded image -->
-    <div v-if="typeof image === 'string'" :class="uploaded.wrapper">
+    <div v-else :class="uploaded.wrapper">
       <img :src="image" :alt="uploaded.alt" :class="uploaded.imgClass" />
-      <button type="button" :class="uploaded.btnClass" @click="removeImage">
+      <button type="button" :class="uploaded.btnClass" @click="onImageRemove">
         {{ uploaded.removeBtnText }}
       </button>
     </div>
@@ -30,8 +30,26 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, PropType, ref, Ref } from '@vue/composition-api';
-  import { Placeholder, Uploaded, VImageForm } from '../types';
+  import { defineComponent, ref } from 'vue';
+  import type { PropType } from 'vue';
+
+  type CommonFields = {
+    wrapper?: string;
+    alt?: string;
+    imgClass?: string;
+    btnClass?: string;
+  };
+  type Placeholder = {
+    image?: string;
+  } & CommonFields;
+  type Uploaded = {
+    removeBtnText?: string;
+  } & CommonFields;
+  type VImageForm = {
+    name?: string;
+    label?: string;
+    accept?: string;
+  };
 
   export default defineComponent({
     name: 'VImage',
@@ -84,46 +102,35 @@
         required: false,
       },
     },
+    emits: ['image-removed', 'image-loaded'],
     setup(_, { emit }) {
-      // Local image variable
-      const image: Ref<string | ArrayBuffer | undefined | null> = ref(null);
-
-      /**
-       * Removes the image & emits the
-       * `remove-image` event
-       *
-       * @returns {void}
-       */
-      function removeImage(): void {
+      let image = ref(null as null | string);
+      const onImageRemove = (): void => {
         image.value = null;
         emit('image-removed', true);
-      }
-
-      /**
-       * On change event when
-       * file is changed.
-       *
-       * @param {Event} e - Event on change object
-       * @returns {void}
-       */
-      function onFileChange(e: any): void {
-        const target = e.target as HTMLInputElement;
-        const dataTransfer = e.dataTransfer as DataTransfer;
-        const files: FileList = target.files || dataTransfer.files;
-        if (files && files.length) {
-          const reader = new FileReader();
-          reader.onload = (e: ProgressEvent<FileReader>) => {
-            image.value = e.target?.result;
-            emit('image-loaded', image);
-          };
-          reader.readAsDataURL(files[0]);
+      };
+      const onImageLoad = (e: Event | DragEvent): void => {
+        const target = (e as Event).target as HTMLInputElement;
+        const dataTransfer = (e as DragEvent).dataTransfer;
+        if (e instanceof DragEvent) {
+          readFiles(dataTransfer!.files);
+        } else {
+          readFiles(target.files!);
         }
-      }
+      };
+      const readFiles = (files: FileList) => {
+        const reader = new FileReader();
+        reader.onload = (e: ProgressEvent<FileReader>) => {
+          image.value = e.target?.result as string;
+          emit('image-loaded', e.target?.result);
+        };
+        reader.readAsDataURL(files[0]);
+      };
 
       return {
         image,
-        onFileChange,
-        removeImage,
+        onImageLoad,
+        onImageRemove,
       };
     },
   });

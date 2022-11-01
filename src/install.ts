@@ -1,17 +1,13 @@
-import VueCompositionApi from '@vue/composition-api';
-import { VueConstructor } from 'vue';
-import VImage from './VImage.vue';
+import { App as Application } from 'vue';
+import VImage from './components/VImage.vue';
 
 let installed = false;
 
-const install = {
-  install(Vue: VueConstructor): void {
-    if (!installed) {
-      Vue.use(VueCompositionApi);
-      Vue.component('VImage', VImage);
-      installed = true;
-    }
-  },
+const install = (app: Application) => {
+  if (!installed) {
+    app.component('VImage', VImage);
+    installed = true;
+  }
 };
 
 export default install;
