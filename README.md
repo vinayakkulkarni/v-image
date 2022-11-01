@@ -24,7 +24,7 @@
 
 ## Demo
 
-[![Edit v-image](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/v-image-h16uk?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit v-image](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/v-image?file=src/App.vue)
 
 ## Features
 
