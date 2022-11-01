@@ -1,4 +1,5 @@
 <template>
+  <v-github-icon url="https://github.com/vinayakkulkarni/v-image" />
   <v-image
     wrapper="flex flex-col justify-center items-center content-center w-full h-full"
     :placeholder="placeholder"
@@ -27,10 +28,14 @@
 <script lang="ts">
   import { defineComponent, ref } from 'vue';
   import type { Ref } from 'vue';
+  import { VGithubIcon } from 'v-github-icon';
   import { VImage } from 'v-image';
 
   export default defineComponent({
-    components: { VImage },
+    components: {
+      VImage,
+      VGithubIcon,
+    },
     setup() {
       const image: Ref<null | string> = ref(null);
       const placeholder = ref({
@@ -74,3 +79,6 @@
     },
   });
 </script>
+<style>
+  @import 'v-github-icon/dist/v-github-icon.css';
+</style>

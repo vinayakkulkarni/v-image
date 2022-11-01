@@ -81,12 +81,12 @@
     "node": ">=16.0.0",
     "npm": ">=8.19.2"
   },
+  "private": false,
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vinayakkulkarni/v-image.git"
   },
-  "private": false,
-  "sideEffects": false,
   "bugs": {
     "url": "https://github.com/vinayakkulkarni/v-image/issues"
   },
