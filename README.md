@@ -66,9 +66,6 @@ $ npm run build
 
 ### Usage
 
-Browser:
-CDN: [UNPKG](https://unpkg.com/v-image/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/v-image/dist/) (available as `window.VImage`)
-
 Global component:
 
 ```js
@@ -102,6 +99,7 @@ import { VImage } from 'v-image';
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('VImage', VImage);
+});
 ```
 
 then import the file in `nuxt.config.{j|t}s`:
