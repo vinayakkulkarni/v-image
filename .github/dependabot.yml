@@ -2,8 +2,8 @@ version: 2
 updates:
   # Fetch and update latest `npm` packages
   - package-ecosystem: npm
-    directory: '/'
     versioning-strategy: increase
+    directory: '/'
     schedule:
       interval: daily
       time: '00:00'
@@ -18,8 +18,8 @@ updates:
       include: scope
   # Fetch and update latest `npm` packages
   - package-ecosystem: npm
-    directory: '/example'
     versioning-strategy: increase
+    directory: '/example'
     schedule:
       interval: daily
       time: '00:00'
