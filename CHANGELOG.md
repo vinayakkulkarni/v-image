@@ -1,3 +1,15 @@
+## [3.0.2](https://github.com/vinayakkulkarni/v-image/compare/v3.0.1...v3.0.2) (2022-11-08)
+
+
+### Bug Fixes
+
+* **deps:** bump v-github-icon from 3.0.1 to 3.0.2 in /example ([c7a8d15](https://github.com/vinayakkulkarni/v-image/commit/c7a8d156f8a930ddc12d2ae8fb25fd23d562a554))
+* netlify badge ([563da0f](https://github.com/vinayakkulkarni/v-image/commit/563da0fe0b56d10eea631ea040b7928739d21793))
+* title of main page ([4cf78ea](https://github.com/vinayakkulkarni/v-image/commit/4cf78ea39aa427f552a8196b6998315fc5430af2))
+* versioning strategy ✅ ([1e29b3b](https://github.com/vinayakkulkarni/v-image/commit/1e29b3b28fcb22fdfeada43a91cbff2bbe69c89b))
+
+
+
 ## [3.0.1](https://github.com/vinayakkulkarni/v-image/compare/v3.0.0...v3.0.1) (2022-11-01)
 
 
