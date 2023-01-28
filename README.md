@@ -1,8 +1,8 @@
 # [v-image](https://vinayakkulkarni.github.io/v-image/) 📷
 
-[![Continuous Integration](https://github.com/vinayakkulkarni/v-image/actions/workflows/ci.yml/badge.svg)](https://github.com/vinayakkulkarni/v-image/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/vinayakkulkarni/v-image/actions/workflows/codeql.yml/badge.svg)](https://github.com/vinayakkulkarni/v-image/actions/workflows/codeql.yml)
-[![Ship js trigger](https://github.com/vinayakkulkarni/v-image/actions/workflows/shipjs-trigger.yml/badge.svg)](https://github.com/vinayakkulkarni/v-image/actions/workflows/shipjs-trigger.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/ci.yml?label=CI&branch=main&logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/ci.yml)
+[![CodeQL](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/codeql.yml?label=CodeQL&branch=main&logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/codeql.yml)
+[![Ship.js Trigger](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/shipjs-trigger.yml?label=⛴%20Ship.js%20trigger)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/shipjs-trigger.yml)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vinayakkulkarni/v-image?sort=semver&logo=github)](https://github.com/vinayakkulkarni/v-image/releases)
 [![npm](https://img.shields.io/npm/v/v-image?logo=npm)](https://www.npmjs.com/package/v-image)
 [![npm](https://img.shields.io/npm/dm/v-image?logo=npm)](http://npm-stat.com/charts.html?package=v-image)
