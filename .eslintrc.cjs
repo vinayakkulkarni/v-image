@@ -3,13 +3,13 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es2021: true,
+    es2022: true,
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',
-    ecmaVersion: 2021,
+    ecmaVersion: 2022,
     sourceType: 'module',
-    lib: ['es2021'],
+    lib: ['es2022'],
     ecmaFeatures: {
       jsx: true,
       tsx: true,
@@ -25,6 +25,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier',
   ],
+  // add your custom rules here
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
