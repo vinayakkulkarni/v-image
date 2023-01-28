@@ -7,7 +7,6 @@ updates:
     schedule:
       interval: daily
       time: '00:00'
-    open-pull-requests-limit: 10
     reviewers:
       - vinayakkulkarni
     assignees:
@@ -23,7 +22,6 @@ updates:
     schedule:
       interval: daily
       time: '00:00'
-    open-pull-requests-limit: 10
     reviewers:
       - vinayakkulkarni
     assignees:
@@ -38,7 +36,6 @@ updates:
     schedule:
       interval: daily
       time: '00:00'
-    open-pull-requests-limit: 10
     reviewers:
       - vinayakkulkarni
     assignees:
