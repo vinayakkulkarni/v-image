@@ -1,3 +1,18 @@
+## [3.0.3](https://github.com/vinayakkulkarni/v-image/compare/v3.0.2...v3.0.3) (2023-01-28)
+
+
+### Bug Fixes
+
+* bump es version ([7cdb8a3](https://github.com/vinayakkulkarni/v-image/commit/7cdb8a33f6ebeca2731361555ef100a44d2707ec))
+* **deps:** bump peaceiris/actions-gh-pages from 3.9.0 to 3.9.1 ([d54f237](https://github.com/vinayakkulkarni/v-image/commit/d54f2378389a2b6c0ace11af4ada0e8d20b4b1cb))
+* **deps:** bump peaceiris/actions-gh-pages from 3.9.1 to 3.9.2 ([5c5b88b](https://github.com/vinayakkulkarni/v-image/commit/5c5b88bf1dcb4f2816e60daad9200b34256992e1))
+* **deps:** bump v-image from 3.0.1 to 3.0.2 in /example ([0180b90](https://github.com/vinayakkulkarni/v-image/commit/0180b90cf7c07f78f5b3f37def326501612cf06e))
+* **deps:** bump vue from 3.2.41 to 3.2.44 in /example ([0642792](https://github.com/vinayakkulkarni/v-image/commit/0642792c997d5adaac192078a4606893c6ae22ae))
+* **deps:** bump vue from 3.2.44 to 3.2.45 in /example ([fd68ad8](https://github.com/vinayakkulkarni/v-image/commit/fd68ad897a68169f14e86c7d5c22277f652b633a))
+* github actor in ship.js config ([a253df1](https://github.com/vinayakkulkarni/v-image/commit/a253df16d6b7f2016d21cf295c198c67f8515fcb))
+
+
+
 ## [3.0.2](https://github.com/vinayakkulkarni/v-image/compare/v3.0.1...v3.0.2) (2022-11-08)
 
 
