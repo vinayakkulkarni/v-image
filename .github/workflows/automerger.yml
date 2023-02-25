@@ -1,13 +1,6 @@
 name: 'Automerge Dependabot PRs'
 
-on:
-  workflow_run:
-    workflows:
-      - 'Lint PR'
-      - 'Continuous Integration'
-      - 'CodeQL'
-    types:
-      - completed
+on: pull_request_target
 
 permissions:
   pull-requests: write
