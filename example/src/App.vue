@@ -15,7 +15,6 @@
       aria-label="View deploys on Netlify"
       target="_blank"
       rel="noopener noreferrer"
-      class="gray-400"
     >
       <img
         src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"
