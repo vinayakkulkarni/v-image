@@ -6,7 +6,7 @@
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vinayakkulkarni/v-image?sort=semver&logo=github)](https://github.com/vinayakkulkarni/v-image/releases)
 [![npm](https://img.shields.io/npm/v/v-image?logo=npm)](https://www.npmjs.com/package/v-image)
 [![npm](https://img.shields.io/npm/dm/v-image?logo=npm)](http://npm-stat.com/charts.html?package=v-image)
-[![npm (downloads)](https://img.shields.io/npm/dm/v-image.svg)](https://npm-stat.com/charts.html?package=v-image)
+[![npm (downloads)](https://img.shields.io/npm/dt/v-image.svg?logo=npm)](https://npm-stat.com/charts.html?package=v-image)
 [![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-image/latest)](https://bundlephobia.com/package/v-image@latest)
 [![npm type definitions](https://img.shields.io/npm/types/v-image)](https://github.com/vinayakkulkarni/v-image/blob/master/package.json)
 [![DeepScan grade](https://deepscan.io/api/teams/9055/projects/11604/branches/426884/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9055&pid=11604&bid=426884)
