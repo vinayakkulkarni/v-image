@@ -1,3 +1,23 @@
+# [3.1.0](https://github.com/vinayakkulkarni/v-image/compare/v3.0.3...v3.1.0) (2023-04-01)
+
+
+### Bug Fixes
+
+* **deps:** bump amannn/action-semantic-pull-request from 5.0.2 to 5.1.0 ([b5e2391](https://github.com/vinayakkulkarni/v-image/commit/b5e23910627bd440f542eb141b31d1a96dd9f726))
+* **deps:** bump amannn/action-semantic-pull-request from 5.1.0 to 5.2.0 ([3444a5c](https://github.com/vinayakkulkarni/v-image/commit/3444a5c60eb4b50d588e79ee693334b33fcda9b7))
+* **deps:** bump peaceiris/actions-gh-pages from 3.9.2 to 3.9.3 ([3b389a3](https://github.com/vinayakkulkarni/v-image/commit/3b389a3cde511219efb312c855e71256ac14135a))
+* **deps:** bump v-image from 3.0.2 to 3.0.3 in /example ([41d1093](https://github.com/vinayakkulkarni/v-image/commit/41d1093c49a2589d96be5f2d6767769b1b3d5bd1))
+* **deps:** bump vue from 3.2.45 to 3.2.47 in /example ([0fb02f0](https://github.com/vinayakkulkarni/v-image/commit/0fb02f04cb72cbab4d51c7b895f043377804d38f))
+* remove unused class ([aa029a3](https://github.com/vinayakkulkarni/v-image/commit/aa029a38b3327e9667acf11f6aa1349b58a5199c))
+
+
+### Features
+
+* add automerger workflow ([53fa8af](https://github.com/vinayakkulkarni/v-image/commit/53fa8af122c0f111e0fb2bad76b8519c9bd904ac))
+* run workflow on `pull_request_target` ([1963ffe](https://github.com/vinayakkulkarni/v-image/commit/1963ffe7503f7059f505641e821a0ff6848eb73e))
+
+
+
 ## [3.0.3](https://github.com/vinayakkulkarni/v-image/compare/v3.0.2...v3.0.3) (2023-01-28)
 
 
