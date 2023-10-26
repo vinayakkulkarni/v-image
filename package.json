@@ -37,7 +37,7 @@
     "release:auto": "shipjs prepare --yes"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.8.0",
+    "@commitlint/cli": "^18.1.0",
     "@commitlint/config-conventional": "^17.8.0",
     "@types/node": "^20.8.6",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
