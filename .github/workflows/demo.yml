@@ -26,7 +26,7 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
 
       - name: Install dependencies 🚀
-        run: npm ci --prefer-offline --no-audit --omit=optional
+        run: npm ci --prefer-offline --no-audit
 
       - name: Run build 🏁
         run: npm run build

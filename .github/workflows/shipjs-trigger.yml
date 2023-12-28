@@ -1,8 +1,10 @@
-name: Ship js trigger
+name: 'Ship js trigger'
+
 on:
   pull_request:
     types:
       - closed
+
 jobs:
   build:
     name: Release
@@ -28,7 +30,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies 🚀
-        run: npm ci --prefer-offline --no-audit --omit=optional
+        run: npm ci --prefer-offline --no-audit
 
       - name: Trigger a release 🥳
         run: npx shipjs trigger
