@@ -1,3 +1,29 @@
+## [3.1.2](https://github.com/vinayakkulkarni/v-image/compare/v3.1.1...v3.1.2) (2024-03-21)
+
+
+### Bug Fixes
+
+* **deps:** Bump v-github-icon from 3.1.2 to 3.1.3 in /example ([919896e](https://github.com/vinayakkulkarni/v-image/commit/919896ec2d274bbd45ed8d53ccf35cae8311de74))
+* **deps:** bump v-github-icon from 3.1.3 to 3.2.1 in /example ([d21a4bc](https://github.com/vinayakkulkarni/v-image/commit/d21a4bc00b99d87137c3dede7016ff7628737dfd))
+* **deps:** bump v-image from 3.1.0 to 3.1.1 in /example ([dff35a6](https://github.com/vinayakkulkarni/v-image/commit/dff35a6d77236ea5f492fe7d57eed1f07297f88d))
+* **deps:** Bump vue from 3.3.13 to 3.4.3 in /example ([47e3499](https://github.com/vinayakkulkarni/v-image/commit/47e3499dbbad8bde6c0299a6ff6be2991bcc064e))
+* **deps:** Bump vue from 3.4.10 to 3.4.13 in /example ([cb6a1d2](https://github.com/vinayakkulkarni/v-image/commit/cb6a1d2b4bacd316065f6a73bc53e4a3f9901fcd))
+* **deps:** Bump vue from 3.4.13 to 3.4.14 in /example ([0e63642](https://github.com/vinayakkulkarni/v-image/commit/0e63642c0cf995b1929b7a70a5f3f1e4888e5cfb))
+* **deps:** Bump vue from 3.4.14 to 3.4.15 in /example ([867bffc](https://github.com/vinayakkulkarni/v-image/commit/867bffc02010d4a0c267dbc0f1b5c455e57a6db3))
+* **deps:** bump vue from 3.4.15 to 3.4.16 in /example ([036516c](https://github.com/vinayakkulkarni/v-image/commit/036516cafd76ee0643d71c72e597eee3f363dd9d))
+* **deps:** bump vue from 3.4.16 to 3.4.18 in /example ([8f79b51](https://github.com/vinayakkulkarni/v-image/commit/8f79b51c96f4f037e6f6f90e1ebd7cbbcd75f2f4))
+* **deps:** bump vue from 3.4.18 to 3.4.19 in /example ([a646645](https://github.com/vinayakkulkarni/v-image/commit/a646645d8c6819d1283ae1f395bcdf42c9f47ec0))
+* **deps:** bump vue from 3.4.19 to 3.4.20 in /example ([9cb2fab](https://github.com/vinayakkulkarni/v-image/commit/9cb2fab86b7729f206d6cbb45f4f47f3212b52b1))
+* **deps:** bump vue from 3.4.20 to 3.4.21 in /example ([75a4889](https://github.com/vinayakkulkarni/v-image/commit/75a488923e341ec86c43f4f23edf7a415f3f4ca6))
+* **deps:** Bump vue from 3.4.3 to 3.4.4 in /example ([adf4fc8](https://github.com/vinayakkulkarni/v-image/commit/adf4fc82d6603072c718a0e1d96d7a345c8b6596))
+* **deps:** Bump vue from 3.4.4 to 3.4.5 in /example ([6003226](https://github.com/vinayakkulkarni/v-image/commit/600322657b2f9a3d7492c46ba4de42476a6d1abd))
+* **deps:** Bump vue from 3.4.5 to 3.4.6 in /example ([d614a51](https://github.com/vinayakkulkarni/v-image/commit/d614a518893f9356fda5905d09ba09e8c1312fb4))
+* **deps:** Bump vue from 3.4.6 to 3.4.7 in /example ([d8f16a5](https://github.com/vinayakkulkarni/v-image/commit/d8f16a5fe91db0d6c4cfac48258e797ad00d0207))
+* **deps:** Bump vue from 3.4.7 to 3.4.8 in /example ([ab6c1d6](https://github.com/vinayakkulkarni/v-image/commit/ab6c1d6cd5b63cf856bc409fb130e2dd39df1949))
+* **deps:** Bump vue from 3.4.8 to 3.4.10 in /example ([c532c03](https://github.com/vinayakkulkarni/v-image/commit/c532c035e89c1d04811a011068f7d2a36c39525f))
+
+
+
 ## <small>3.1.1 (2023-12-28)</small>
 
 * fix: remove `--omit=optional` from shipjs ([a16ea85](https://github.com/vinayakkulkarni/v-image/commit/a16ea85))
