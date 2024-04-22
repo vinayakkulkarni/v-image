@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "unocss": "^0.59.0",
+    "unocss": "^0.59.4",
     "v-github-icon": "^3.2.1",
     "v-image": "^3.1.2",
     "vue": "^3.4.21"
