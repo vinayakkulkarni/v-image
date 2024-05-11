@@ -63,7 +63,7 @@
     "stylelint-prettier": "5.0.0",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
-    "vue": "^3.4.21",
+    "vue": "^3.4.27",
     "vue-tsc": "^2.0.14"
   },
   "keywords": [
