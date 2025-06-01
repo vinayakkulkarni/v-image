@@ -55,7 +55,7 @@
     "husky": "^9.1.2",
     "is-ci": "^3.0.1",
     "lint-staged": "^15.2.7",
-    "prettier": "^3.3.3",
+    "prettier": "^3.5.3",
     "sass": "^1.77.5",
     "shipjs": "^0.27.0",
     "stylelint": "16.13.0",
