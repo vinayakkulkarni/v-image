@@ -12,7 +12,7 @@
     "unocss": "^66.5.0",
     "v-github-icon": "^3.2.2",
     "v-image": "^3.1.2",
-    "vue": "^3.5.20"
+    "vue": "^3.5.22"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
