@@ -23,7 +23,7 @@
     "prepare": "is-ci || husky"
   },
   "peerDependencies": {
-    "vue": "^3.5.27"
+    "vue": "^3.5.31"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
@@ -39,7 +39,7 @@
     "unplugin-vue": "^7.1.1",
     "vite": "^7.3.1",
     "vite-plus": "^0.1.14",
-    "vue": "^3.5.27",
+    "vue": "^3.5.31",
     "vue-tsc": "^3.2.4"
   },
   "keywords": [
