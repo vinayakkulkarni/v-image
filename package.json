@@ -4,7 +4,7 @@
   "description": "Tiny little component for input type=file.",
   "exports": {
     ".": {
-      "import": "./dist/v-image.js",
+      "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
@@ -14,11 +14,11 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "lint": "oxlint --config .oxlintrc.jsonc",
-    "lint:fix": "oxlint --fix --config .oxlintrc.jsonc",
-    "format": "oxfmt --config .oxfmtrc.jsonc .",
-    "format:check": "oxfmt --check --config .oxfmtrc.jsonc .",
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
+    "lint": "vp lint",
+    "lint:fix": "vp lint --fix",
+    "format": "vp fmt",
+    "format:check": "vp fmt --check",
+    "build": "vp pack",
     "test": "echo 'test!'",
     "prepare": "is-ci || husky"
   },
@@ -34,10 +34,11 @@
     "husky": "latest",
     "is-ci": "latest",
     "lint-staged": "latest",
-    "oxlint": "latest",
     "sass": "^1.97.3",
     "typescript": "^5.9.3",
+    "unplugin-vue": "^7.1.1",
     "vite": "^7.3.1",
+    "vite-plus": "^0.1.14",
     "vue": "^3.5.27",
     "vue-tsc": "^3.2.4"
   },
@@ -62,5 +63,6 @@
   "bugs": {
     "url": "https://github.com/vinayakkulkarni/v-image/issues"
   },
-  "homepage": "https://github.com/vinayakkulkarni/v-image#readme"
+  "homepage": "https://github.com/vinayakkulkarni/v-image#readme",
+  "packageManager": "bun@1.3.11"
 }
