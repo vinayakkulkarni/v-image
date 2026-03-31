@@ -465,6 +465,28 @@
 
 
 
+## [4.0.1](https://github.com/vinayakkulkarni/v-image/compare/v-image-v4.0.0...v-image-v4.0.1) (2026-03-31)
+
+
+### Bug Fixes
+
+* **deps:** bump actions/setup-node from 4 to 6 ([d687c3a](https://github.com/vinayakkulkarni/v-image/commit/d687c3a6d15d118d33862b6bc60c3f783d8893bd))
+* **deps:** bump dependabot/fetch-metadata from 2.5.0 to 3.0.0 ([8b41464](https://github.com/vinayakkulkarni/v-image/commit/8b414648e23af6ddd791b79e6e47e54cc11487f3))
+* **deps:** bump dependabot/fetch-metadata from 2.5.0 to 3.0.0 ([937cf19](https://github.com/vinayakkulkarni/v-image/commit/937cf1925a7316278b9b2bec38d93311c7a9bbf7))
+* **deps:** update unocss requirement from ^66.5.0 to ^66.6.7 in /example ([5ef9917](https://github.com/vinayakkulkarni/v-image/commit/5ef991731862c926be5413049f7437f0f6aac1e8))
+* **deps:** update unocss requirement from ^66.5.0 to ^66.6.7 in /example ([ac0576d](https://github.com/vinayakkulkarni/v-image/commit/ac0576dd10b275d22dbe955e7cc1eda167c4b7c4))
+
+
+### Miscellaneous
+
+* **deps-dev:** bump typescript from 5.9.3 to 6.0.2 in /example ([bb27c55](https://github.com/vinayakkulkarni/v-image/commit/bb27c55b67afe8ed552dd758633aeb4d161182eb))
+* **deps-dev:** bump typescript from 5.9.3 to 6.0.2 in /example ([884ab5d](https://github.com/vinayakkulkarni/v-image/commit/884ab5d6d1febfd1cfd1f1dd5551a4d9a30d3f45))
+* **deps-dev:** update @vitejs/plugin-vue requirement from ^6.0.1 to ^6.0.5 in /example ([3469f09](https://github.com/vinayakkulkarni/v-image/commit/3469f09ab43a4a6223854fee5dc268dfdafbe9f5))
+* **deps-dev:** update @vitejs/plugin-vue requirement in /example ([bf6e822](https://github.com/vinayakkulkarni/v-image/commit/bf6e822df3a9b4abaf39616588a8a3c5d56b7137))
+* **deps-dev:** update vue-tsc requirement from ^3.0.6 to ^3.2.6 in /example ([32ec6bc](https://github.com/vinayakkulkarni/v-image/commit/32ec6bcb26a8dc62f5492e6ddbfeec0c28844818))
+* **deps-dev:** update vue-tsc requirement in /example ([d7249db](https://github.com/vinayakkulkarni/v-image/commit/d7249dba11f5e461d9251be4d50ce8608d86004e))
+* update dependencies and fix tsconfig for TypeScript 6.0 ([a1c250c](https://github.com/vinayakkulkarni/v-image/commit/a1c250c6914c87d8789da94b6d337d322f9c4e91))
+
 ## [4.0.0](https://github.com/vinayakkulkarni/v-image/compare/v-image-v3.1.2...v-image-v4.0.0) (2026-02-07)
 
 
