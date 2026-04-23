@@ -465,6 +465,38 @@
 
 
 
+## [4.0.2](https://github.com/vinayakkulkarni/v-image/compare/v-image-v4.0.1...v-image-v4.0.2) (2026-04-23)
+
+
+### Bug Fixes
+
+* **deps:** bump dependabot/fetch-metadata from 3.0.0 to 3.1.0 in the actions-minor group ([d24ebaf](https://github.com/vinayakkulkarni/v-image/commit/d24ebaff73de3c545e0ae4fb6e30b3a2641e8bea))
+* **deps:** bump dependabot/fetch-metadata in the actions-minor group ([5f38493](https://github.com/vinayakkulkarni/v-image/commit/5f384932ec1d58803b47389a31e2da2132b60b1b))
+
+
+### Miscellaneous
+
+* **deps-dev:** update @types/node requirement from ^25.5.0 to ^25.6.0 ([c53a09e](https://github.com/vinayakkulkarni/v-image/commit/c53a09ee566ce1d074b243230f3fabe942d50837))
+* **deps-dev:** update @types/node requirement from ^25.5.0 to ^25.6.0 ([8180ac1](https://github.com/vinayakkulkarni/v-image/commit/8180ac1faf4c3e3ccc967cbbeb7414294a854b77))
+* **deps-dev:** update @vitejs/plugin-vue requirement ([912527f](https://github.com/vinayakkulkarni/v-image/commit/912527fc4fc1beb9efdb2a244be5742db1b2b838))
+* **deps-dev:** update @vitejs/plugin-vue requirement from ^6.0.5 to ^6.0.6 ([164376e](https://github.com/vinayakkulkarni/v-image/commit/164376e16c4a366e2bd633548463f15fc8730f49))
+* **deps-dev:** update @vue/runtime-dom requirement ([2768ce5](https://github.com/vinayakkulkarni/v-image/commit/2768ce5d8d240c6505d5e6fbc3627e248e743eef))
+* **deps-dev:** update @vue/runtime-dom requirement from ^3.5.31 to ^3.5.33 ([aa44aa1](https://github.com/vinayakkulkarni/v-image/commit/aa44aa1a32cd2bc66653f293ddd1bb4cbaa61ee2))
+* **deps-dev:** update sass requirement from ^1.98.0 to ^1.99.0 ([64e87d2](https://github.com/vinayakkulkarni/v-image/commit/64e87d23ae52a707f109b6a2f55c558eb3c39d3d))
+* **deps-dev:** update sass requirement from ^1.98.0 to ^1.99.0 ([3fecc05](https://github.com/vinayakkulkarni/v-image/commit/3fecc056ffbe57e0f5b9729aa9bcf02d248d486c))
+* **deps-dev:** update typescript requirement from ^6.0.2 to ^6.0.3 ([fb25db1](https://github.com/vinayakkulkarni/v-image/commit/fb25db1f415fc6af9f2d820eadfb413a0e94980a))
+* **deps-dev:** update typescript requirement from ^6.0.2 to ^6.0.3 ([865deb4](https://github.com/vinayakkulkarni/v-image/commit/865deb4ea55d8b10fabda0a46cd66f90a4e09800))
+* **deps-dev:** update vite requirement from ^8.0.3 to ^8.0.9 ([5a87813](https://github.com/vinayakkulkarni/v-image/commit/5a878135b27359aefc7c6de207635f56b9057a36))
+* **deps-dev:** update vite requirement from ^8.0.3 to ^8.0.9 ([861a76e](https://github.com/vinayakkulkarni/v-image/commit/861a76ea20d81d72ce80ee58bded567652e7b640))
+* **deps-dev:** update vite requirement from ^8.0.9 to ^8.0.10 ([a731f97](https://github.com/vinayakkulkarni/v-image/commit/a731f974f043cc4a694c9eedc320149f55ae3dd4))
+* **deps-dev:** update vite requirement from ^8.0.9 to ^8.0.10 ([6c0c8ab](https://github.com/vinayakkulkarni/v-image/commit/6c0c8abc569602414f6d9a5233925ec93ea19089))
+* **deps-dev:** update vite-plus requirement ([029cc71](https://github.com/vinayakkulkarni/v-image/commit/029cc71594a8a7187f719902c7255c1afa6192b2))
+* **deps-dev:** update vite-plus requirement from ^0.1.14 to ^0.1.15 in the npm-development group ([bfad873](https://github.com/vinayakkulkarni/v-image/commit/bfad873f76963277cf9a062d95b383d0100af4ac))
+* **deps-dev:** update vue requirement from ^3.5.31 to ^3.5.33 ([77a9a1b](https://github.com/vinayakkulkarni/v-image/commit/77a9a1bc46a8e74118104f8a48d70321c658c993))
+* **deps-dev:** update vue requirement from ^3.5.31 to ^3.5.33 ([6191c15](https://github.com/vinayakkulkarni/v-image/commit/6191c156f72fc55cdd674dec5ebf0c2f74316441))
+* **deps-dev:** update vue-tsc requirement from ^3.2.6 to ^3.2.7 ([da0a412](https://github.com/vinayakkulkarni/v-image/commit/da0a412a5bdedeaffd0b5bddc8e4f09f58065b82))
+* **deps-dev:** update vue-tsc requirement from ^3.2.6 to ^3.2.7 ([e218ea5](https://github.com/vinayakkulkarni/v-image/commit/e218ea52c32146dff86bb8eb06eb536e47c3e46e))
+
 ## [4.0.1](https://github.com/vinayakkulkarni/v-image/compare/v-image-v4.0.0...v-image-v4.0.1) (2026-03-31)
 
 

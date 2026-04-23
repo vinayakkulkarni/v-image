@@ -1,6 +1,6 @@
 {
   "name": "v-image",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Tiny little component for input type=file.",
   "exports": {
     ".": {
