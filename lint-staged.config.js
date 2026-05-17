@@ -1,4 +1,4 @@
 export default {
-  "*.{js,jsx,ts,tsx,vue}": ["oxlint --fix", "oxfmt --write"],
-  "*.{json,md,yml,yaml,css,html}": ["oxfmt --write --no-error-on-unmatched-pattern"],
+  '*.{js,jsx,ts,tsx,vue}': ['vp lint --fix', 'vp fmt --write'],
+  '*.{json,md,yml,yaml,css,html}': ['vp fmt --write'],
 };
