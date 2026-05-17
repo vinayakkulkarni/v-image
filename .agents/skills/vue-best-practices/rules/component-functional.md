@@ -22,41 +22,41 @@ For simple, stateless presentational components, keep them lightweight without u
 </template>
 
 <script setup>
-import { computed, ref, watch, onMounted } from 'vue'
+  import { computed, ref, watch, onMounted } from 'vue'
 
-const props = defineProps<{
-  variant: 'primary' | 'secondary'
-  size: 'sm' | 'md' | 'lg'
-}>()
+  const props = defineProps<{
+    variant: 'primary' | 'secondary'
+    size: 'sm' | 'md' | 'lg'
+  }>()
 
-const emit = defineEmits<{
-  click: [event: MouseEvent]
-}>()
+  const emit = defineEmits<{
+    click: [event: MouseEvent]
+  }>()
 
-// Unnecessary state for a simple button
-const isHovered = ref(false)
-const clickCount = ref(0)
+  // Unnecessary state for a simple button
+  const isHovered = ref(false)
+  const clickCount = ref(0)
 
-// Unnecessary watcher
-watch(() => props.variant, () => {
-  console.log('variant changed')
-})
+  // Unnecessary watcher
+  watch(() => props.variant, () => {
+    console.log('variant changed')
+  })
 
-// Unnecessary lifecycle
-onMounted(() => {
-  console.log('mounted')
-})
+  // Unnecessary lifecycle
+  onMounted(() => {
+    console.log('mounted')
+  })
 
-const buttonClasses = computed(() => [
-  'btn',
-  `btn-${props.variant}`,
-  `btn-${props.size}`
-])
+  const buttonClasses = computed(() => [
+    'btn',
+    `btn-${props.variant}`,
+    `btn-${props.size}`
+  ])
 
-function handleClick(e: MouseEvent) {
-  clickCount.value++
-  emit('click', e)
-}
+  function handleClick(e: MouseEvent) {
+    clickCount.value++
+    emit('click', e)
+  }
 </script>
 ```
 
@@ -65,20 +65,23 @@ function handleClick(e: MouseEvent) {
 ```vue
 <!-- IconButton.vue -->
 <template>
-  <button :class="['btn', `btn-${variant}`, `btn-${size}`]" @click="$emit('click', $event)">
+  <button
+    :class="['btn', `btn-${variant}`, `btn-${size}`]"
+    @click="$emit('click', $event)"
+  >
     <slot />
   </button>
 </template>
 
 <script setup>
-defineProps<{
-  variant?: 'primary' | 'secondary'
-  size?: 'sm' | 'md' | 'lg'
-}>()
+  defineProps<{
+    variant?: 'primary' | 'secondary'
+    size?: 'sm' | 'md' | 'lg'
+  }>()
 
-defineEmits<{
-  click: [event: MouseEvent]
-}>()
+  defineEmits<{
+    click: [event: MouseEvent]
+  }>()
 </script>
 ```
 
@@ -93,13 +96,13 @@ defineEmits<{
 </template>
 
 <script setup>
-withDefaults(defineProps<{
-  variant?: 'primary' | 'secondary'
-  size?: 'sm' | 'md' | 'lg'
-}>(), {
-  variant: 'primary',
-  size: 'md'
-})
+  withDefaults(defineProps<{
+    variant?: 'primary' | 'secondary'
+    size?: 'sm' | 'md' | 'lg'
+  }>(), {
+    variant: 'primary',
+    size: 'md'
+  })
 </script>
 ```
 
@@ -107,7 +110,7 @@ withDefaults(defineProps<{
 
 ```typescript
 // For components with very dynamic rendering logic
-import { h } from "vue";
+import { h } from 'vue';
 
 export default function DynamicHeading(props: { level: number }, { slots }) {
   return h(`h${props.level}`, slots.default?.());
@@ -118,7 +121,7 @@ export default function DynamicHeading(props: { level: number }, { slots }) {
 
 ```tsx
 // DynamicList.tsx
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   props: {

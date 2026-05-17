@@ -28,7 +28,7 @@ Content that never changes after initial render should use `v-once` to skip all 
 </template>
 
 <script setup>
-const appTitle = "My App"; // Never changes
+  const appTitle = 'My App'; // Never changes
 </script>
 ```
 
@@ -51,7 +51,7 @@ const appTitle = "My App"; // Never changes
 </template>
 
 <script setup>
-const appTitle = "My App";
+  const appTitle = 'My App';
 </script>
 ```
 

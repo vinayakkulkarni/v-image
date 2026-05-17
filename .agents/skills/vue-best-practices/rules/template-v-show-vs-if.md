@@ -24,9 +24,9 @@ tags: template, v-show, v-if, conditional, performance
 </template>
 
 <script setup>
-import { ref } from "vue";
-const showDetails = ref(false);
-// User toggles this rapidly...
+  import { ref } from 'vue';
+  const showDetails = ref(false);
+  // User toggles this rapidly...
 </script>
 ```
 
@@ -45,8 +45,8 @@ const showDetails = ref(false);
 </template>
 
 <script setup>
-import { ref } from "vue";
-const showDetails = ref(false);
+  import { ref } from 'vue';
+  const showDetails = ref(false);
 </script>
 ```
 
@@ -85,14 +85,14 @@ const showDetails = ref(false);
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+  import { ref, watch } from 'vue';
 
-const isOpen = ref(false);
-const hasBeenOpened = ref(false);
+  const isOpen = ref(false);
+  const hasBeenOpened = ref(false);
 
-watch(isOpen, (open) => {
-  if (open) hasBeenOpened.value = true;
-});
+  watch(isOpen, (open) => {
+    if (open) hasBeenOpened.value = true;
+  });
 </script>
 ```
 

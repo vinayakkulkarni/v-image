@@ -24,10 +24,10 @@ Use `<KeepAlive>` to cache component instances when switching between them, pres
 </template>
 
 <script setup>
-import { ref } from "vue";
+  import { ref } from 'vue';
 
-const currentTab = ref("search");
-// User's search input is lost when switching tabs!
+  const currentTab = ref('search');
+  // User's search input is lost when switching tabs!
 </script>
 ```
 
@@ -47,18 +47,18 @@ const currentTab = ref("search");
 </template>
 
 <script setup>
-import { ref, computed, shallowRef } from "vue";
-import SearchForm from "./SearchForm.vue";
-import ResultsTable from "./ResultsTable.vue";
+  import { ref, computed, shallowRef } from 'vue';
+  import SearchForm from './SearchForm.vue';
+  import ResultsTable from './ResultsTable.vue';
 
-const currentTab = ref("search");
+  const currentTab = ref('search');
 
-const tabs = {
-  search: SearchForm,
-  results: ResultsTable,
-};
+  const tabs = {
+    search: SearchForm,
+    results: ResultsTable,
+  };
 
-const currentTabComponent = computed(() => tabs[currentTab.value]);
+  const currentTabComponent = computed(() => tabs[currentTab.value]);
 </script>
 ```
 
@@ -98,21 +98,21 @@ const currentTabComponent = computed(() => tabs[currentTab.value]);
 
 ```vue
 <script setup>
-import { onActivated, onDeactivated } from "vue";
+  import { onActivated, onDeactivated } from 'vue';
 
-// Called when component is inserted from cache
-onActivated(() => {
-  console.log("Component activated from cache");
-  // Refresh data if needed
-  fetchLatestData();
-});
+  // Called when component is inserted from cache
+  onActivated(() => {
+    console.log('Component activated from cache');
+    // Refresh data if needed
+    fetchLatestData();
+  });
 
-// Called when component is removed to cache
-onDeactivated(() => {
-  console.log("Component deactivated to cache");
-  // Cleanup if needed
-  pauseVideoPlayback();
-});
+  // Called when component is removed to cache
+  onDeactivated(() => {
+    console.log('Component deactivated to cache');
+    // Cleanup if needed
+    pauseVideoPlayback();
+  });
 </script>
 ```
 

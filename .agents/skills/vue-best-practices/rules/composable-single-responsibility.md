@@ -28,8 +28,8 @@ export function useUser() {
   }
 
   // User preferences (different concern!)
-  const theme = ref("light");
-  const language = ref("en");
+  const theme = ref('light');
+  const language = ref('en');
   function setTheme(t) {
     theme.value = t;
   }
@@ -85,17 +85,18 @@ export function useAuth() {
 ```typescript
 // composables/useUserPreferences.ts
 export function useUserPreferences() {
-  const theme = ref<"light" | "dark">("light");
-  const language = ref("en");
+  const theme = ref<'light' | 'dark'>('light');
+  const language = ref('en');
 
-  function setTheme(newTheme: "light" | "dark") {
+  function setTheme(newTheme: 'light' | 'dark') {
     theme.value = newTheme;
-    localStorage.setItem("theme", newTheme);
+    localStorage.setItem('theme', newTheme);
   }
 
   function loadPreferences() {
-    theme.value = (localStorage.getItem("theme") as "light" | "dark") || "light";
-    language.value = localStorage.getItem("language") || "en";
+    theme.value =
+      (localStorage.getItem('theme') as 'light' | 'dark') || 'light';
+    language.value = localStorage.getItem('language') || 'en';
   }
 
   return { theme, language, setTheme, loadPreferences };
@@ -130,13 +131,13 @@ export function useNotifications() {
 
 ```vue
 <script setup>
-import { useAuth } from "@/composables/useAuth";
-import { useUserPreferences } from "@/composables/useUserPreferences";
-import { useNotifications } from "@/composables/useNotifications";
+  import { useAuth } from '@/composables/useAuth';
+  import { useUserPreferences } from '@/composables/useUserPreferences';
+  import { useNotifications } from '@/composables/useNotifications';
 
-const { user, isAuthenticated, logout } = useAuth();
-const { theme, setTheme } = useUserPreferences();
-const { notifications, add: addNotification } = useNotifications();
+  const { user, isAuthenticated, logout } = useAuth();
+  const { theme, setTheme } = useUserPreferences();
+  const { notifications, add: addNotification } = useNotifications();
 </script>
 ```
 
@@ -165,7 +166,11 @@ export function useAsyncState<T>(asyncFn: () => Promise<T>, initialState: T) {
 }
 
 // Usage
-const { state: users, isLoading, execute: loadUsers } = useAsyncState(() => api.fetchUsers(), []);
+const {
+  state: users,
+  isLoading,
+  execute: loadUsers,
+} = useAsyncState(() => api.fetchUsers(), []);
 ```
 
 Reference: [Composables](https://vuejs.org/guide/reusability/composables.html)

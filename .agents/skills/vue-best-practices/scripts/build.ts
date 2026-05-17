@@ -1,9 +1,9 @@
-import { readdir, readFile, writeFile } from "fs/promises";
-import { join } from "path";
+import { readdir, readFile, writeFile } from 'fs/promises';
+import { join } from 'path';
 
-const RULES_DIR = join(import.meta.dir, "..", "rules");
-const SKILL_FILE = join(import.meta.dir, "..", "SKILL.md");
-const OUTPUT_FILE = join(import.meta.dir, "..", "AGENTS.md");
+const RULES_DIR = join(import.meta.dir, '..', 'rules');
+const SKILL_FILE = join(import.meta.dir, '..', 'SKILL.md');
+const OUTPUT_FILE = join(import.meta.dir, '..', 'AGENTS.md');
 
 interface RuleMeta {
   title: string;
@@ -23,31 +23,33 @@ function parseFrontmatter(content: string): {
   const body = match[2];
 
   const meta: Partial<RuleMeta> = {};
-  for (const line of frontmatter.split("\n")) {
-    const [key, ...valueParts] = line.split(":");
-    const value = valueParts.join(":").trim();
-    if (key === "title") meta.title = value;
-    if (key === "impact") meta.impact = value;
-    if (key === "impactDescription") meta.impactDescription = value;
-    if (key === "tags") meta.tags = value.split(",").map((t) => t.trim());
+  for (const line of frontmatter.split('\n')) {
+    const [key, ...valueParts] = line.split(':');
+    const value = valueParts.join(':').trim();
+    if (key === 'title') meta.title = value;
+    if (key === 'impact') meta.impact = value;
+    if (key === 'impactDescription') meta.impactDescription = value;
+    if (key === 'tags') meta.tags = value.split(',').map((t) => t.trim());
   }
 
   return { meta: meta as RuleMeta, body };
 }
 
 async function readSkillHeader(): Promise<string> {
-  const skillContent = await readFile(SKILL_FILE, "utf-8");
+  const skillContent = await readFile(SKILL_FILE, 'utf-8');
   const { body } = parseFrontmatter(skillContent);
   return body;
 }
 
 async function readRuleFiles(): Promise<string[]> {
   const files = await readdir(RULES_DIR);
-  const ruleFiles = files.filter((f) => f.endsWith(".md") && !f.startsWith("_")).sort();
+  const ruleFiles = files
+    .filter((f) => f.endsWith('.md') && !f.startsWith('_'))
+    .sort();
 
   const rules: string[] = [];
   for (const file of ruleFiles) {
-    const content = await readFile(join(RULES_DIR, file), "utf-8");
+    const content = await readFile(join(RULES_DIR, file), 'utf-8');
     const { meta, body } = parseFrontmatter(content);
     if (meta) {
       rules.push(
@@ -70,12 +72,12 @@ ${skillBody.trim()}
 
 # Detailed Rules
 
-${rules.join("\n\n---\n\n")}
+${rules.join('\n\n---\n\n')}
 `;
 }
 
 async function build() {
-  console.log("Building AGENTS.md for vue-best-practices...");
+  console.log('Building AGENTS.md for vue-best-practices...');
 
   const skillBody = await readSkillHeader();
   const rules = await readRuleFiles();

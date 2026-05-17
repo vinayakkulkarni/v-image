@@ -23,11 +23,11 @@ const state = reactive({ count: 0 });
 **Correct (ref for primitives):**
 
 ```typescript
-import { ref } from "vue";
+import { ref } from 'vue';
 
 // Use ref() for primitives
 const count = ref(0);
-const name = ref("");
+const name = ref('');
 const isLoading = ref(false);
 
 // Access with .value in script, auto-unwrapped in template
@@ -37,20 +37,20 @@ count.value++;
 **Correct (reactive for objects):**
 
 ```typescript
-import { reactive } from "vue";
+import { reactive } from 'vue';
 
 // Use reactive() for objects with multiple properties
 const user = reactive({
-  name: "John",
-  email: "john@example.com",
+  name: 'John',
+  email: 'john@example.com',
   preferences: {
-    theme: "dark",
+    theme: 'dark',
   },
 });
 
 // Direct property access
-user.name = "Jane";
-user.preferences.theme = "light";
+user.name = 'Jane';
+user.preferences.theme = 'light';
 ```
 
 **When to use which:**

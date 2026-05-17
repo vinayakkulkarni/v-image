@@ -12,13 +12,15 @@ When performing read-only operations (filtering, searching, serialization) on la
 **Incorrect (proxy overhead in loops):**
 
 ```typescript
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const items = ref<Item[]>(generateLargeDataset(10000));
 
 function searchItems(query: string) {
   // BAD: Each access goes through reactive proxy
-  return items.value.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()));
+  return items.value.filter((item) =>
+    item.name.toLowerCase().includes(query.toLowerCase()),
+  );
 }
 
 function serializeData() {
@@ -30,14 +32,16 @@ function serializeData() {
 **Correct (using toRaw):**
 
 ```typescript
-import { ref, toRaw } from "vue";
+import { ref, toRaw } from 'vue';
 
 const items = ref<Item[]>(generateLargeDataset(10000));
 
 function searchItems(query: string) {
   // Get raw array - no proxy overhead
   const rawItems = toRaw(items.value);
-  return rawItems.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()));
+  return rawItems.filter((item) =>
+    item.name.toLowerCase().includes(query.toLowerCase()),
+  );
 }
 
 function serializeData() {
@@ -59,10 +63,10 @@ function serializeData() {
 **Performance-critical search example:**
 
 ```typescript
-import { ref, toRaw, computed } from "vue";
+import { ref, toRaw, computed } from 'vue';
 
 const allProducts = ref<Product[]>([]);
-const searchQuery = ref("");
+const searchQuery = ref('');
 
 // Use toRaw in computed for large datasets
 const filteredProducts = computed(() => {
@@ -72,7 +76,9 @@ const filteredProducts = computed(() => {
   // Use raw data for filtering
   const raw = toRaw(allProducts.value);
   return raw.filter(
-    (p) => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query),
+    (p) =>
+      p.name.toLowerCase().includes(query) ||
+      p.description.toLowerCase().includes(query),
   );
 });
 ```
@@ -80,7 +86,7 @@ const filteredProducts = computed(() => {
 **Sending to Web Workers:**
 
 ```typescript
-import { toRaw } from "vue";
+import { toRaw } from 'vue';
 
 const data = ref(complexData);
 

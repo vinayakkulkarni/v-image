@@ -13,7 +13,7 @@ When returning state from composables, use refs (or toRefs) so consumers can des
 
 ```typescript
 // composables/useCounter.ts
-import { reactive } from "vue";
+import { reactive } from 'vue';
 
 export function useCounter() {
   const state = reactive({
@@ -49,7 +49,7 @@ export function useCounter() {
 
 ```typescript
 // composables/useCounter.ts
-import { ref, computed } from "vue";
+import { ref, computed } from 'vue';
 
 export function useCounter(initial = 0) {
   const count = ref(initial);
@@ -86,12 +86,12 @@ const { count, doubleCount, increment } = useCounter();
 
 ```typescript
 // composables/useUser.ts
-import { reactive, toRefs } from "vue";
+import { reactive, toRefs } from 'vue';
 
 export function useUser() {
   const state = reactive({
-    name: "",
-    email: "",
+    name: '',
+    email: '',
     isLoading: false,
   });
 
@@ -121,7 +121,7 @@ const { name, email, isLoading, loadUser } = useUser();
 
 ```typescript
 // composables/useFetch.ts
-import { ref, shallowRef } from "vue";
+import { ref, shallowRef } from 'vue';
 
 export function useFetch<T>(url: string) {
   const data = shallowRef<T | null>(null);

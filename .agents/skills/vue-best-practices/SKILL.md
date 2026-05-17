@@ -4,7 +4,7 @@ description: Vue.js performance optimization guidelines for building fast, maint
 license: MIT
 metadata:
   author: vinayakkulkarni
-  version: "1.0.0"
+  version: '1.0.0'
 ---
 
 # Vue Best Practices

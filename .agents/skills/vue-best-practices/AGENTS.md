@@ -132,11 +132,11 @@ Heavy components that aren't needed immediately should be loaded asynchronously 
 
 ```vue
 <script setup>
-// BAD: All components loaded upfront
-import HeavyChart from "./HeavyChart.vue";
-import RichTextEditor from "./RichTextEditor.vue";
-import DataGrid from "./DataGrid.vue";
-import PdfViewer from "./PdfViewer.vue";
+  // BAD: All components loaded upfront
+  import HeavyChart from './HeavyChart.vue';
+  import RichTextEditor from './RichTextEditor.vue';
+  import DataGrid from './DataGrid.vue';
+  import PdfViewer from './PdfViewer.vue';
 </script>
 
 <template>
@@ -153,16 +153,18 @@ import PdfViewer from "./PdfViewer.vue";
 
 ```vue
 <script setup>
-import { defineAsyncComponent, ref } from "vue";
+  import { defineAsyncComponent, ref } from 'vue';
 
-// Lazy load - only fetched when rendered
-const HeavyChart = defineAsyncComponent(() => import("./HeavyChart.vue"));
+  // Lazy load - only fetched when rendered
+  const HeavyChart = defineAsyncComponent(() => import('./HeavyChart.vue'));
 
-const RichTextEditor = defineAsyncComponent(() => import("./RichTextEditor.vue"));
+  const RichTextEditor = defineAsyncComponent(
+    () => import('./RichTextEditor.vue'),
+  );
 
-const DataGrid = defineAsyncComponent(() => import("./DataGrid.vue"));
+  const DataGrid = defineAsyncComponent(() => import('./DataGrid.vue'));
 
-const PdfViewer = defineAsyncComponent(() => import("./PdfViewer.vue"));
+  const PdfViewer = defineAsyncComponent(() => import('./PdfViewer.vue'));
 </script>
 
 <template>
@@ -179,17 +181,17 @@ const PdfViewer = defineAsyncComponent(() => import("./PdfViewer.vue"));
 
 ```vue
 <script setup>
-import { defineAsyncComponent } from "vue";
-import LoadingSpinner from "./LoadingSpinner.vue";
-import ErrorDisplay from "./ErrorDisplay.vue";
+  import { defineAsyncComponent } from 'vue';
+  import LoadingSpinner from './LoadingSpinner.vue';
+  import ErrorDisplay from './ErrorDisplay.vue';
 
-const HeavyChart = defineAsyncComponent({
-  loader: () => import("./HeavyChart.vue"),
-  loadingComponent: LoadingSpinner,
-  errorComponent: ErrorDisplay,
-  delay: 200, // Show loading after 200ms
-  timeout: 10000, // Timeout after 10s
-});
+  const HeavyChart = defineAsyncComponent({
+    loader: () => import('./HeavyChart.vue'),
+    loadingComponent: LoadingSpinner,
+    errorComponent: ErrorDisplay,
+    delay: 200, // Show loading after 200ms
+    timeout: 10000, // Timeout after 10s
+  });
 </script>
 ```
 
@@ -208,9 +210,9 @@ const HeavyChart = defineAsyncComponent({
 </template>
 
 <script setup>
-import { defineAsyncComponent } from "vue";
+  import { defineAsyncComponent } from 'vue';
 
-const HeavyChart = defineAsyncComponent(() => import("./HeavyChart.vue"));
+  const HeavyChart = defineAsyncComponent(() => import('./HeavyChart.vue'));
 </script>
 ```
 
@@ -220,13 +222,13 @@ const HeavyChart = defineAsyncComponent(() => import("./HeavyChart.vue"));
 // router/index.ts
 const routes = [
   {
-    path: "/dashboard",
+    path: '/dashboard',
     // Lazy load entire route
-    component: () => import("@/views/Dashboard.vue"),
+    component: () => import('@/views/Dashboard.vue'),
   },
   {
-    path: "/analytics",
-    component: () => import("@/views/Analytics.vue"),
+    path: '/analytics',
+    component: () => import('@/views/Analytics.vue'),
     // Webpack magic comment for chunk naming
     // component: () => import(/* webpackChunkName: "analytics" */ '@/views/Analytics.vue')
   },
@@ -270,41 +272,41 @@ For simple, stateless presentational components, keep them lightweight without u
 </template>
 
 <script setup>
-import { computed, ref, watch, onMounted } from 'vue'
+  import { computed, ref, watch, onMounted } from 'vue'
 
-const props = defineProps<{
-  variant: 'primary' | 'secondary'
-  size: 'sm' | 'md' | 'lg'
-}>()
+  const props = defineProps<{
+    variant: 'primary' | 'secondary'
+    size: 'sm' | 'md' | 'lg'
+  }>()
 
-const emit = defineEmits<{
-  click: [event: MouseEvent]
-}>()
+  const emit = defineEmits<{
+    click: [event: MouseEvent]
+  }>()
 
-// Unnecessary state for a simple button
-const isHovered = ref(false)
-const clickCount = ref(0)
+  // Unnecessary state for a simple button
+  const isHovered = ref(false)
+  const clickCount = ref(0)
 
-// Unnecessary watcher
-watch(() => props.variant, () => {
-  console.log('variant changed')
-})
+  // Unnecessary watcher
+  watch(() => props.variant, () => {
+    console.log('variant changed')
+  })
 
-// Unnecessary lifecycle
-onMounted(() => {
-  console.log('mounted')
-})
+  // Unnecessary lifecycle
+  onMounted(() => {
+    console.log('mounted')
+  })
 
-const buttonClasses = computed(() => [
-  'btn',
-  `btn-${props.variant}`,
-  `btn-${props.size}`
-])
+  const buttonClasses = computed(() => [
+    'btn',
+    `btn-${props.variant}`,
+    `btn-${props.size}`
+  ])
 
-function handleClick(e: MouseEvent) {
-  clickCount.value++
-  emit('click', e)
-}
+  function handleClick(e: MouseEvent) {
+    clickCount.value++
+    emit('click', e)
+  }
 </script>
 ```
 
@@ -313,20 +315,23 @@ function handleClick(e: MouseEvent) {
 ```vue
 <!-- IconButton.vue -->
 <template>
-  <button :class="['btn', `btn-${variant}`, `btn-${size}`]" @click="$emit('click', $event)">
+  <button
+    :class="['btn', `btn-${variant}`, `btn-${size}`]"
+    @click="$emit('click', $event)"
+  >
     <slot />
   </button>
 </template>
 
 <script setup>
-defineProps<{
-  variant?: 'primary' | 'secondary'
-  size?: 'sm' | 'md' | 'lg'
-}>()
+  defineProps<{
+    variant?: 'primary' | 'secondary'
+    size?: 'sm' | 'md' | 'lg'
+  }>()
 
-defineEmits<{
-  click: [event: MouseEvent]
-}>()
+  defineEmits<{
+    click: [event: MouseEvent]
+  }>()
 </script>
 ```
 
@@ -341,13 +346,13 @@ defineEmits<{
 </template>
 
 <script setup>
-withDefaults(defineProps<{
-  variant?: 'primary' | 'secondary'
-  size?: 'sm' | 'md' | 'lg'
-}>(), {
-  variant: 'primary',
-  size: 'md'
-})
+  withDefaults(defineProps<{
+    variant?: 'primary' | 'secondary'
+    size?: 'sm' | 'md' | 'lg'
+  }>(), {
+    variant: 'primary',
+    size: 'md'
+  })
 </script>
 ```
 
@@ -355,7 +360,7 @@ withDefaults(defineProps<{
 
 ```typescript
 // For components with very dynamic rendering logic
-import { h } from "vue";
+import { h } from 'vue';
 
 export default function DynamicHeading(props: { level: number }, { slots }) {
   return h(`h${props.level}`, slots.default?.());
@@ -366,7 +371,7 @@ export default function DynamicHeading(props: { level: number }, { slots }) {
 
 ```tsx
 // DynamicList.tsx
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   props: {
@@ -423,10 +428,10 @@ Use `<KeepAlive>` to cache component instances when switching between them, pres
 </template>
 
 <script setup>
-import { ref } from "vue";
+  import { ref } from 'vue';
 
-const currentTab = ref("search");
-// User's search input is lost when switching tabs!
+  const currentTab = ref('search');
+  // User's search input is lost when switching tabs!
 </script>
 ```
 
@@ -446,18 +451,18 @@ const currentTab = ref("search");
 </template>
 
 <script setup>
-import { ref, computed, shallowRef } from "vue";
-import SearchForm from "./SearchForm.vue";
-import ResultsTable from "./ResultsTable.vue";
+  import { ref, computed, shallowRef } from 'vue';
+  import SearchForm from './SearchForm.vue';
+  import ResultsTable from './ResultsTable.vue';
 
-const currentTab = ref("search");
+  const currentTab = ref('search');
 
-const tabs = {
-  search: SearchForm,
-  results: ResultsTable,
-};
+  const tabs = {
+    search: SearchForm,
+    results: ResultsTable,
+  };
 
-const currentTabComponent = computed(() => tabs[currentTab.value]);
+  const currentTabComponent = computed(() => tabs[currentTab.value]);
 </script>
 ```
 
@@ -497,21 +502,21 @@ const currentTabComponent = computed(() => tabs[currentTab.value]);
 
 ```vue
 <script setup>
-import { onActivated, onDeactivated } from "vue";
+  import { onActivated, onDeactivated } from 'vue';
 
-// Called when component is inserted from cache
-onActivated(() => {
-  console.log("Component activated from cache");
-  // Refresh data if needed
-  fetchLatestData();
-});
+  // Called when component is inserted from cache
+  onActivated(() => {
+    console.log('Component activated from cache');
+    // Refresh data if needed
+    fetchLatestData();
+  });
 
-// Called when component is removed to cache
-onDeactivated(() => {
-  console.log("Component deactivated to cache");
-  // Cleanup if needed
-  pauseVideoPlayback();
-});
+  // Called when component is removed to cache
+  onDeactivated(() => {
+    console.log('Component deactivated to cache');
+    // Cleanup if needed
+    pauseVideoPlayback();
+  });
 </script>
 ```
 
@@ -569,10 +574,10 @@ For large lists where each item is expensive to render, use `v-memo` to skip re-
 </template>
 
 <script setup>
-import { ref } from "vue";
+  import { ref } from 'vue';
 
-const items = ref(generateLargeList(1000));
-const selectedId = ref(null);
+  const items = ref(generateLargeList(1000));
+  const selectedId = ref(null);
 </script>
 ```
 
@@ -595,10 +600,10 @@ const selectedId = ref(null);
 </template>
 
 <script setup>
-import { ref } from "vue";
+  import { ref } from 'vue';
 
-const items = ref(generateLargeList(1000));
-const selectedId = ref(null);
+  const items = ref(generateLargeList(1000));
+  const selectedId = ref(null);
 </script>
 ```
 
@@ -706,7 +711,7 @@ Content that never changes after initial render should use `v-once` to skip all 
 </template>
 
 <script setup>
-const appTitle = "My App"; // Never changes
+  const appTitle = 'My App'; // Never changes
 </script>
 ```
 
@@ -729,7 +734,7 @@ const appTitle = "My App"; // Never changes
 </template>
 
 <script setup>
-const appTitle = "My App";
+  const appTitle = 'My App';
 </script>
 ```
 
@@ -811,7 +816,7 @@ When returning state from composables, use refs (or toRefs) so consumers can des
 
 ```typescript
 // composables/useCounter.ts
-import { reactive } from "vue";
+import { reactive } from 'vue';
 
 export function useCounter() {
   const state = reactive({
@@ -847,7 +852,7 @@ export function useCounter() {
 
 ```typescript
 // composables/useCounter.ts
-import { ref, computed } from "vue";
+import { ref, computed } from 'vue';
 
 export function useCounter(initial = 0) {
   const count = ref(initial);
@@ -884,12 +889,12 @@ const { count, doubleCount, increment } = useCounter();
 
 ```typescript
 // composables/useUser.ts
-import { reactive, toRefs } from "vue";
+import { reactive, toRefs } from 'vue';
 
 export function useUser() {
   const state = reactive({
-    name: "",
-    email: "",
+    name: '',
+    email: '',
     isLoading: false,
   });
 
@@ -919,7 +924,7 @@ const { name, email, isLoading, loadUser } = useUser();
 
 ```typescript
 // composables/useFetch.ts
-import { ref, shallowRef } from "vue";
+import { ref, shallowRef } from 'vue';
 
 export function useFetch<T>(url: string) {
   const data = shallowRef<T | null>(null);
@@ -1000,8 +1005,8 @@ export function useUser() {
   }
 
   // User preferences (different concern!)
-  const theme = ref("light");
-  const language = ref("en");
+  const theme = ref('light');
+  const language = ref('en');
   function setTheme(t) {
     theme.value = t;
   }
@@ -1057,17 +1062,18 @@ export function useAuth() {
 ```typescript
 // composables/useUserPreferences.ts
 export function useUserPreferences() {
-  const theme = ref<"light" | "dark">("light");
-  const language = ref("en");
+  const theme = ref<'light' | 'dark'>('light');
+  const language = ref('en');
 
-  function setTheme(newTheme: "light" | "dark") {
+  function setTheme(newTheme: 'light' | 'dark') {
     theme.value = newTheme;
-    localStorage.setItem("theme", newTheme);
+    localStorage.setItem('theme', newTheme);
   }
 
   function loadPreferences() {
-    theme.value = (localStorage.getItem("theme") as "light" | "dark") || "light";
-    language.value = localStorage.getItem("language") || "en";
+    theme.value =
+      (localStorage.getItem('theme') as 'light' | 'dark') || 'light';
+    language.value = localStorage.getItem('language') || 'en';
   }
 
   return { theme, language, setTheme, loadPreferences };
@@ -1102,13 +1108,13 @@ export function useNotifications() {
 
 ```vue
 <script setup>
-import { useAuth } from "@/composables/useAuth";
-import { useUserPreferences } from "@/composables/useUserPreferences";
-import { useNotifications } from "@/composables/useNotifications";
+  import { useAuth } from '@/composables/useAuth';
+  import { useUserPreferences } from '@/composables/useUserPreferences';
+  import { useNotifications } from '@/composables/useNotifications';
 
-const { user, isAuthenticated, logout } = useAuth();
-const { theme, setTheme } = useUserPreferences();
-const { notifications, add: addNotification } = useNotifications();
+  const { user, isAuthenticated, logout } = useAuth();
+  const { theme, setTheme } = useUserPreferences();
+  const { notifications, add: addNotification } = useNotifications();
 </script>
 ```
 
@@ -1137,7 +1143,11 @@ export function useAsyncState<T>(asyncFn: () => Promise<T>, initialState: T) {
 }
 
 // Usage
-const { state: users, isLoading, execute: loadUsers } = useAsyncState(() => api.fetchUsers(), []);
+const {
+  state: users,
+  isLoading,
+  execute: loadUsers,
+} = useAsyncState(() => api.fetchUsers(), []);
 ```
 
 Reference: [Composables](https://vuejs.org/guide/reusability/composables.html)
@@ -1170,18 +1180,18 @@ Computed properties are cached based on their reactive dependencies. Methods are
 </template>
 
 <script setup>
-import { ref } from 'vue'
+  import { ref } from 'vue'
 
-const items = ref([...])
-const searchQuery = ref('')
+  const items = ref([...])
+  const searchQuery = ref('')
 
-// BAD: Recalculates every time it's called
-function getFilteredItems() {
-  console.log('Filtering...') // Logs on every render!
-  return items.value.filter(item =>
-    item.name.includes(searchQuery.value)
-  )
-}
+  // BAD: Recalculates every time it's called
+  function getFilteredItems() {
+    console.log('Filtering...') // Logs on every render!
+    return items.value.filter(item =>
+      item.name.includes(searchQuery.value)
+    )
+  }
 </script>
 ```
 
@@ -1203,18 +1213,18 @@ function getFilteredItems() {
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+  import { ref, computed } from 'vue'
 
-const items = ref([...])
-const searchQuery = ref('')
+  const items = ref([...])
+  const searchQuery = ref('')
 
-// GOOD: Only recalculates when items or searchQuery changes
-const filteredItems = computed(() => {
-  console.log('Filtering...') // Only logs when deps change
-  return items.value.filter(item =>
-    item.name.includes(searchQuery.value)
-  )
-})
+  // GOOD: Only recalculates when items or searchQuery changes
+  const filteredItems = computed(() => {
+    console.log('Filtering...') // Only logs when deps change
+    return items.value.filter(item =>
+      item.name.includes(searchQuery.value)
+    )
+  })
 </script>
 ```
 
@@ -1233,18 +1243,18 @@ const filteredItems = computed(() => {
 
 ```vue
 <script setup>
-import { computed } from 'vue'
+  import { computed } from 'vue'
 
-const items = ref([...])
+  const items = ref([...])
 
-// If you need arguments, return a function from computed
-// But consider if this defeats caching benefits
-const getItemById = computed(() => {
-  // Build a Map once when items change
-  const map = new Map(items.value.map(item => [item.id, item]))
-  // Return lookup function
-  return (id: string) => map.get(id)
-})
+  // If you need arguments, return a function from computed
+  // But consider if this defeats caching benefits
+  const getItemById = computed(() => {
+    // Build a Map once when items change
+    const map = new Map(items.value.map(item => [item.id, item]))
+    // Return lookup function
+    return (id: string) => map.get(id)
+  })
 </script>
 
 <template>
@@ -1256,24 +1266,24 @@ const getItemById = computed(() => {
 
 ```vue
 <script setup>
-import { ref, computed } from 'vue'
+  import { ref, computed } from 'vue'
 
-const items = ref([...])
-const searchQuery = ref('')
-const sortOrder = ref('asc')
+  const items = ref([...])
+  const searchQuery = ref('')
+  const sortOrder = ref('asc')
 
-// Chain computeds for complex transformations
-const filteredItems = computed(() =>
-  items.value.filter(item => item.name.includes(searchQuery.value))
-)
-
-const sortedItems = computed(() =>
-  [...filteredItems.value].sort((a, b) =>
-    sortOrder.value === 'asc'
-      ? a.name.localeCompare(b.name)
-      : b.name.localeCompare(a.name)
+  // Chain computeds for complex transformations
+  const filteredItems = computed(() =>
+    items.value.filter(item => item.name.includes(searchQuery.value))
   )
-)
+
+  const sortedItems = computed(() =>
+    [...filteredItems.value].sort((a, b) =>
+      sortOrder.value === 'asc'
+        ? a.name.localeCompare(b.name)
+        : b.name.localeCompare(a.name)
+    )
+  )
 </script>
 ```
 
@@ -1293,23 +1303,23 @@ Computed properties recalculate when ANY dependency changes. Keep dependencies m
 
 ```vue
 <script setup>
-import { reactive, computed } from "vue";
+  import { reactive, computed } from 'vue';
 
-const state = reactive({
-  user: {
-    name: "John",
-    email: "john@example.com",
-    preferences: { theme: "dark", notifications: true },
-    lastLogin: new Date(),
-    sessionCount: 42,
-  },
-});
+  const state = reactive({
+    user: {
+      name: 'John',
+      email: 'john@example.com',
+      preferences: { theme: 'dark', notifications: true },
+      lastLogin: new Date(),
+      sessionCount: 42,
+    },
+  });
 
-// BAD: Depends on entire user object
-// Recalculates when ANY user property changes
-const greeting = computed(() => {
-  return `Hello, ${state.user.name}!`;
-});
+  // BAD: Depends on entire user object
+  // Recalculates when ANY user property changes
+  const greeting = computed(() => {
+    return `Hello, ${state.user.name}!`;
+  });
 </script>
 ```
 
@@ -1317,23 +1327,23 @@ const greeting = computed(() => {
 
 ```vue
 <script setup>
-import { reactive, computed } from "vue";
+  import { reactive, computed } from 'vue';
 
-const state = reactive({
-  user: {
-    name: "John",
-    email: "john@example.com",
-    preferences: { theme: "dark", notifications: true },
-    lastLogin: new Date(),
-    sessionCount: 42,
-  },
-});
+  const state = reactive({
+    user: {
+      name: 'John',
+      email: 'john@example.com',
+      preferences: { theme: 'dark', notifications: true },
+      lastLogin: new Date(),
+      sessionCount: 42,
+    },
+  });
 
-// GOOD: Only depends on user.name
-// Only recalculates when name changes
-const greeting = computed(() => {
-  return `Hello, ${state.user.name}!`;
-});
+  // GOOD: Only depends on user.name
+  // Only recalculates when name changes
+  const greeting = computed(() => {
+    return `Hello, ${state.user.name}!`;
+  });
 </script>
 ```
 
@@ -1341,24 +1351,24 @@ const greeting = computed(() => {
 
 ```vue
 <script setup>
-import { ref, computed } from 'vue'
+  import { ref, computed } from 'vue'
 
-const items = ref<Item[]>([...])
+  const items = ref<Item[]>([...])
 
-// BAD: Depends on entire items array
-// Recalculates when ANY item changes
-const expensiveComputed = computed(() => {
-  return items.value.some(item => item.status === 'active')
-})
+  // BAD: Depends on entire items array
+  // Recalculates when ANY item changes
+  const expensiveComputed = computed(() => {
+    return items.value.some(item => item.status === 'active')
+  })
 
-// BETTER: Derive a simpler dependency first
-const activeStatuses = computed(() =>
-  items.value.map(item => item.status)
-)
+  // BETTER: Derive a simpler dependency first
+  const activeStatuses = computed(() =>
+    items.value.map(item => item.status)
+  )
 
-const hasActiveItem = computed(() =>
-  activeStatuses.value.includes('active')
-)
+  const hasActiveItem = computed(() =>
+    activeStatuses.value.includes('active')
+  )
 </script>
 ```
 
@@ -1366,17 +1376,17 @@ const hasActiveItem = computed(() =>
 
 ```vue
 <script setup>
-import { ref, computed } from "vue";
+  import { ref, computed } from 'vue';
 
-const data = ref({ a: 1, b: 2, c: 3 });
+  const data = ref({ a: 1, b: 2, c: 3 });
 
-// BAD: Overlapping dependencies cause extra recalculations
-const sumAB = computed(() => data.value.a + data.value.b);
-const sumBC = computed(() => data.value.b + data.value.c);
-const total = computed(() => sumAB.value + sumBC.value); // b counted twice
+  // BAD: Overlapping dependencies cause extra recalculations
+  const sumAB = computed(() => data.value.a + data.value.b);
+  const sumBC = computed(() => data.value.b + data.value.c);
+  const total = computed(() => sumAB.value + sumBC.value); // b counted twice
 
-// BETTER: Direct calculation
-const total = computed(() => data.value.a + data.value.b + data.value.c);
+  // BETTER: Direct calculation
+  const total = computed(() => data.value.a + data.value.b + data.value.c);
 </script>
 ```
 
@@ -1384,25 +1394,25 @@ const total = computed(() => data.value.a + data.value.b + data.value.c);
 
 ```vue
 <script setup>
-import { ref, computed } from "vue";
+  import { ref, computed } from 'vue';
 
-// BAD: One reactive object
-const form = reactive({
-  name: "",
-  email: "",
-  message: "",
-});
+  // BAD: One reactive object
+  const form = reactive({
+    name: '',
+    email: '',
+    message: '',
+  });
 
-// Any change triggers this recompute
-const isValid = computed(() => form.name && form.email);
+  // Any change triggers this recompute
+  const isValid = computed(() => form.name && form.email);
 
-// GOOD: Separate refs for truly independent values
-const name = ref("");
-const email = ref("");
-const message = ref("");
+  // GOOD: Separate refs for truly independent values
+  const name = ref('');
+  const email = ref('');
+  const message = ref('');
 
-// Only depends on name and email, not message
-const isValid = computed(() => name.value && email.value);
+  // Only depends on name and email, not message
+  const isValid = computed(() => name.value && email.value);
 </script>
 ```
 
@@ -1421,11 +1431,11 @@ Destructuring a reactive object breaks the reactivity connection. The destructur
 **Incorrect (loses reactivity):**
 
 ```typescript
-import { reactive } from "vue";
+import { reactive } from 'vue';
 
 const state = reactive({
   count: 0,
-  name: "Vue",
+  name: 'Vue',
 });
 
 // BAD: These are now plain values, not reactive!
@@ -1437,15 +1447,15 @@ count++; // Just increments a local variable
 
 ```vue
 <script setup>
-import { reactive } from "vue";
+  import { reactive } from 'vue';
 
-const user = reactive({
-  firstName: "John",
-  lastName: "Doe",
-});
+  const user = reactive({
+    firstName: 'John',
+    lastName: 'Doe',
+  });
 
-// BAD: Destructured in setup - loses reactivity
-const { firstName, lastName } = user;
+  // BAD: Destructured in setup - loses reactivity
+  const { firstName, lastName } = user;
 </script>
 
 <template>
@@ -1457,26 +1467,26 @@ const { firstName, lastName } = user;
 **Correct (maintain reactivity):**
 
 ```typescript
-import { reactive } from "vue";
+import { reactive } from 'vue';
 
 const state = reactive({
   count: 0,
-  name: "Vue",
+  name: 'Vue',
 });
 
 // Access properties directly
 state.count++;
-state.name = "Vue 3";
+state.name = 'Vue 3';
 ```
 
 ```vue
 <script setup>
-import { reactive } from "vue";
+  import { reactive } from 'vue';
 
-const user = reactive({
-  firstName: "John",
-  lastName: "Doe",
-});
+  const user = reactive({
+    firstName: 'John',
+    lastName: 'Doe',
+  });
 </script>
 
 <template>
@@ -1488,11 +1498,11 @@ const user = reactive({
 **If you need to destructure, use toRefs():**
 
 ```typescript
-import { reactive, toRefs } from "vue";
+import { reactive, toRefs } from 'vue';
 
 const state = reactive({
   count: 0,
-  name: "Vue",
+  name: 'Vue',
 });
 
 // toRefs() converts each property to a ref
@@ -1517,13 +1527,15 @@ When performing read-only operations (filtering, searching, serialization) on la
 **Incorrect (proxy overhead in loops):**
 
 ```typescript
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const items = ref<Item[]>(generateLargeDataset(10000));
 
 function searchItems(query: string) {
   // BAD: Each access goes through reactive proxy
-  return items.value.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()));
+  return items.value.filter((item) =>
+    item.name.toLowerCase().includes(query.toLowerCase()),
+  );
 }
 
 function serializeData() {
@@ -1535,14 +1547,16 @@ function serializeData() {
 **Correct (using toRaw):**
 
 ```typescript
-import { ref, toRaw } from "vue";
+import { ref, toRaw } from 'vue';
 
 const items = ref<Item[]>(generateLargeDataset(10000));
 
 function searchItems(query: string) {
   // Get raw array - no proxy overhead
   const rawItems = toRaw(items.value);
-  return rawItems.filter((item) => item.name.toLowerCase().includes(query.toLowerCase()));
+  return rawItems.filter((item) =>
+    item.name.toLowerCase().includes(query.toLowerCase()),
+  );
 }
 
 function serializeData() {
@@ -1564,10 +1578,10 @@ function serializeData() {
 **Performance-critical search example:**
 
 ```typescript
-import { ref, toRaw, computed } from "vue";
+import { ref, toRaw, computed } from 'vue';
 
 const allProducts = ref<Product[]>([]);
-const searchQuery = ref("");
+const searchQuery = ref('');
 
 // Use toRaw in computed for large datasets
 const filteredProducts = computed(() => {
@@ -1577,7 +1591,9 @@ const filteredProducts = computed(() => {
   // Use raw data for filtering
   const raw = toRaw(allProducts.value);
   return raw.filter(
-    (p) => p.name.toLowerCase().includes(query) || p.description.toLowerCase().includes(query),
+    (p) =>
+      p.name.toLowerCase().includes(query) ||
+      p.description.toLowerCase().includes(query),
   );
 });
 ```
@@ -1585,7 +1601,7 @@ const filteredProducts = computed(() => {
 **Sending to Web Workers:**
 
 ```typescript
-import { toRaw } from "vue";
+import { toRaw } from 'vue';
 
 const data = ref(complexData);
 
@@ -1621,11 +1637,11 @@ const state = reactive({ count: 0 });
 **Correct (ref for primitives):**
 
 ```typescript
-import { ref } from "vue";
+import { ref } from 'vue';
 
 // Use ref() for primitives
 const count = ref(0);
-const name = ref("");
+const name = ref('');
 const isLoading = ref(false);
 
 // Access with .value in script, auto-unwrapped in template
@@ -1635,20 +1651,20 @@ count.value++;
 **Correct (reactive for objects):**
 
 ```typescript
-import { reactive } from "vue";
+import { reactive } from 'vue';
 
 // Use reactive() for objects with multiple properties
 const user = reactive({
-  name: "John",
-  email: "john@example.com",
+  name: 'John',
+  email: 'john@example.com',
   preferences: {
-    theme: "dark",
+    theme: 'dark',
   },
 });
 
 // Direct property access
-user.name = "Jane";
-user.preferences.theme = "light";
+user.name = 'Jane';
+user.preferences.theme = 'light';
 ```
 
 **When to use which:**
@@ -1675,14 +1691,14 @@ When storing large objects or arrays where you only need to track replacement (n
 **Incorrect (unnecessary deep reactivity):**
 
 ```typescript
-import { ref } from "vue";
+import { ref } from 'vue';
 
 // BAD: Vue makes every nested property reactive
 // For 10,000 items, this creates 10,000+ reactive proxies
 const largeDataset = ref<DataItem[]>([]);
 
 async function fetchData() {
-  const response = await fetch("/api/data");
+  const response = await fetch('/api/data');
   // Every property of every item becomes reactive
   largeDataset.value = await response.json();
 }
@@ -1691,13 +1707,13 @@ async function fetchData() {
 **Correct (shallow reactivity):**
 
 ```typescript
-import { shallowRef, triggerRef } from "vue";
+import { shallowRef, triggerRef } from 'vue';
 
 // Only the .value assignment is tracked, not nested mutations
 const largeDataset = shallowRef<DataItem[]>([]);
 
 async function fetchData() {
-  const response = await fetch("/api/data");
+  const response = await fetch('/api/data');
   // Fast: just replaces the value, no deep proxy creation
   largeDataset.value = await response.json();
 }
@@ -1722,19 +1738,19 @@ function updateItem(index: number, newData: Partial<DataItem>) {
 **shallowReactive for objects:**
 
 ```typescript
-import { shallowReactive } from "vue";
+import { shallowReactive } from 'vue';
 
 // Only top-level properties are reactive
 const state = shallowReactive({
-  user: { name: "John", email: "john@example.com" },
-  settings: { theme: "dark" },
+  user: { name: 'John', email: 'john@example.com' },
+  settings: { theme: 'dark' },
 });
 
 // This triggers updates
-state.user = { name: "Jane", email: "jane@example.com" };
+state.user = { name: 'Jane', email: 'jane@example.com' };
 
 // This does NOT trigger updates (nested mutation)
-state.user.name = "Jane"; // Won't cause re-render!
+state.user.name = 'Jane'; // Won't cause re-render!
 ```
 
 **Performance comparison:**
@@ -1763,7 +1779,7 @@ When you need to destructure a reactive object (e.g., returning from a composabl
 
 ```typescript
 // composables/useCounter.ts
-import { reactive } from "vue";
+import { reactive } from 'vue';
 
 export function useCounter() {
   const state = reactive({
@@ -1791,7 +1807,7 @@ const { count, increment } = useCounter();
 
 ```typescript
 // composables/useCounter.ts
-import { reactive, toRefs } from "vue";
+import { reactive, toRefs } from 'vue';
 
 export function useCounter() {
   const state = reactive({
@@ -1819,7 +1835,7 @@ const { count, doubleCount, increment } = useCounter();
 
 ```typescript
 // composables/useCounter.ts
-import { ref, computed } from "vue";
+import { ref, computed } from 'vue';
 
 export function useCounter() {
   const count = ref(0);
@@ -1840,15 +1856,15 @@ export function useCounter() {
 **Use toRef() for single properties:**
 
 ```typescript
-import { reactive, toRef } from "vue";
+import { reactive, toRef } from 'vue';
 
 const state = reactive({
   count: 0,
-  name: "Vue",
+  name: 'Vue',
 });
 
 // Extract single property as ref
-const countRef = toRef(state, "count");
+const countRef = toRef(state, 'count');
 countRef.value++; // Updates state.count
 ```
 
@@ -1856,15 +1872,15 @@ countRef.value++; // Updates state.count
 
 ```vue
 <script setup>
-import { toRefs } from 'vue'
+  import { toRefs } from 'vue'
 
-const props = defineProps<{
-  title: string
-  count: number
-}>()
+  const props = defineProps<{
+    title: string
+    count: number
+  }>()
 
-// Convert props to refs for use in composables
-const { title, count } = toRefs(props)
+  // Convert props to refs for use in composables
+  const { title, count } = toRefs(props)
 </script>
 ```
 
@@ -1907,16 +1923,16 @@ When `v-if` and `v-for` are on the same element, `v-if` has higher priority in V
 </template>
 
 <script setup>
-import { computed } from 'vue'
+  import { computed } from 'vue'
 
-const props = defineProps<{
-  items: Item[]
-}>()
+  const props = defineProps<{
+    items: Item[]
+  }>()
 
-// Filter once, not per-render
-const activeItems = computed(() =>
-  props.items.filter(item => item.isActive)
-)
+  // Filter once, not per-render
+  const activeItems = computed(() =>
+    props.items.filter(item => item.isActive)
+  )
 </script>
 ```
 
@@ -1951,11 +1967,13 @@ const activeItems = computed(() =>
 </template>
 
 <script setup>
-import { computed } from "vue";
+  import { computed } from 'vue';
 
-const visibleActiveItems = computed(() =>
-  items.value.filter((item) => item.isActive).filter((item) => item.isVisible),
-);
+  const visibleActiveItems = computed(() =>
+    items.value
+      .filter((item) => item.isActive)
+      .filter((item) => item.isVisible),
+  );
 </script>
 ```
 
@@ -1972,9 +1990,11 @@ const visibleActiveItems = computed(() =>
 </template>
 
 <script setup>
-import { computed } from "vue";
+  import { computed } from 'vue';
 
-const activeItems = computed(() => items.value.filter((item) => item.isActive));
+  const activeItems = computed(() =>
+    items.value.filter((item) => item.isActive),
+  );
 </script>
 ```
 
@@ -2051,7 +2071,7 @@ Keys help Vue track element identity for efficient updates. Without proper keys,
 **For items without IDs, generate stable keys:**
 
 ```typescript
-import { ref } from "vue";
+import { ref } from 'vue';
 
 interface Item {
   id: string;
@@ -2093,7 +2113,9 @@ async function loadItems() {
 ```vue
 <template>
   <!-- OK: Static list that never reorders/filters -->
-  <li v-for="(step, index) in staticSteps" :key="index">Step {{ index + 1 }}: {{ step }}</li>
+  <li v-for="(step, index) in staticSteps" :key="index">
+    Step {{ index + 1 }}: {{ step }}
+  </li>
 
   <!-- OK: Simple display without form inputs -->
   <span v-for="(tag, index) in tags" :key="index">
@@ -2141,9 +2163,9 @@ Reference: [List Rendering - key](https://vuejs.org/guide/essentials/list.html#m
 </template>
 
 <script setup>
-import { ref } from "vue";
-const showDetails = ref(false);
-// User toggles this rapidly...
+  import { ref } from 'vue';
+  const showDetails = ref(false);
+  // User toggles this rapidly...
 </script>
 ```
 
@@ -2162,8 +2184,8 @@ const showDetails = ref(false);
 </template>
 
 <script setup>
-import { ref } from "vue";
-const showDetails = ref(false);
+  import { ref } from 'vue';
+  const showDetails = ref(false);
 </script>
 ```
 
@@ -2202,14 +2224,14 @@ const showDetails = ref(false);
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+  import { ref, watch } from 'vue';
 
-const isOpen = ref(false);
-const hasBeenOpened = ref(false);
+  const isOpen = ref(false);
+  const hasBeenOpened = ref(false);
 
-watch(isOpen, (open) => {
-  if (open) hasBeenOpened.value = true;
-});
+  watch(isOpen, (open) => {
+    if (open) hasBeenOpened.value = true;
+  });
 </script>
 ```
 
@@ -2260,27 +2282,27 @@ Deep watchers traverse entire object trees on every change. For large objects, t
 
 ```vue
 <script setup>
-import { reactive, watch } from "vue";
+  import { reactive, watch } from 'vue';
 
-const state = reactive({
-  users: [], // Could be 1000+ users
-  settings: {
-    /* nested settings */
-  },
-  cache: {
-    /* large cache object */
-  },
-});
+  const state = reactive({
+    users: [], // Could be 1000+ users
+    settings: {
+      /* nested settings */
+    },
+    cache: {
+      /* large cache object */
+    },
+  });
 
-// BAD: Deep traverses entire state tree on ANY change
-watch(
-  () => state,
-  (newState) => {
-    console.log("State changed");
-    saveToLocalStorage(newState);
-  },
-  { deep: true },
-);
+  // BAD: Deep traverses entire state tree on ANY change
+  watch(
+    () => state,
+    (newState) => {
+      console.log('State changed');
+      saveToLocalStorage(newState);
+    },
+    { deep: true },
+  );
 </script>
 ```
 
@@ -2288,29 +2310,29 @@ watch(
 
 ```vue
 <script setup>
-import { reactive, watch } from "vue";
+  import { reactive, watch } from 'vue';
 
-const state = reactive({
-  users: [],
-  settings: { theme: "dark", language: "en" },
-  cache: {},
-});
+  const state = reactive({
+    users: [],
+    settings: { theme: 'dark', language: 'en' },
+    cache: {},
+  });
 
-// GOOD: Watch only what you need
-watch(
-  () => state.settings.theme,
-  (newTheme) => {
-    document.body.className = newTheme;
-  },
-);
+  // GOOD: Watch only what you need
+  watch(
+    () => state.settings.theme,
+    (newTheme) => {
+      document.body.className = newTheme;
+    },
+  );
 
-// GOOD: Watch multiple specific properties
-watch(
-  () => [state.settings.theme, state.settings.language],
-  ([theme, language]) => {
-    updateUIPreferences(theme, language);
-  },
-);
+  // GOOD: Watch multiple specific properties
+  watch(
+    () => [state.settings.theme, state.settings.language],
+    ([theme, language]) => {
+      updateUIPreferences(theme, language);
+    },
+  );
 </script>
 ```
 
@@ -2318,34 +2340,34 @@ watch(
 
 ```vue
 <script setup>
-import { reactive, watch } from "vue";
+  import { reactive, watch } from 'vue';
 
-const user = reactive({
-  name: "John",
-  email: "john@example.com",
-  profile: {
-    avatar: "url",
-    bio: "text",
-  },
-});
+  const user = reactive({
+    name: 'John',
+    email: 'john@example.com',
+    profile: {
+      avatar: 'url',
+      bio: 'text',
+    },
+  });
 
-// Watch for object replacement (shallow)
-watch(
-  () => user.profile,
-  (newProfile) => {
-    // Only triggers when profile is replaced entirely
-    saveProfile(newProfile);
-  },
-);
+  // Watch for object replacement (shallow)
+  watch(
+    () => user.profile,
+    (newProfile) => {
+      // Only triggers when profile is replaced entirely
+      saveProfile(newProfile);
+    },
+  );
 
-// If you need deep but only for profile
-watch(
-  () => user.profile,
-  (newProfile) => {
-    saveProfile(newProfile);
-  },
-  { deep: true }, // Deep only on profile, not entire user
-);
+  // If you need deep but only for profile
+  watch(
+    () => user.profile,
+    (newProfile) => {
+      saveProfile(newProfile);
+    },
+    { deep: true }, // Deep only on profile, not entire user
+  );
 </script>
 ```
 
@@ -2353,21 +2375,21 @@ watch(
 
 ```vue
 <script setup>
-import { reactive, watchEffect } from "vue";
+  import { reactive, watchEffect } from 'vue';
 
-const settings = reactive({
-  theme: "dark",
-  fontSize: 14,
-  language: "en",
-});
+  const settings = reactive({
+    theme: 'dark',
+    fontSize: 14,
+    language: 'en',
+  });
 
-// Automatically tracks only accessed properties
-watchEffect(() => {
-  // Only re-runs when theme or fontSize changes
-  // NOT when language changes (not accessed here)
-  document.body.style.fontSize = `${settings.fontSize}px`;
-  document.body.className = settings.theme;
-});
+  // Automatically tracks only accessed properties
+  watchEffect(() => {
+    // Only re-runs when theme or fontSize changes
+    // NOT when language changes (not accessed here)
+    document.body.style.fontSize = `${settings.fontSize}px`;
+    document.body.className = settings.theme;
+  });
 </script>
 ```
 
@@ -2375,24 +2397,24 @@ watchEffect(() => {
 
 ```vue
 <script setup>
-import { reactive, computed, watch } from "vue";
+  import { reactive, computed, watch } from 'vue';
 
-const items = reactive([
-  /* large array */
-]);
+  const items = reactive([
+    /* large array */
+  ]);
 
-// Compute a simple value to watch
-const itemCount = computed(() => items.length);
-const hasActiveItem = computed(() => items.some((item) => item.active));
+  // Compute a simple value to watch
+  const itemCount = computed(() => items.length);
+  const hasActiveItem = computed(() => items.some((item) => item.active));
 
-// Watch the simple computed value
-watch(itemCount, (count) => {
-  console.log(`Item count changed to ${count}`);
-});
+  // Watch the simple computed value
+  watch(itemCount, (count) => {
+    console.log(`Item count changed to ${count}`);
+  });
 
-watch(hasActiveItem, (hasActive) => {
-  if (hasActive) notifyUser();
-});
+  watch(hasActiveItem, (hasActive) => {
+    if (hasActive) notifyUser();
+  });
 </script>
 ```
 

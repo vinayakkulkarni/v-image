@@ -12,14 +12,14 @@ When storing large objects or arrays where you only need to track replacement (n
 **Incorrect (unnecessary deep reactivity):**
 
 ```typescript
-import { ref } from "vue";
+import { ref } from 'vue';
 
 // BAD: Vue makes every nested property reactive
 // For 10,000 items, this creates 10,000+ reactive proxies
 const largeDataset = ref<DataItem[]>([]);
 
 async function fetchData() {
-  const response = await fetch("/api/data");
+  const response = await fetch('/api/data');
   // Every property of every item becomes reactive
   largeDataset.value = await response.json();
 }
@@ -28,13 +28,13 @@ async function fetchData() {
 **Correct (shallow reactivity):**
 
 ```typescript
-import { shallowRef, triggerRef } from "vue";
+import { shallowRef, triggerRef } from 'vue';
 
 // Only the .value assignment is tracked, not nested mutations
 const largeDataset = shallowRef<DataItem[]>([]);
 
 async function fetchData() {
-  const response = await fetch("/api/data");
+  const response = await fetch('/api/data');
   // Fast: just replaces the value, no deep proxy creation
   largeDataset.value = await response.json();
 }
@@ -59,19 +59,19 @@ function updateItem(index: number, newData: Partial<DataItem>) {
 **shallowReactive for objects:**
 
 ```typescript
-import { shallowReactive } from "vue";
+import { shallowReactive } from 'vue';
 
 // Only top-level properties are reactive
 const state = shallowReactive({
-  user: { name: "John", email: "john@example.com" },
-  settings: { theme: "dark" },
+  user: { name: 'John', email: 'john@example.com' },
+  settings: { theme: 'dark' },
 });
 
 // This triggers updates
-state.user = { name: "Jane", email: "jane@example.com" };
+state.user = { name: 'Jane', email: 'jane@example.com' };
 
 // This does NOT trigger updates (nested mutation)
-state.user.name = "Jane"; // Won't cause re-render!
+state.user.name = 'Jane'; // Won't cause re-render!
 ```
 
 **Performance comparison:**

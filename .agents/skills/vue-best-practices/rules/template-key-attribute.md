@@ -60,7 +60,7 @@ Keys help Vue track element identity for efficient updates. Without proper keys,
 **For items without IDs, generate stable keys:**
 
 ```typescript
-import { ref } from "vue";
+import { ref } from 'vue';
 
 interface Item {
   id: string;
@@ -102,7 +102,9 @@ async function loadItems() {
 ```vue
 <template>
   <!-- OK: Static list that never reorders/filters -->
-  <li v-for="(step, index) in staticSteps" :key="index">Step {{ index + 1 }}: {{ step }}</li>
+  <li v-for="(step, index) in staticSteps" :key="index">
+    Step {{ index + 1 }}: {{ step }}
+  </li>
 
   <!-- OK: Simple display without form inputs -->
   <span v-for="(tag, index) in tags" :key="index">

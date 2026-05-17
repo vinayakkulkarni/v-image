@@ -27,10 +27,10 @@ For large lists where each item is expensive to render, use `v-memo` to skip re-
 </template>
 
 <script setup>
-import { ref } from "vue";
+  import { ref } from 'vue';
 
-const items = ref(generateLargeList(1000));
-const selectedId = ref(null);
+  const items = ref(generateLargeList(1000));
+  const selectedId = ref(null);
 </script>
 ```
 
@@ -53,10 +53,10 @@ const selectedId = ref(null);
 </template>
 
 <script setup>
-import { ref } from "vue";
+  import { ref } from 'vue';
 
-const items = ref(generateLargeList(1000));
-const selectedId = ref(null);
+  const items = ref(generateLargeList(1000));
+  const selectedId = ref(null);
 </script>
 ```
 

@@ -36,16 +36,16 @@ When `v-if` and `v-for` are on the same element, `v-if` has higher priority in V
 </template>
 
 <script setup>
-import { computed } from 'vue'
+  import { computed } from 'vue'
 
-const props = defineProps<{
-  items: Item[]
-}>()
+  const props = defineProps<{
+    items: Item[]
+  }>()
 
-// Filter once, not per-render
-const activeItems = computed(() =>
-  props.items.filter(item => item.isActive)
-)
+  // Filter once, not per-render
+  const activeItems = computed(() =>
+    props.items.filter(item => item.isActive)
+  )
 </script>
 ```
 
@@ -80,11 +80,13 @@ const activeItems = computed(() =>
 </template>
 
 <script setup>
-import { computed } from "vue";
+  import { computed } from 'vue';
 
-const visibleActiveItems = computed(() =>
-  items.value.filter((item) => item.isActive).filter((item) => item.isVisible),
-);
+  const visibleActiveItems = computed(() =>
+    items.value
+      .filter((item) => item.isActive)
+      .filter((item) => item.isVisible),
+  );
 </script>
 ```
 
@@ -101,9 +103,11 @@ const visibleActiveItems = computed(() =>
 </template>
 
 <script setup>
-import { computed } from "vue";
+  import { computed } from 'vue';
 
-const activeItems = computed(() => items.value.filter((item) => item.isActive));
+  const activeItems = computed(() =>
+    items.value.filter((item) => item.isActive),
+  );
 </script>
 ```
 
