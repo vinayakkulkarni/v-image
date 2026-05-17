@@ -65,10 +65,7 @@ function handleClick(e: MouseEvent) {
 ```vue
 <!-- IconButton.vue -->
 <template>
-  <button 
-    :class="['btn', `btn-${variant}`, `btn-${size}`]"
-    @click="$emit('click', $event)"
-  >
+  <button :class="['btn', `btn-${variant}`, `btn-${size}`]" @click="$emit('click', $event)">
     <slot />
   </button>
 </template>
@@ -90,9 +87,7 @@ defineEmits<{
 ```vue
 <!-- IconButton.vue -->
 <template>
-  <button 
-    :class="['btn', `btn-${variant}`, `btn-${size}`]"
-  >
+  <button :class="['btn', `btn-${variant}`, `btn-${size}`]">
     <slot />
   </button>
 </template>
@@ -112,10 +107,10 @@ withDefaults(defineProps<{
 
 ```typescript
 // For components with very dynamic rendering logic
-import { h } from 'vue'
+import { h } from "vue";
 
 export default function DynamicHeading(props: { level: number }, { slots }) {
-  return h(`h${props.level}`, slots.default?.())
+  return h(`h${props.level}`, slots.default?.());
 }
 ```
 
@@ -123,12 +118,12 @@ export default function DynamicHeading(props: { level: number }, { slots }) {
 
 ```tsx
 // DynamicList.tsx
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
   props: {
     items: { type: Array, required: true },
-    renderItem: { type: Function, required: true }
+    renderItem: { type: Function, required: true },
   },
   setup(props) {
     return () => (
@@ -137,20 +132,20 @@ export default defineComponent({
           <li key={index}>{props.renderItem(item)}</li>
         ))}
       </ul>
-    )
-  }
-})
+    );
+  },
+});
 ```
 
 **Guidelines for simple components:**
 
-| Feature | Include? |
-|---------|----------|
-| Props | Yes, if needed |
-| Emits | Yes, if needed |
-| computed() | Only if logic is complex |
+| Feature          | Include?                               |
+| ---------------- | -------------------------------------- |
+| Props            | Yes, if needed                         |
+| Emits            | Yes, if needed                         |
+| computed()       | Only if logic is complex               |
 | ref()/reactive() | Only if component needs internal state |
-| watch() | Rarely - prefer computed |
-| Lifecycle hooks | Only if truly needed |
+| watch()          | Rarely - prefer computed               |
+| Lifecycle hooks  | Only if truly needed                   |
 
 Reference: [SFC Syntax](https://vuejs.org/api/sfc-spec.html)

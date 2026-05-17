@@ -1,18 +1,40 @@
 {
   "name": "v-image",
   "version": "4.0.1",
+  "private": false,
   "description": "Tiny little component for input type=file.",
+  "keywords": [
+    "image",
+    "input-image",
+    "vue3",
+    "vuejs"
+  ],
+  "homepage": "https://github.com/vinayakkulkarni/v-image#readme",
+  "bugs": {
+    "url": "https://github.com/vinayakkulkarni/v-image/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vinayak Kulkarni",
+    "email": "inbox.vinayak@gmail.com",
+    "url": "https://vinayakkulkarni.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinayakkulkarni/v-image.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
-  "files": [
-    "dist"
-  ],
-  "types": "./dist/index.d.ts",
-  "type": "module",
   "scripts": {
     "lint": "vp lint",
     "lint:fix": "vp lint --fix",
@@ -21,9 +43,6 @@
     "build": "vp pack",
     "test": "echo 'test!'",
     "prepare": "is-ci || husky"
-  },
-  "peerDependencies": {
-    "vue": "^3.5.27"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
@@ -34,6 +53,8 @@
     "husky": "latest",
     "is-ci": "latest",
     "lint-staged": "latest",
+    "oxfmt": "^0.50.0",
+    "oxlint": "^1.65.0",
     "sass": "^1.99.0",
     "typescript": "^6.0.3",
     "unplugin-vue": "^7.2.0",
@@ -42,29 +63,9 @@
     "vue": "^3.5.34",
     "vue-tsc": "^3.2.9"
   },
-  "keywords": [
-    "vuejs",
-    "image",
-    "vue3",
-    "input-image"
-  ],
-  "author": {
-    "name": "Vinayak Kulkarni",
-    "email": "inbox.vinayak@gmail.com",
-    "url": "https://vinayakkulkarni.dev"
+  "peerDependencies": {
+    "vue": "^3.5.27"
   },
-  "license": "MIT",
-  "private": false,
-  "sideEffects": false,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vinayakkulkarni/v-image.git"
-  },
-  "bugs": {
-    "url": "https://github.com/vinayakkulkarni/v-image/issues"
-  },
-  "homepage": "https://github.com/vinayakkulkarni/v-image#readme",
-  "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
@@ -75,5 +76,6 @@
       "name": "node",
       "version": ">=24"
     }
-  }
+  },
+  "packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499"
 }
