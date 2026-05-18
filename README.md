@@ -1,23 +1,16 @@
 # [v-image](https://vinayakkulkarni.github.io/v-image/) 📷
 
-[![CI](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/ci.yml?label=CI&branch=main&logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/ci.yml)
-[![CodeQL](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/codeql.yml?label=CodeQL&branch=main&logo=github-actions)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/codeql.yml)
-[![Ship.js Trigger](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-offline/shipjs-trigger.yml?label=⛴%20Ship.js%20trigger)](https://github.com/vinayakkulkarni/v-offline/actions/workflows/shipjs-trigger.yml)
+[![Pipeline](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-image/pipeline.yml?logo=github-actions)](https://github.com/vinayakkulkarni/v-image/actions/workflows/pipeline.yml)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vinayakkulkarni/v-image?sort=semver&logo=github)](https://github.com/vinayakkulkarni/v-image/releases)
 [![npm](https://img.shields.io/npm/v/v-image?logo=npm)](https://www.npmjs.com/package/v-image)
 [![npm](https://img.shields.io/npm/dm/v-image?logo=npm)](http://npm-stat.com/charts.html?package=v-image)
 [![npm (downloads)](https://img.shields.io/npm/dt/v-image.svg?logo=npm)](https://npm-stat.com/charts.html?package=v-image)
 [![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-image/latest)](https://bundlephobia.com/package/v-image@latest)
 [![npm type definitions](https://img.shields.io/npm/types/v-image)](https://github.com/vinayakkulkarni/v-image/blob/master/package.json)
-[![DeepScan grade](https://deepscan.io/api/teams/9055/projects/11604/branches/426884/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=9055&pid=11604&bid=426884)
-[![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/vinayakkulkarni/v-image)](https://snyk.io/test/github/vinayakkulkarni/v-image)
 [![license](https://img.shields.io/npm/l/v-image)](https://github.com/vinayakkulkarni/v-image/blob/master/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/vinayakkulkarni/v-image)](https://github.com/vinayakkulkarni/v-image/graphs/contributors)
 
-[![eslint](https://img.shields.io/npm/dependency-version/v-image/dev/eslint?logo=eslint)](https://eslint.org/)
-[![prettier](https://img.shields.io/npm/dependency-version/v-image/dev/prettier?logo=prettier)](https://prettier.io/)
-[![vite](https://img.shields.io/npm/dependency-version/v-image/dev/vite?logo=vite)](https://vitejs.dev/)
-[![vue](https://img.shields.io/npm/dependency-version/v-image/dev/vue?logo=vue.js)](https://vuejs.org/)
+[![vite-plus](https://img.shields.io/github/package-json/dependency-version/vinayakkulkarni/v-image/dev/vite-plus?logo=vite)](https://github.com/voidzero-dev/vite-plus)
 [![typescript](https://img.shields.io/npm/dependency-version/v-image/dev/typescript?logo=TypeScript)](https://www.typescriptlang.org/)
 
 ⚠️ Docs are for Vue 3, for Vue 2 docs, check [this tree](https://github.com/vinayakkulkarni/v-image/tree/v2.6.1#readme)
