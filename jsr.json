@@ -6,5 +6,6 @@
     "exclude": [
       "!dist"
     ]
-  }
+  },
+  "description": "Vue 3 file input component with image preview, drag-and-drop upload, and reactive validation. TypeScript-native ESM."
 }

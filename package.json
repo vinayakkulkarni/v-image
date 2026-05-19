@@ -2,7 +2,7 @@
   "name": "v-image",
   "version": "4.0.1",
   "private": false,
-  "description": "Tiny little component for input type=file.",
+  "description": "Vue 3 file input component with image preview, drag-and-drop upload, and reactive validation. TypeScript-native ESM.",
   "keywords": [
     "image",
     "input-image",

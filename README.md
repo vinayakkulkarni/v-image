@@ -1,17 +1,22 @@
 # [v-image](https://vinayakkulkarni.github.io/v-image/) 📷
 
-[![Pipeline](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-image/pipeline.yml?logo=github-actions)](https://github.com/vinayakkulkarni/v-image/actions/workflows/pipeline.yml)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vinayakkulkarni/v-image?sort=semver&logo=github)](https://github.com/vinayakkulkarni/v-image/releases)
-[![npm](https://img.shields.io/npm/v/v-image?logo=npm)](https://www.npmjs.com/package/v-image)
-[![npm](https://img.shields.io/npm/dm/v-image?logo=npm)](http://npm-stat.com/charts.html?package=v-image)
-[![npm (downloads)](https://img.shields.io/npm/dt/v-image.svg?logo=npm)](https://npm-stat.com/charts.html?package=v-image)
-[![npm bundle size (version)](https://img.shields.io/bundlephobia/min/v-image/latest)](https://bundlephobia.com/package/v-image@latest)
-[![npm type definitions](https://img.shields.io/npm/types/v-image)](https://github.com/vinayakkulkarni/v-image/blob/master/package.json)
-[![license](https://img.shields.io/npm/l/v-image)](https://github.com/vinayakkulkarni/v-image/blob/master/LICENSE)
-[![GitHub contributors](https://img.shields.io/github/contributors/vinayakkulkarni/v-image)](https://github.com/vinayakkulkarni/v-image/graphs/contributors)
+<!-- Badges -->
 
-[![vite-plus](https://img.shields.io/github/package-json/dependency-version/vinayakkulkarni/v-image/dev/vite-plus?logo=vite)](https://github.com/voidzero-dev/vite-plus)
-[![typescript](https://img.shields.io/npm/dependency-version/v-image/dev/typescript?logo=TypeScript)](https://www.typescriptlang.org/)
+[![Pipeline](https://img.shields.io/github/actions/workflow/status/vinayakkulkarni/v-image/pipeline.yml?branch=main&logo=github-actions&label=pipeline)](https://github.com/vinayakkulkarni/v-image/actions/workflows/pipeline.yml)
+[![GitHub release](https://img.shields.io/github/v/release/vinayakkulkarni/v-image?sort=semver&logo=github&label=release)](https://github.com/vinayakkulkarni/v-image/releases)
+[![npm](https://img.shields.io/npm/v/v-image?logo=npm&label=npm)](https://www.npmjs.com/package/v-image)
+[![JSR](https://img.shields.io/jsr/v/@vinayakkulkarni/v-image?logo=jsr&label=jsr)](https://jsr.io/@vinayakkulkarni/v-image)
+[![npm downloads](https://img.shields.io/npm/dm/v-image?logo=npm&label=downloads)](http://npm-stat.com/charts.html?package=v-image)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/v-image?label=size)](https://bundlephobia.com/package/v-image@latest)
+[![types](https://img.shields.io/npm/types/v-image?logo=typescript&label=types)](https://github.com/vinayakkulkarni/v-image/blob/main/package.json)
+[![License](https://img.shields.io/github/license/vinayakkulkarni/v-image?logo=github&label=license)](./LICENSE)
+
+[![vite-plus](https://img.shields.io/github/package-json/dependency-version/vinayakkulkarni/v-image/dev/vite-plus?logo=vite&label=vite-plus)](https://github.com/voidzero-dev/vite-plus)
+[![typescript](https://img.shields.io/github/package-json/dependency-version/vinayakkulkarni/v-image/dev/typescript?logo=TypeScript&label=typescript)](https://www.typescriptlang.org/)
+[![pnpm](https://img.shields.io/github/package-json/packageManager/vinayakkulkarni/v-image?label=pnpm&logo=pnpm)](https://pnpm.io/)
+[![node](https://img.shields.io/node/v/v-image?logo=node.js&label=node)](https://nodejs.org/)
+
+<!-- End Badges -->
 
 ⚠️ Docs are for Vue 3, for Vue 2 docs, check [this tree](https://github.com/vinayakkulkarni/v-image/tree/v2.6.1#readme)
 
@@ -44,17 +49,17 @@
 ### Installation
 
 ```bash
-npm i v-image
+pnpm add v-image
 ```
 
 ### Build Setup
 
 ```bash
 # install dependencies
-$ npm install
+$ pnpm install
 
 # package lib
-$ npm run build
+$ pnpm run build
 ```
 
 ### Usage
