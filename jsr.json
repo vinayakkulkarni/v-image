@@ -1,7 +1,7 @@
 {
   "name": "@vinayakkulkarni/v-image",
   "version": "4.0.1",
-  "exports": "./dist/v-image.js",
+  "exports": "./dist/index.js",
   "publish": {
     "exclude": [
       "!dist"
