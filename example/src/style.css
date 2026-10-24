@@ -1,26 +1,102 @@
 @import 'tailwindcss';
 
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: 'Satoshi';
   font-weight: 400;
-  color-scheme: light dark;
-  color: rgb(255 255 255 / 87%);
-  background-color: #242424;
-  font-synthesis: none;
-  text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-size-adjust: 100%;
+  font-display: swap;
+  src: url('/fonts/satoshi-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/satoshi-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/clash-display-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/instrument-serif-400-italic.woff2') format('woff2');
+}
+
+:root {
+  --background: oklch(0.985 0.002 270);
+  --foreground: oklch(0.17 0.004 270);
+  --card: oklch(0.995 0.001 270);
+  --muted: oklch(0.955 0.003 270);
+  --muted-foreground: oklch(0.5 0.01 270);
+  --border: oklch(0.9 0.004 270);
+  --primary: oklch(0.205 0.004 270);
+  --primary-foreground: oklch(0.975 0.002 270);
+  --accent: oklch(0.62 0.19 35);
+  --ring: oklch(0.62 0.19 35);
+}
+
+.dark {
+  --background: oklch(0.13 0.004 270);
+  --foreground: oklch(0.965 0.002 270);
+  --card: oklch(0.165 0.004 270);
+  --muted: oklch(0.22 0.005 270);
+  --muted-foreground: oklch(0.68 0.01 270);
+  --border: oklch(0.27 0.006 270);
+  --primary: oklch(0.965 0.002 270);
+  --primary-foreground: oklch(0.18 0.004 270);
+  --accent: oklch(0.72 0.17 40);
+  --ring: oklch(0.72 0.17 40);
+}
+
+@theme {
+  --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Clash Display', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-ring: var(--ring);
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  place-content: center;
-  overflow: hidden;
-  width: 100vw;
-  height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
 }
