@@ -35,7 +35,7 @@
     </header>
 
     <main
-      class="mx-auto grid w-full max-w-6xl flex-1 items-center gap-10 px-5 pt-6 pb-16 sm:px-8 lg:grid-cols-[1.1fr_1fr] lg:gap-16"
+      class="mx-auto grid w-full max-w-6xl flex-1 items-center gap-10 px-5 pt-6 pb-16 sm:px-8 lg:grid-cols-2 lg:gap-16"
     >
       <section class="min-w-0">
         <p
@@ -44,7 +44,7 @@
           Vue 3 · ESM · {{ version }}
         </p>
         <h1
-          class="mt-4 font-display text-[clamp(3.5rem,14vw,7rem)] leading-[0.85] tracking-tight whitespace-nowrap"
+          class="mt-4 font-display text-hero tracking-tight whitespace-nowrap"
         >
           v-image
         </h1>
@@ -93,12 +93,7 @@
               type="button"
               role="radio"
               :aria-checked="accept === option.value"
-              :class="[
-                'rounded px-2.5 py-1 font-mono transition-colors',
-                accept === option.value
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:text-foreground',
-              ]"
+              :class="acceptClass(option.value)"
               @click="setAccept(option.value)"
             >
               {{ option.label }}
@@ -158,7 +153,7 @@
   const buttonClass =
     'mt-4 inline-flex w-full cursor-pointer items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-85 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none';
   const frameClass = 'rounded-xl border border-dashed border-border p-3';
-  const imageClass = 'block aspect-[3/2] w-full rounded-lg object-cover';
+  const imageClass = 'block aspect-photo w-full rounded-lg object-cover';
 
   const installCommand = 'pnpm add v-image';
   const copied = ref(false);
@@ -185,6 +180,10 @@
     { label: 'jpeg', value: 'image/jpeg' },
   ];
   const accept = ref('image/*');
+  const acceptClass = (value: string) =>
+    accept.value === value
+      ? 'rounded px-2.5 py-1 font-mono transition-colors bg-primary text-primary-foreground'
+      : 'rounded px-2.5 py-1 font-mono transition-colors text-muted-foreground hover:text-foreground';
   const setAccept = (value: string) => {
     accept.value = value;
     image.value = null;
@@ -213,9 +212,9 @@
   };
 
   const image = ref<string | null>(null);
-  const lastEvent = ref('—');
+  const lastEvent = ref('none');
   const dataUrlSize = computed(() =>
-    image.value ? `${(image.value.length / 1024).toFixed(1)} KB` : '—',
+    image.value ? `${(image.value.length / 1024).toFixed(1)} KB` : 'none',
   );
 
   const onImageLoad = (dataUrl: string) => {

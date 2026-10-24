@@ -69,6 +69,9 @@
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   --font-display: 'Clash Display', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+  --text-hero: clamp(3.5rem, 14vw, 7rem);
+  --text-hero--line-height: 0.85;
+  --aspect-photo: 3 / 2;
 }
 
 @theme inline {
