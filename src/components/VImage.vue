@@ -110,12 +110,11 @@
         emit('image-removed', true);
       };
       const onImageLoad = (e: Event | DragEvent): void => {
-        const target = (e as Event).target as HTMLInputElement;
-        const dataTransfer = (e as DragEvent).dataTransfer;
-        if (e instanceof DragEvent) {
-          readFiles(dataTransfer!.files);
-        } else {
-          readFiles(target.files!);
+        const dataTransfer = 'dataTransfer' in e ? e.dataTransfer : null;
+        const target = e.target as HTMLInputElement | null;
+        const files = dataTransfer?.files ?? target?.files;
+        if (files && files.length > 0) {
+          readFiles(files);
         }
       };
       const readFiles = (files: FileList) => {
