@@ -42,7 +42,9 @@ v-image/
 | Package Mgr | pnpm                              |
 | Git Hooks   | Husky + lint-staged + commitlint  |
 | Release     | release-please                    |
-| Node        | 24                                |
+| Tests       | vp test (Vitest + happy-dom)      |
+| Demo        | Vite app in `example/`, CF Worker |
+| Node        | 26 (`devEngines.runtime`)         |
 
 ---
 
@@ -53,8 +55,11 @@ pnpm run lint          # vp lint
 pnpm run lint:fix      # vp lint --fix
 pnpm run format        # vp fmt
 pnpm run format:check  # vp fmt --check
+pnpm run typecheck     # vue-tsc (library + demo)
+pnpm run test          # vp test run
 pnpm run build         # vp pack (tsdown + dts)
-pnpm run test          # Tests
+pnpm run build:demo    # library + example/dist
+pnpm run deploy        # build:demo + wrangler deploy (v-image-demo Worker)
 ```
 
 ---
@@ -95,5 +100,5 @@ All commits must follow conventional commit format with `Signed-off-by` trailer.
 
 ---
 
-**Last Updated:** 2026-02-08
+**Last Updated:** 2026-10-24
 **Maintainer:** Vinayak Kulkarni

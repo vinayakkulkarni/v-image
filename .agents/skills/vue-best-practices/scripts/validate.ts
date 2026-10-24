@@ -1,8 +1,8 @@
 import { readdir, readFile } from 'fs/promises';
 import { join } from 'path';
 
-const RULES_DIR = join(import.meta.dir, '..', 'rules');
-const SKILL_FILE = join(import.meta.dir, '..', 'SKILL.md');
+const RULES_DIR = join(import.meta.dirname, '..', 'rules');
+const SKILL_FILE = join(import.meta.dirname, '..', 'SKILL.md');
 
 interface ValidationError {
   file: string;

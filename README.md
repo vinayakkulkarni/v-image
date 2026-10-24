@@ -1,4 +1,4 @@
-# [v-image](https://vinayakkulkarni.github.io/v-image/) 📷
+# [v-image](https://v-image.vinayakkulkarni.dev) 📷
 
 <!-- Badges -->
 
@@ -22,6 +22,8 @@
 ⚠️ Docs are for Vue 3, for Vue 2 docs, check [this tree](https://github.com/vinayakkulkarni/v-image/tree/v2.6.1#readme)
 
 ## Demo
+
+Live demo: <https://v-image.vinayakkulkarni.dev>
 
 [![Edit v-image](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/v-image?file=src/App.vue)
 

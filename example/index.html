@@ -3,7 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>V-Image Demo</title>
+    <title>v-image — Vue 3 image input with live preview</title>
+    <meta
+      name="description"
+      content="v-image is a tiny Vue 3 component for input type=file with an instant image preview. Try it live."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://v-image.vinayakkulkarni.dev/" />
+    <meta property="og:title" content="v-image — Vue 3 image input" />
+    <meta
+      property="og:description"
+      content="A tiny Vue 3 file input with an instant image preview."
+    />
+    <meta property="og:url" content="https://v-image.vinayakkulkarni.dev/" />
+    <link
+      rel="preload"
+      href="/fonts/clash-display-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/satoshi-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script>
+      (function () {
+        var stored = localStorage.getItem('v-image-color-mode');
+        var dark =
+          stored === 'dark' ||
+          (stored !== 'light' &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+      })();
+    </script>
+    <script
+      async
+      src="https://analytics.geoql.in/js/pa-7vNW4C1_hHza1dGWt8M8L.js"
+    ></script>
+    <script>
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
+    </script>
+    <script>
+      window.op =
+        window.op ||
+        (function () {
+          var n = [];
+          return new Proxy(
+            function () {
+              arguments.length && n.push([].slice.call(arguments));
+            },
+            {
+              get: function (t, r) {
+                return 'q' === r
+                  ? n
+                  : function () {
+                      n.push([r].concat([].slice.call(arguments)));
+                    };
+              },
+              has: function (t, r) {
+                return 'q' === r;
+              },
+            },
+          );
+        })();
+      window.op('init', {
+        apiUrl: 'https://events.geoql.in/api',
+        clientId: 'b62eaa53-01b4-4aab-a218-e7578c83693d',
+        trackScreenViews: true,
+        trackOutgoingLinks: true,
+        trackAttributes: true,
+      });
+    </script>
+    <script src="https://openpanel.dev/op1.js" defer async></script>
+    <script>
+      // GA4 measurement ID for this host. Empty until one is issued; GA4 is
+      // skipped entirely while it is empty.
+      var GA4_MEASUREMENT_ID = '';
+      if (GA4_MEASUREMENT_ID) {
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src =
+          'https://www.googletagmanager.com/gtag/js?id=' + GA4_MEASUREMENT_ID;
+        document.head.appendChild(ga);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function gtag() {
+          dataLayer.push(arguments);
+        };
+        gtag('js', new Date());
+        gtag('config', GA4_MEASUREMENT_ID);
+      }
+    </script>
   </head>
   <body>
     <div id="app"></div>

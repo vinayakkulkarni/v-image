@@ -1,0 +1,16 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "v-image-demo",
+  "account_id": "bd11b1c42ee2759044a1769f80f704dd",
+  "compatibility_date": "2026-10-23",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "v-image.vinayakkulkarni.dev", "custom_domain": true },
+  ],
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application",
+  },
+  "observability": { "enabled": true },
+}
