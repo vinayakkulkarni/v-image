@@ -9,7 +9,7 @@
     "vue3",
     "vuejs"
   ],
-  "homepage": "https://github.com/vinayakkulkarni/v-image#readme",
+  "homepage": "https://v-image.vinayakkulkarni.dev",
   "bugs": {
     "url": "https://github.com/vinayakkulkarni/v-image/issues"
   },
@@ -40,21 +40,25 @@
     "lint:fix": "vp lint --fix",
     "format": "vp fmt",
     "format:check": "vp fmt --check",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json && pnpm --filter ./example run typecheck",
+    "test": "vp test run",
     "build": "vp pack",
-    "test": "echo 'test!'",
+    "build:demo": "pnpm run build && pnpm --filter ./example run build",
+    "deploy": "pnpm run build:demo && pnpm --filter ./example run deploy",
     "prepare": "is-ci || husky"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^21.2.4",
-    "@types/node": "^25.9.0",
+    "@types/node": "^26.6.5",
+    "@vue/test-utils": "^2.5.1",
+    "happy-dom": "^21.0.4",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
     "lint-staged": "^17.6.0",
-    "sass": "^1.105.2",
     "typescript": "^6.0.3",
-    "unplugin-vue": "^7.2.0",
-    "vite-plus": "^0.1.21",
+    "unplugin-vue": "^8.0.0",
+    "vite-plus": "^1.4.0",
     "vue": "^3.5.44",
     "vue-tsc": "^3.3.13"
   },
@@ -62,15 +66,10 @@
     "vue": "^3.5.27"
   },
   "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.1.3",
-      "onFail": "warn"
-    },
     "runtime": {
       "name": "node",
-      "version": ">=24"
+      "version": ">=26.x"
     }
   },
-  "packageManager": "pnpm@11.1.3+sha512.c85357fe17ca12dd23dd7071822666dfd7e3cb76fe214e3370b5ea2fb34f2a231185509b63e717f3cd0acb38dd3f8d82bcd5e8172400ae678b70ea4fbed0896d"
+  "packageManager": "pnpm@12.15.0+sha512.b3951d6d6ff4a9f13dc7cf56cd28d2b8eb37dbcc9c68e52e1e1191873ea9f82a017287ab50baadc5ccc494f036c67c0e47eb13608c2fa36f47711b61ea128e61"
 }
