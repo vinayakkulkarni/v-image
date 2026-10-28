@@ -1,4 +1,4 @@
-# [v-image](https://v-image.vinayakkulkarni.dev) 📷
+# [v-image](https://v-image.vinayakkulkarni.dev/?utm_source=github&utm_medium=readme&utm_campaign=v-image) 📷
 
 <!-- Badges -->
 
@@ -19,11 +19,13 @@
 
 <!-- End Badges -->
 
+**[Live demo](https://v-image.vinayakkulkarni.dev/?utm_source=github&utm_medium=readme&utm_campaign=v-image)** · [npm](https://www.npmjs.com/package/v-image) · [JSR](https://jsr.io/@vinayakkulkarni/v-image)
+
 ⚠️ Docs are for Vue 3, for Vue 2 docs, check [this tree](https://github.com/vinayakkulkarni/v-image/tree/v2.6.1#readme)
 
 ## Demo
 
-Live demo: <https://v-image.vinayakkulkarni.dev>
+Live demo: [v-image.vinayakkulkarni.dev](https://v-image.vinayakkulkarni.dev/?utm_source=github&utm_medium=readme&utm_campaign=v-image)
 
 [![Edit v-image](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/v-image?file=src/App.vue)
 
@@ -235,4 +237,15 @@ _Note_:
 **v-image** © [Vinayak](https://github.com/vinayakkulkarni), Released under the [MIT](./LICENSE) License.<br>
 Authored and maintained by Vinayak Kulkarni with help from contributors ([list](https://github.com/vinayakkulkarni/v-image/contributors)).
 
-> [vinayakkulkarni.dev](https://vinayakkulkarni.dev) · GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)
+> [vinayakkulkarni.dev](https://vinayakkulkarni.dev/?utm_source=github&utm_medium=readme&utm_campaign=v-image) · GitHub [@vinayakkulkarni](https://github.com/vinayakkulkarni) · Twitter [@\_vinayak_k](https://twitter.com/_vinayak_k)
+
+## More from the author
+
+- [v-pip](https://v-pip.vinayakkulkarni.dev/?utm_source=github&utm_medium=readme&utm_campaign=v-image) — picture-in-picture for Vue 3
+- [v-clappr](https://v-clappr.vinayakkulkarni.dev/?utm_source=github&utm_medium=readme&utm_campaign=v-image) — Vue 3 wrapper for the Clappr media player
+- [v-spotlight](https://v-spotlight.vinayakkulkarni.dev/?utm_source=github&utm_medium=readme&utm_campaign=v-image) — cursor spotlight overlay for Vue 3
+- [v-github-icon](https://v-github-icon.vinayakkulkarni.dev/?utm_source=github&utm_medium=readme&utm_campaign=v-image) — GitHub corner component for Vue 3
+- [nxui](https://nxui.geoql.in/?utm_source=github&utm_medium=readme&utm_campaign=v-image) — animated copy-paste UI components and Paper Shaders for Vue 3 and Nuxt
+- [shadscan-vue](https://shadscan-vue.geoql.in/?utm_source=github&utm_medium=readme&utm_campaign=v-image) — UI-fundamentals audits for shadcn-vue and shadcn-nuxt apps
+
+See every project at [vinayakkulkarni.dev/projects](https://vinayakkulkarni.dev/projects?utm_source=github&utm_medium=readme&utm_campaign=v-image) and [geoql.in](https://geoql.in/?utm_source=github&utm_medium=readme&utm_campaign=v-image).
