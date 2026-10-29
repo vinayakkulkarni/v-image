@@ -465,6 +465,14 @@
 
 
 
+## [4.0.3](https://github.com/vinayakkulkarni/v-image/compare/v4.0.2...v4.0.3) (2026-10-29)
+
+
+### Miscellaneous
+
+* **deps-dev:** bump wrangler ([5a18bbd](https://github.com/vinayakkulkarni/v-image/commit/5a18bbd178459cdffecd3db3866a9cfe3ad16dba))
+* **deps-dev:** bump wrangler from 4.152.0 to 4.153.0 in the npm-development group ([710333a](https://github.com/vinayakkulkarni/v-image/commit/710333ab8df3e4f97edde08fccc1286010385203))
+
 ## [4.0.2](https://github.com/vinayakkulkarni/v-image/compare/v4.0.1...v4.0.2) (2026-10-28)
 
 
