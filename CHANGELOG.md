@@ -465,6 +465,70 @@
 
 
 
+## [4.0.3](https://github.com/vinayakkulkarni/v-image/compare/v4.0.2...v4.0.3) (2026-11-25)
+
+
+### Bug Fixes
+
+* **deps:** bump github/codeql-action ([05cd4a7](https://github.com/vinayakkulkarni/v-image/commit/05cd4a7da231a99a806187d0caea934dc77228bc))
+* **deps:** bump github/codeql-action from 4.39.3 to 4.39.4 in the actions-minor group ([0154f7e](https://github.com/vinayakkulkarni/v-image/commit/0154f7e5e8dce29a3252831e1771dbf0d9655e7a))
+* **deps:** bump the actions-minor group across 1 directory with 2 updates ([4a001e6](https://github.com/vinayakkulkarni/v-image/commit/4a001e667a732ebabe02d2ce9354117e2e6540b2))
+* **deps:** bump the actions-minor group across 1 directory with 2 updates ([42e3cc9](https://github.com/vinayakkulkarni/v-image/commit/42e3cc91347bd84ba8803e696b29c4d6cb55ded3))
+* **deps:** bump vue ([1cff9dd](https://github.com/vinayakkulkarni/v-image/commit/1cff9dd75ab44c30adb69bd84605bc27d8d5db19))
+* **deps:** bump vue ([c936706](https://github.com/vinayakkulkarni/v-image/commit/c936706ef3e4cd36bc6edfd684a976b412aad771))
+* **deps:** bump vue from 3.5.44 to 3.5.45 in the npm-production group across 1 directory ([75ef783](https://github.com/vinayakkulkarni/v-image/commit/75ef783a0dea9ad5fc412e3d15f59e2538f04e92))
+* **deps:** bump vue from 3.5.45 to 3.5.46 in /example in the npm-production group ([2603835](https://github.com/vinayakkulkarni/v-image/commit/260383503a280b589bb5931d6015988c3f9fcc6b))
+* **deps:** bump vue from 3.5.45 to 3.5.46 in the npm-production group across 1 directory ([28fd7bd](https://github.com/vinayakkulkarni/v-image/commit/28fd7bd7e3297a93dc219f31f9957bf730d1f5c1))
+* **deps:** bump vue in /example in the npm-production group ([d951d7e](https://github.com/vinayakkulkarni/v-image/commit/d951d7eb95b63211ab5c0f52b82521b25a7c3f0a))
+
+
+### Miscellaneous
+
+* **deps-dev:** bump lint-staged ([8807a4d](https://github.com/vinayakkulkarni/v-image/commit/8807a4d3a074593aea55412930ca6c4d11e603ec))
+* **deps-dev:** bump lint-staged from 17.6.1 to 17.6.2 in the npm-development group ([5969f1f](https://github.com/vinayakkulkarni/v-image/commit/5969f1fcb2ab7574321e7f319f0523df107f9642))
+* **deps-dev:** bump the npm-development group ([2d16a10](https://github.com/vinayakkulkarni/v-image/commit/2d16a10f6e0693ce9b4629716a01f283e235e729))
+* **deps-dev:** bump the npm-development group ([fae40b4](https://github.com/vinayakkulkarni/v-image/commit/fae40b4e9e92c96d09f40b38a74a31d1e7873350))
+* **deps-dev:** bump the npm-development group ([c250545](https://github.com/vinayakkulkarni/v-image/commit/c2505456a8604a52eafda87de43751abe4047102))
+* **deps-dev:** bump the npm-development group across 1 directory with 2 updates ([8de17d2](https://github.com/vinayakkulkarni/v-image/commit/8de17d20f905e1e0060030ba0834d7be9ed0df94))
+* **deps-dev:** bump the npm-development group across 1 directory with 2 updates ([81892e5](https://github.com/vinayakkulkarni/v-image/commit/81892e5d29d3a3033ad57aa2a428d50532b547a2))
+* **deps-dev:** bump the npm-development group in /example with 2 updates ([0dc762c](https://github.com/vinayakkulkarni/v-image/commit/0dc762c1dfb568d49c72cb09926c5fcf49eabb4c))
+* **deps-dev:** bump the npm-development group in /example with 2 updates ([0db9f55](https://github.com/vinayakkulkarni/v-image/commit/0db9f555926a7ccc25917717ed2945ed5509024f))
+* **deps-dev:** bump the npm-development group in /example with 4 updates ([25c2205](https://github.com/vinayakkulkarni/v-image/commit/25c22050e3a34553734b7e6ad1e016d5b62eacb2))
+* **deps-dev:** bump the npm-development group with 2 updates ([de88e17](https://github.com/vinayakkulkarni/v-image/commit/de88e1775d1f43e3eacc2683cc22794b9ce4cf16))
+* **deps-dev:** bump the npm-development group with 2 updates ([b2e844b](https://github.com/vinayakkulkarni/v-image/commit/b2e844b8b2b4d1e6db5948d0354843e62800e010))
+* **deps-dev:** bump the npm-development group with 2 updates ([de8ae33](https://github.com/vinayakkulkarni/v-image/commit/de8ae33230fc10d33507b5ee51962753eeb86778))
+* **deps-dev:** bump the npm-development group with 2 updates ([5d1c5cc](https://github.com/vinayakkulkarni/v-image/commit/5d1c5cc97f721b70389be87a64e40081abb44f69))
+* **deps-dev:** bump the npm-development group with 2 updates ([9c30201](https://github.com/vinayakkulkarni/v-image/commit/9c302014ca1f1c96ff43a0713766b39e2545fb0a))
+* **deps-dev:** bump the npm-development group with 2 updates ([865b51a](https://github.com/vinayakkulkarni/v-image/commit/865b51a2b0aa30465fabcf983f6e19e2f13bc860))
+* **deps-dev:** bump the npm-development group with 3 updates ([ae0f0c5](https://github.com/vinayakkulkarni/v-image/commit/ae0f0c5cb15101598b1fad318dce7bbc56d87222))
+* **deps-dev:** bump the npm-development group with 3 updates ([7ff9d13](https://github.com/vinayakkulkarni/v-image/commit/7ff9d134e8362692946cbcb0e4dbb19378fcf82d))
+* **deps-dev:** bump the npm-development group with 3 updates ([dcaedca](https://github.com/vinayakkulkarni/v-image/commit/dcaedca1b73405b15fa4365add14f6ac60af7475))
+* **deps-dev:** bump the npm-development group with 3 updates ([8987b6d](https://github.com/vinayakkulkarni/v-image/commit/8987b6d823b5ad831be1f5eb65a371ad24e082b5))
+* **deps-dev:** bump the npm-development group with 4 updates ([ec77a4b](https://github.com/vinayakkulkarni/v-image/commit/ec77a4b9f09c2acaa985a5750ecd7b9c13f4e9ab))
+* **deps-dev:** bump the npm-development group with 4 updates ([81abdb5](https://github.com/vinayakkulkarni/v-image/commit/81abdb5e619430ae3fcfbd5395f543926ba8b026))
+* **deps-dev:** bump the npm-development group with 5 updates ([5a26abe](https://github.com/vinayakkulkarni/v-image/commit/5a26abebaac057b9460b5c53d7551d5f9f2ffb51))
+* **deps-dev:** bump the npm-development group with 5 updates ([fa8b179](https://github.com/vinayakkulkarni/v-image/commit/fa8b1795b0ac0efaf789752304979e958fb67f46))
+* **deps-dev:** bump wrangler ([9f72449](https://github.com/vinayakkulkarni/v-image/commit/9f72449403d6d84bd6224b5541660f8c43109549))
+* **deps-dev:** bump wrangler ([ac3a37b](https://github.com/vinayakkulkarni/v-image/commit/ac3a37b294ccce20af98aa0178a8dfc049643a29))
+* **deps-dev:** bump wrangler ([15a725f](https://github.com/vinayakkulkarni/v-image/commit/15a725f30b5087504469d0d2b9fb836e84ff19aa))
+* **deps-dev:** bump wrangler ([c997c8e](https://github.com/vinayakkulkarni/v-image/commit/c997c8e3106ed362d512ba6c27050fab6fac5dd5))
+* **deps-dev:** bump wrangler ([78b252b](https://github.com/vinayakkulkarni/v-image/commit/78b252b1a03e5bdda97957cdd94d3e6ed720c4c0))
+* **deps-dev:** bump wrangler ([5a18bbd](https://github.com/vinayakkulkarni/v-image/commit/5a18bbd178459cdffecd3db3866a9cfe3ad16dba))
+* **deps-dev:** bump wrangler from 4.152.0 to 4.153.0 in the npm-development group ([710333a](https://github.com/vinayakkulkarni/v-image/commit/710333ab8df3e4f97edde08fccc1286010385203))
+* **deps-dev:** bump wrangler from 4.153.0 to 4.155.0 in /example in the npm-development group ([6971535](https://github.com/vinayakkulkarni/v-image/commit/6971535925261d3a829988754e6229c66c28d9df))
+* **deps-dev:** bump wrangler from 4.156.0 to 4.156.2 in the npm-development group ([56aea34](https://github.com/vinayakkulkarni/v-image/commit/56aea34f1bf33c80cee4fdaacf1b6fd6435088b9))
+* **deps-dev:** bump wrangler from 4.161.0 to 4.162.0 in /example in the npm-development group ([b4a3cae](https://github.com/vinayakkulkarni/v-image/commit/b4a3caef68588d954ef7853738bb72ea244faad8))
+* **deps-dev:** bump wrangler from 4.161.0 to 4.162.0 in the npm-development group ([f69ceda](https://github.com/vinayakkulkarni/v-image/commit/f69ceda4a0a4e74e146d225b6374c3a53cc4ecbb))
+* **deps-dev:** bump wrangler from 4.162.0 to 4.163.0 in /example in the npm-development group ([c63267c](https://github.com/vinayakkulkarni/v-image/commit/c63267ce7b69e85f8755f5222c9efeb724484822))
+* **deps-dev:** bump wrangler from 4.162.0 to 4.163.0 in the npm-development group ([610c7cf](https://github.com/vinayakkulkarni/v-image/commit/610c7cf3c0970388ad7885b5d37168da14ba4395))
+* **deps-dev:** bump wrangler from 4.163.0 to 4.165.0 in /example in the npm-development group ([614735a](https://github.com/vinayakkulkarni/v-image/commit/614735a35b3eab17ed839afe91b38dee96363e77))
+* **deps-dev:** bump wrangler from 4.165.0 to 4.166.0 in /example in the npm-development group across 1 directory ([6ffa111](https://github.com/vinayakkulkarni/v-image/commit/6ffa11126f995c617e9f721a8bbe486deb5a1a5d))
+* **deps-dev:** bump wrangler from 4.165.0 to 4.166.0 in the npm-development group across 1 directory ([0bb9d2b](https://github.com/vinayakkulkarni/v-image/commit/0bb9d2b838540a51f16e48ddfba53ad88df4f0b3))
+* **deps-dev:** bump wrangler in /example in the npm-development group ([36a3bc6](https://github.com/vinayakkulkarni/v-image/commit/36a3bc6149d5a30ae410bac21b11ee2fb9e5331e))
+* **deps-dev:** bump wrangler in /example in the npm-development group ([2aebd1a](https://github.com/vinayakkulkarni/v-image/commit/2aebd1ae9d765f32e58c554527eab8da82351cca))
+* **deps-dev:** bump wrangler in /example in the npm-development group ([fe32d47](https://github.com/vinayakkulkarni/v-image/commit/fe32d47089fcaea873d4ab4923174d76b6bf92ec))
+* **deps-dev:** bump wrangler in /example in the npm-development group ([9a3ed6e](https://github.com/vinayakkulkarni/v-image/commit/9a3ed6eaa1d116a462f85de5ec4805c515c6d108))
+
 ## [4.0.2](https://github.com/vinayakkulkarni/v-image/compare/v4.0.1...v4.0.2) (2026-10-28)
 
 
